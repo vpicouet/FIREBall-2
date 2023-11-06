@@ -1,0 +1,6 @@
+#make
+/sbin/insmod comsync.ko comsync_major=200
+#/sbin/insmod comsync.ko iobase1=0x300 irq1=7 comsync_major=200
+
+mknod -m 666 /dev/csync1 c 200 1
+mknod -m 666 /dev/csync2 c 200 2
