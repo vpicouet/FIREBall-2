@@ -1,0 +1,229 @@
+
+Time: 230924_10:38:24
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:38:30
+Running Receiver for FIREBall image (TEXT) to image.txt...
+
+Time: 230924_10:40:13
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:40:37
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:41:34
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError("invalid literal for long() with base 10: '\\x9b_\\xba}Q\\x02V\\xa7\\xdb\\xf8\\xa8\\xd6\\xado\\xa3\\x17\\xf6G\\xb5\\xfe\\\\\\xb8^m\\xef:\\xbf\\xaa\\xce;/\\xdbMr\\xc6\\x7f-I+wA\\xb6pD\\x14^Wg\\xf0\\xbfJZke\\x9an<tf=h\\xd4\\xa2W\\xac\\x82\\xb0wN\\xa0\\x13W\\xa0\\xac\\xd4|)\\xff\\xf1\\x10(\\xc1\\xc1n\\xf4a6\\x8e\\xf4\\xbf^\\xffU\\x80\\x11L\\xd6\\x9e\\xf2j\\xdd\\xbf\\xa7\\xbd\\xf10\\xe3\\xdd4\\xf2>.\\x0e\\xfb\\xc2\\xf4\\xe6:=x\\x19]\\x1f\\\\\\xda;;)\\xfd\\x0e\\xd3\\xa3\\xef\\xfb\\xbd\\xe2\\xefl\\x93!\\xcf\\xa1\\xff\\x8d\\xaa\\xe8\\xf9\\x1b\\xae\\xfb\\xa8\\x06\\x95r\\xd9\\xc8\\xa9\\x9f>X\\xea]]\\xb7l1\\xb9\\x04\\xcc\\xd4\\x9b\\xf7\\xa6{\\xd8\\xfbq\\xfaU\\xb4\\x96\\xc5W\\xda\\xfe\\x04\\xefiV\\xcc\\xc3m\\xdfE\\xa8\\xd7\\xf0\\\\\\xef\\xeb'",) /home/fireball2/dobc/data/230924/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:47:26
+Running Receiver for FIREBall image (TEXT) to image.txt...
+
+Time: 230924_10:49:06
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError("invalid literal for long() with base 10: ''",) /home/fireball2/dobc/data/230924/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:50:27
+Running Receiver for FIREBall image (TEXT) to image.txt...
+
+Time: 230924_10:52:12
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:52:21
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:53:42
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:54:18
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:54:33
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError("invalid literal for long() with base 10: '\\x03\\xc0'",) /home/fireball2/dobc/data/230924/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:55:15
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError('invalid literal for long() with base 10: \'\\xbe\\xd0\\xcd\\xd6\\xd5\\xd0\\xea\\xc5\\x82]\\x7fM\\xdc*hpDF}\\x05OkB\\xc1O\\x81k\\xd0\\x15\\xcd\\x0eO\\xafj\\x07\\xd7\\x87\\xbf\\x10\\xeau\\x05O\\xbf"\\x82\\x8a\\xeb\\xeb\\xe8\\xf5\\xd3\\x13\\xd7\\x95\\xb5\\x04O\\xaf\\xb5\\x10\\x8a\\xcdw\\xf4\\xf5\\xbd\\x82O\\xef\\xa6\\xd0\\x15M\\x13\\x17\\xb3\\xb5\\x15\\xf7\\x15\\x0e\\x04\\xd4Ld\\x04O\\xc4\\x84\\xc1\\xd1\\xdd\\x81\\xc1\\xddO\\xa1\\x82M\\xc2\\x04\\xcf\\xc4\\xc4\\x04L\\x84\\xcf\\xc1\\xd1\\x7fKP\\xcd\\xc6E\\xf4\\xc5\\xe9\\x05\\xd1y\\xa1\\x82\\x19\\x1c\\x1c\\x10\\x19\\x01\\x8a\\x88\\xc0\\x91\\x111\\xc4\\xc4\\x04\\x14d\\xb4\\x01\\xcf\\x7f~\\x01\\xd1\\xef\\xca\\x82\\xca\\xe2\\xc2\\x01\\xcf\\xb9\\xfe\\x01\\xcf\\xf9\\xef\\x82\\x198\\x02\\xd1\\xc7\\xa6\\x82\\x8a\\x8e\\x1d1\\xc8h\\x02\\xd1\\x19\\xe2\\x82\\xc6\\x86\\xcb\\x82\\xca\\xc2\\xc1\\x82\\xca\\x06\\xbe\\x81\\xcaZ\\xef\\x81\\xc6\\xca\'',) /home/fireball2/dobc/data/230924/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:55:48
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:56:48
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:58:36
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:59:09
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:59:30
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_10:59:51
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError('null byte in argument for long()',) /home/fireball2/dobc/data/230924/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:01:42
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:02:00
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:02:42
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:02:52
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:03:10
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:03:37
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:04:13
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:04:22
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:04:46
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:04:52
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:05:07
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:05:34
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:05:49
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:05:55
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:06:22
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:06:31
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:06:43
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:06:52
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:07:01
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:07:10
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:07:16
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:07:22
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:07:31
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:08:16
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:08:34
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:08:40
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:08:46
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:09:28
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:09:52
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:22:17
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:22:44
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:24:08
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:25:05
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:26:14
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_11:27:02
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230924 FAILED
+
+Time: 230924_12:37:45
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error executing command: ./test --> Receiving --> image.txt
+
+Time: 230924_12:58:10
+Running Receiver for FIREBall image (TEXT) to image.txt...

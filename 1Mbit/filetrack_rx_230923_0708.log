@@ -1,0 +1,11 @@
+
+Time: 230923_07:08:16
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230923 FAILED
+
+Time: 230923_07:08:52
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error executing command: ./test --> Receiving --> image.txt
+
+Time: 230923_07:09:33
+Running Receiver for FIREBall image (TEXT) to image.txt...

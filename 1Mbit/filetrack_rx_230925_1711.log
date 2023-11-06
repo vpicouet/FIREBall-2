@@ -1,0 +1,15 @@
+
+Time: 230925_17:11:59
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError("invalid literal for long() with base 10: '\\x14\\x80fa('",) /home/fireball2/dobc/data/230925/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_17:12:08
+Running Receiver for FIREBall image (TEXT) to image.txt...
+
+Time: 230925_17:13:52
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error executing command: ./test --> Receiving --> image.txt
+
+Time: 230925_19:16:57
+Running Receiver for FIREBall image (TEXT) to image.txt...

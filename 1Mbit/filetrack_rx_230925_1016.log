@@ -1,0 +1,104 @@
+
+Time: 230925_10:16:08
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:26:54
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError("invalid literal for long() with base 10: '\\xfb\\x0eOM\\xa6\\xa6?<\\xfb\\xfb\\xe0\\xfe;\\xf8'",) /home/fireball2/dobc/data/230925/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:28:36
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError("invalid literal for long() with base 10: '\\x80'",) /home/fireball2/dobc/data/230925/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:29:18
+Running Receiver for FIREBall image (TEXT) to image.txt...
+
+Time: 230925_10:31:02
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:31:29
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError("invalid literal for long() with base 10: 'P'",) /home/fireball2/dobc/data/230925/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:32:14
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:32:47
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:33:23
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError("invalid literal for long() with base 10: '\\x18\\x1bP\\x8f\\xc0'",) /home/fireball2/dobc/data/230925/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:34:05
+Running Receiver for FIREBall image (TEXT) to image.txt...
+
+Time: 230925_10:34:54
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:35:21
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError('****CHECK: min value Corruption in File:',) /home/fireball2/dobc/data/230925/image.txt
+
+Time: 230925_10:35:48
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError("invalid literal for long() with base 10: '\\x06\\x1eX`'",) /home/fireball2/dobc/data/230925/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:36:30
+Running Receiver for FIREBall image (TEXT) to image.txt...
+
+Time: 230925_10:38:11
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:38:29
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:38:35
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError("invalid literal for long() with base 10: '\\x18\\x18\\xa0\\xc0'",) /home/fireball2/dobc/data/230925/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:40:26
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError("invalid literal for long() with base 10: '\\x0f30\\xb0\\x06\\x06\\x80\\x06\\x06303030\\x830\\x03\\x03\\xc3\\x03'",) /home/fireball2/dobc/data/230925/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:40:41
+Running Receiver for FIREBall image (TEXT) to image.txt...
+ValueError("invalid literal for long() with base 10: '\\xb7\\xe7\\xb51\\xfe\\xfb\\xd7\\x8ea5^\\xcaO\\x9d\\x15\\xbf\\xa7(j\\xdd`\\xa6Ua\\xaf['",) /home/fireball2/dobc/data/230925/image.txt
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:43:06
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:44:33
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:44:39
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:44:45
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:44:57
+Running Receiver for FIREBall image (TEXT) to image.txt...
+Error: Moving file image.txt --> /home/fireball2/dobc/data/230925 FAILED
+
+Time: 230925_10:45:15
+Running Receiver for FIREBall image (TEXT) to image.txt...
