@@ -1,0 +1,104 @@
+TODO:
+-- add a way to stop a dither or focus sequence
+-- make sure entire video screen is visible when going through xmitter
+-- make the software spawn on boot (yes?) and respawn
+-- verify fit parameter settings
+-- check that the headers are populated properly
+-- save configuration on the ground side
+-- set up displays
+-- fix NaN in fits file headers
+-- restart guider command
+-- shutdown guider command
+-- get astrometry working
+-- fix NaN in the dx,dy,dr reporting [WATCH THIS]
+-- back up data and clear off hard drive a bit
+-- add error checking to the focus stage moves
+-- set the defaults better
+-- prune logs
+-- add move all stages button
+-- check lamp and shutter status on guider software power down and cycle
+
+=====================================================
+DESIRED?
+-- include mask regions for star acquisition [needed???]
+-- optimize Gaussian centroiding code
+-- clear up valid/used flags on demand (ground and flight)
+-- clickable stuff on the GUI
+-- widget to compute offset for a star [REFINE]
+-- fix how motor positions are ingested
+-- add a median image computation (very short exposures)
+-- install serial port card
+
+
+
+=====================================================
+TEST:
+-- decide what needs to be sent to the detector
+-- add target information to headers
+-- horizontal step through(?) (period? step size?)
+-- add simultaneous stage motion command
+-- add delta motion
+-- sample command/adjust target
+-- get RA/Dec/Roll downlink
+-- save median image 
+-- add DTU RA/Dec/Roll to header
+-- add slide or dither
+
+=====================================================
+DONE
+-- include row subtraction [DONE]
+-- add temperature/pressure readout 
+-- add temperature/pressure command
+-- command to move designated star to specified pix
+-- fix DIO readout
+-- add frameblob centroiding for small boxes
+-- change display stretch defaults 
+-- change blob sigma to 2 for now???
+-- number of digits for frames changed to 7!!!
+-- make an average of the temperature readout
+-- make CAMERA_ON FALSE switch more robust
+-- make new temperatures available in the header
+-- fix motor rotation
+-- add tag
+-- list of star positions, valid values, as a table
+-- add flux downloads 
+-- command to turn median subtraciton on or off
+-- command to turn row subtraction on or off (could be same command)
+-- algorithm switching mechanism
+-- merge commands to acquire targets/star (use negative???);
+-- add algorithm and subtraction to the guider status downlink
+-- add Gaussian centroiding
+-- changing which stars are used should not change what is valid.
+-- add width to download
+-- screen needs to go black when switching to small windows
+-- fix N-acquire
+-- test and fix nominal motion command. update positions.
+-- make sure the filtered rotation error is being sent! [NOT NEEDED]
+-- clear up used flag problem on flight side
+-- rename shutters/shutter buttons/shutter states
+-- add focus delay knob
+-- send down star profile
+-- output profile shape
+-- test and fix focus command [Not working]
+-- add peak flux to download
+-- homing is not super robust (seems to be OK, but gotta watch)
+-- make saving period adjustable
+-- test mask positions and populate names
+-- save tags
+-- add profile sending to focus;
+-- add other information to headers (what?)
+-- test new focus version
+-- send down EL, AZ, rot; 
+-- non-zero default for focus curve
+-- remove the fucking mouse pointer
+-- upload a,b; use that or CNES telemetry (decode quaternions; not working!)
+-- no camera flag
+-- verify roll with CNES
+-- permanent flight version of code
+
+
+
+for ground station, likely need to install:
+ apt-get install tklib
+apt-get install iwidgets4
+apt-get install tcl8.5-kwwidgets 

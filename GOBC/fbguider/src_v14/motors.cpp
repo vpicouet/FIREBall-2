@@ -1,0 +1,801 @@
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <unistd.h>
+
+#include "sys/time.h"
+#include "motors.h" 
+#include "fbcamera.h"
+#include "fblog.h"
+#include "communication.h"
+#include "ground_communication.h"
+#include "parameters.h"
+#include "image_analysis.h"
+#include "detector_communication.h"
+
+#define WRITE_TO_STAGE(arg) write_to_stage((char *)arg, strlen(arg))
+
+namespace motors {
+
+  unsigned char focus_delay=5;
+  char cmd[255];
+  int cmdlen;
+  motor_positions_t motorpos = { {-1., -2. ,-3., -4} };
+  float nominalpos[] = { AXISANOMINAL, AXISBNOMINAL, AXISCNOMINAL };
+  float carouselpos[] = { CARPOS0, CARPOS1, CARPOS2, CARPOS3, CARPOS4, CARPOS5, CARPOS6, CARPOS7, CARPOS8 };
+  char mot_used;
+
+  focus_structure_t focus_struct;
+  dither_structure_t dither_struct;
+  abc_moves_structure_t abc_moves_struct;
+
+  int do_focus;
+  float focus_positions[3][11];
+  int focus_ctr;
+
+
+
+  float get_motorpos(axis_t axis){
+    return motorpos.stagepos[(int)axis-1];
+  }; //get_motorpos
+
+  void get_motor_positions(float *pos){
+    memcpy(pos,(void*) &motorpos.stagepos[0],16);
+    return;
+  };
+
+  // this should not be used by outside of motors.cpp
+  void set_motorpos(axis_t axis, float pos){
+    motorpos.stagepos[(int)axis-1]=pos;
+    return;
+  }; // set motorpos 
+
+  void set_stage_error(axis_t axis,unsigned char err){
+    motorpos.stageerr[(int)axis-1]=err;
+    return;
+  };
+  
+  void set_stage_status(axis_t axis, unsigned short poserr, unsigned char stagestat){
+    motorpos.poserr[(int)axis-1]=poserr;
+    motorpos.stagestat[(int)axis-1]=stagestat;
+    return;
+  };
+
+  void get_stage_statuses(unsigned char *stageerr, unsigned short *poserr, unsigned char *stagestat){
+    memcpy(stageerr, motorpos.stageerr,4);
+    memcpy(poserr, motorpos.poserr,8);
+    memcpy(stagestat, motorpos.stagestat,4);
+    return;
+  };
+
+
+
+  char home(axis_t axis){
+    if ( FOCUS_STAGE_ON || MASK_STAGE_ON ){
+      getstatus(axis);
+      cmdlen = sprintf(cmd,"\n%1d%s\n\n\r",(int) axis,NEWPORT_HOME);
+      fblog::logmsg("Homing: %s",cmd);
+      WRITE_TO_STAGE(cmd);
+      usleep(MOTOR_SLEEP);
+    if ((int) axis > 1){
+      // Setting hysteresis compensation at homing for tip tilt linear stages
+      //cmdlen = sprintf(cmd, "%1d%s%.3f\n\n\r",(int) axis, NEWPORT_BH,NEWPORT_BH_PRESET);
+      //fblog::logmsg("Backlash Comp: %s",cmd);
+      //WRITE_TO_STAGE(cmd);
+      //usleep(MOTOR_SLEEP);
+    }
+
+
+    };
+    return getstatus(axis);
+  }; // home
+
+  void start_focus(char del, float step){
+    static int i,j;
+    static timeval tvs;
+    static unsigned char delay;
+    static char do_det;
+    delay=del;
+    do_det=0;
+    if (del<0){
+      delay=-del;
+      do_det=1;
+    };
+
+    focus_struct.do_focus=1;
+    focus_struct.delay=(1.0*delay);
+    if (focus_struct.delay < 5) focus_struct.delay=5.0;
+    if (focus_struct.delay > 60) focus_struct.delay=60.0;
+    focus_struct.counter=0;
+
+    focus_struct.step = step;
+    if ( step < 0.1 ) focus_struct.step=0.1;
+    if ( step > 1.5 ) focus_struct.step=1.5;
+
+    focus_struct.xi[0]= get_motorpos(LINAAXIS);
+    focus_struct.xi[1]= get_motorpos(LINBAXIS);
+    focus_struct.xi[2]= get_motorpos(LINCAXIS);
+    
+    gettimeofday(&tvs,NULL);
+    focus_struct.starttime=tvs.tv_sec + tvs.tv_usec/1000000.;
+
+    for(i=0;i<11;i++){
+      for(j=0;j<3;j++){
+	focus_struct.xf[j][i]=focus_struct.xi[j]-focus_struct.step*(i-5);
+	  }; //j
+    }; //i
+    for(j=0;j<3;j++)
+      focus_struct.xf[j][11]=focus_struct.xi[j];
+    focus_struct.saveperiod=img::get_image_save_period();
+    img::set_image_save_period(0);
+    focus_struct.tookpicture=0;
+    fblog::logmsg("Starting focus");
+    sprintf(cmd,"Focus Started");
+    ground::send_text(cmd);
+    // are we commanding the detector?
+    detector::toggle_detector_command(do_det);	  
+    return;
+  };
+
+  void focus_step(){
+    static timeval tvc;
+    //static int len;
+    static double timenow;
+    if (focus_struct.do_focus){
+      gettimeofday(&tvc,NULL);
+      timenow=tvc.tv_sec+ tvc.tv_usec/1000000.0;
+      if(   (timenow-focus_struct.starttime > 5.0  ) &&
+	    !focus_struct.tookpicture ){
+	printf("at dt= %f\n",timenow-focus_struct.starttime);
+	printf("Would take a picture here!\n");
+	sprintf(cmd,"Focus %.2lf",focus_struct.xf[1][focus_struct.counter]);
+	detector::command_exposure(cmd);
+	//	write_to_detector(cmd,len);
+	focus_struct.tookpicture=1;
+	request_new_stack(1,20,0);
+	fblog::logmsg("Taking stack");
+      }; // is it a good time to take a picture???
+      if( ( timenow-focus_struct.starttime > focus_struct.delay ) ||
+	  (focus_struct.counter == 0)){
+	// register when this move is happening
+	// command the move
+	absmove(LINAAXIS,focus_struct.xf[0][focus_struct.counter]);
+	absmove(LINBAXIS,focus_struct.xf[1][focus_struct.counter]);
+	absmove(LINCAXIS,focus_struct.xf[2][focus_struct.counter]);
+	printf("at dt= %f\n",timenow-focus_struct.starttime);
+	printf("moving A to %f\n",focus_struct.xf[0][focus_struct.counter]);
+	printf("moving B to %f\n",focus_struct.xf[1][focus_struct.counter]);
+	printf("moving C to %f\n",focus_struct.xf[2][focus_struct.counter]);
+	focus_struct.starttime=timenow;
+	focus_struct.tookpicture=0;
+	// increment the counter
+	focus_struct.counter++;
+	if( focus_struct.counter == 12){
+	  end_focus();
+	}; // if we finished, we stop focusing!
+      }; // sufficient time has elapsed or this is the first step;
+    };//are we doing focus? 
+    return;
+  };
+
+  void end_focus(){
+    printf("Focus finished.\n");	  
+    focus_struct.do_focus=0;
+    // turn off detector commanding
+    if(detector::get_detector_command()) detector::toggle_detector_command(0);
+    img::set_image_save_period(focus_struct.saveperiod);
+    fblog::logmsg("Focus finished");
+    sprintf(cmd,"Focus finished");
+    ground::send_text(cmd);
+    return;
+  };
+
+  unsigned char is_focus(){
+    return focus_struct.do_focus;
+  };
+
+  void start_dither(char del,unsigned char pattern){
+    static timeval tvs;
+    static char err;
+    //    static int i;
+    static unsigned char delay;
+    static char do_det;
+    delay=del;
+    do_det=0;
+    if (del<0){
+      delay=-del;
+      do_det=1;
+    };
+    img::get_target_pointers( &dither_struct.txi[0], &dither_struct.tyi[0] );    
+    
+    err=load_dither_pattern(pattern);
+
+    //    err=load_dither_pattern(pattern,
+    //			    dither_struct.txi,
+    //			    dither_struct.tyi,
+    //			    (float *)&dither_struct.txd,
+    //			    (float *)&dither_struct.tyd,
+    //			    &dither_struct.points
+    //			    );
+
+    
+    if(err){
+      sprintf(cmd,"Dither load failed %d",pattern);      
+      ground::send_text(cmd);      
+      fblog::logmsg("Dither load failed %d",pattern);
+      return;
+    };
+
+    dither_struct.do_dither=1;
+    dither_struct.delay = (1.0*delay);
+    if (dither_struct.delay < 5) dither_struct.delay=5;
+    if (dither_struct.delay > 60) dither_struct.delay=60;
+    dither_struct.counter=0;
+    dither_struct.pattern=pattern;
+    
+
+
+    
+    dither_struct.tookpicture=0;
+    dither_struct.saveperiod=img::get_image_save_period();
+    img::set_image_save_period(0);
+    fblog::logmsg("Dither started: %d %.0f.",
+		  dither_struct.pattern,
+		  dither_struct.delay);
+    sprintf(cmd,"Dither started: %d %.0f.",
+		  dither_struct.pattern,
+		  dither_struct.delay);
+    ground::send_text(cmd);
+    gettimeofday(&tvs,NULL);
+    dither_struct.timetag=tvs.tv_sec + tvs.tv_usec/1000000.;
+    detector::toggle_detector_command(do_det);
+    return;
+  };
+  
+  void dither_step(){
+    static timeval tvc;
+    //static int len;
+    unsigned char use[MAXSTARS],valid[MAXSTARS];
+    static double timenow;
+    if (dither_struct.do_dither){
+      gettimeofday(&tvc,NULL);
+      timenow=tvc.tv_sec + tvc.tv_usec/1000000.0;
+      // take a picture if there is reasonable expectation
+      // of being in the right place
+      if ( (timenow-dither_struct.timetag > 5.0 ) && 
+	   !dither_struct.tookpicture){
+	// send a request/info to detector
+	sprintf(cmd,"Dither %.2lf %.2lf",dither_struct.dx[dither_struct.counter],dither_struct.dy[dither_struct.counter]);
+	detector::command_exposure(cmd);
+	//write_to_detector(cmd,len);
+	// raise took picture flat
+	dither_struct.tookpicture=1;
+	// save an image
+	request_new_stack(1,20,0);
+	fblog::logmsg("Taking images");
+      } // timenow for pictures
+      if ( ( timenow-dither_struct.timetag > dither_struct.delay+5.0 ) ||
+	   (dither_struct.counter == 0 ) ) {
+	
+	img::get_star_usevalid(use,valid);
+	// update targets, and then switch to them!
+	img::set_next_targets(&dither_struct.txd[dither_struct.counter][0],
+			      &dither_struct.tyd[dither_struct.counter][0],
+			      use,
+			      0.0,
+			      0.0,
+			      0.0);
+			      
+	img::switch_to_next_targets();
+	// update structure variables.
+	dither_struct.timetag=timenow;
+	dither_struct.tookpicture=0;
+
+	sprintf(cmd,"dx= %.2f %.2f",
+		dither_struct.dx[dither_struct.counter],
+		dither_struct.dy[dither_struct.counter]);
+	ground::send_text(cmd);
+	for(int i=0;i<MAXSTARS;i++){
+	  printf("dither %d %.1lf %.1lf %.1lf %.1lf\n",
+		 dither_struct.counter,
+		 dither_struct.txi[i],
+		 dither_struct.tyi[i],
+		 dither_struct.txd[dither_struct.counter][i],
+		 dither_struct.tyd[dither_struct.counter][i]);
+	};
+	printf("---------------\n");
+	if (dither_struct.counter == dither_struct.points){
+	  end_dither();
+	};// finished dither
+	dither_struct.counter++;
+      }; // dither step
+    }; // doing dither
+    return;
+  };
+
+  void end_dither(){
+    fblog::logmsg("Dither finished");
+    dither_struct.do_dither=0;
+    img::set_image_save_period(dither_struct.saveperiod);
+    if(detector::get_detector_command()) detector::toggle_detector_command(0);
+    fblog::logmsg("Dither started: %d %.0f.",
+		  dither_struct.pattern,
+		  dither_struct.delay);
+    sprintf(cmd,"Dither Ended: %d %.0f.",
+		  dither_struct.pattern,
+		  dither_struct.delay);
+    ground::send_text(cmd);
+    return;
+
+  };
+  
+  unsigned char is_dither(){
+    return dither_struct.do_dither;
+  };
+
+  //  char load_dither_pattern(unsigned char pattern, 
+  //			   float *startx, float *starty,
+  //			   float *arrtx, float *arrty, unsigned char *pts){
+
+  char load_dither_pattern(unsigned char pattern){
+    char fname[255];
+    FILE *fp;
+    int err, j;
+    int steps, ctr, retcnt;
+    float dx[255],dy[255];
+    sprintf(fname,"/home/salo/FB/Fireball2/fbguider/dithers/dither%03d.txt",pattern);
+    printf("looking for: %s\n",fname);
+    err = 0;
+    //lin = ( char **) &(line[0]);
+    if( access( fname, R_OK ) != -1 ) {
+      // file exists
+      // open file
+      fp = fopen(fname,"r");
+      //number of steps
+      retcnt = fscanf(fp,"N %d\n",&steps);
+      if ( retcnt != 1) err = 1;
+      if ( steps > 255) steps=255;
+      if ( steps < 0) err=1;
+      fblog::logmsg("Fname: %s",fname);
+      fblog::logmsg("Steps: %d",steps);
+      
+      for(ctr=0;ctr<steps;ctr++){
+	retcnt = fscanf(fp,"%f %f",dx+ctr,dy+ctr);
+	if ( retcnt == 2){
+	  fblog::logmsg("Step %d %f %f",ctr,dx[ctr],dy[ctr]);
+	} else {
+	  err = 1;
+	  printf("here...\n");
+	}; // count per step
+      }; // loop over steps
+      
+      //Position pairs.
+      // close file
+      fclose(fp);
+      dx[steps]=0.0;
+      dy[steps]=0.0;
+      memcpy(dither_struct.dx,dx,1020);
+      memcpy(dither_struct.dy,dy,1020);
+      if (!err){
+	for(ctr=0; ctr<=steps; ctr++){
+	  for(j=0;j<MAXSTARS;j++){
+	    dither_struct.txd[ctr][j] = dither_struct.txi[j]+dither_struct.dx[ctr];
+	    dither_struct.tyd[ctr][j] = dither_struct.tyi[j]+dither_struct.dy[ctr];
+	  };
+	};
+	dither_struct.points=steps;
+	sprintf(fname,"Loaded dither %d",pattern);
+	ground::send_text(fname);
+      };
+    } else {
+      err=1;
+      printf("file problem.\n");
+      // file doesn't exist
+	sprintf(fname,"Failed to load dither %d",pattern);
+	ground::send_text(fname);
+    };
+    return err;
+  };
+  
+  
+  
+
+
+  char focus(){
+    static int i;
+    static float init_ax1,init_ax2,init_ax3,ax1, ax2, ax3;
+    static float pos;
+    if ( FOCUS_STAGE_ON ){
+      init_ax1 = get_motorpos(LINAAXIS);
+      init_ax2 = get_motorpos(LINBAXIS);
+      init_ax3 = get_motorpos(LINCAXIS);
+      for(i=0;i<11;i++){
+        ax1=init_ax1-0.25*(i-5);
+	ax2=init_ax2-0.25*(i-5);
+	ax3=init_ax3-0.25*(i-5);
+	absmove(LINAAXIS,ax1);
+	usleep(200000);
+	absmove(LINBAXIS,ax2 );
+	usleep(200000);
+	absmove(LINCAXIS,ax3 );
+        printf("Move start: %d %f %f %f\n",i,ax1,ax2,ax3);
+        usleep(400000);
+	motors::getpos(LINAAXIS,&pos);
+	motors::getpos(LINBAXIS,&pos);
+	motors::getpos(LINCAXIS,&pos);
+	ground::send_stage_status();
+	usleep(int(focus_delay)*1000000);
+        printf("Move end\n");
+      }
+      motors::absmove(LINAAXIS,init_ax1);
+      motors::absmove(LINBAXIS,init_ax2 );
+      motors::absmove(LINCAXIS,init_ax3 );
+      usleep(400000);
+      motors::getpos(LINAAXIS,&pos);
+      motors::getpos(LINBAXIS,&pos);
+      motors::getpos(LINCAXIS,&pos);
+      ground::send_stage_status();
+      printf("Returned to original position: %f, %f, %f\n",ax1,ax2,ax3);
+    };
+    return 0;
+  };
+
+  char set_carousel_station(unsigned char station){
+    if ( ( station >= 0 ) && (station <= 8 ) ) {
+      motors::absmove(ROTAXIS, carouselpos[station]);
+      DEBUGPRINT("ROTAXIS pos=%d enc=%f\n",station,carouselpos[station]);
+      fblog::logmsg("ROTAXIS pos=%d enc=%f",station,carouselpos[station]);
+    };
+    return 0;
+  };
+
+
+  char nominal(){
+    motors::absmove(LINAAXIS, nominalpos[0]);
+    usleep(500000);
+    motors::absmove(LINBAXIS, nominalpos[1]);
+    usleep(500000);
+    motors::absmove(LINCAXIS, nominalpos[2]);
+    usleep(500000);
+    DEBUGPRINT("LINAXIS sent to Nominal.\n");
+    fblog::logmsg("LINAXIS sent to Nominal.");
+    return 0;
+  };
+
+  char focus_delta(float dx){
+    static float ax1, ax2, ax3;
+    if (FOCUS_STAGE_ON || MASK_STAGE_ON){
+      ax1 = get_motorpos(LINAAXIS)+dx;
+      ax2 = get_motorpos(LINBAXIS)+dx;
+      ax3 = get_motorpos(LINCAXIS)+dx;
+      printf("%f %f %f\n",ax1,ax2,ax3);
+      if ( (ax1 > 1.0) && (ax1 < 24.1) && 
+	   (ax2 > 1.0) && (ax2 < 24.0) &&
+	   (ax3 > 1.0) && (ax3 < 24.0)){
+	motors::absmove(LINAAXIS, ax1);
+	usleep(300000);
+	motors::absmove(LINBAXIS, ax2);
+	usleep(300000);
+	motors::absmove(LINCAXIS, ax3);
+	usleep(300000);
+	fblog::logmsg("STAGES Applied dx=%f",dx);
+      } else {
+	fblog::logmsg("Invalid move dx=%f",dx);
+	sprintf(cmd,"Invalid move dx=%f",dx);
+	ground::send_text(cmd);
+
+      };
+    };
+    return 0;
+  };
+
+  char absmove(axis_t axis, float position){
+
+    if (axis == ROTAXIS){
+      if ( ( position < ROT_LIMIT_MIN) || (position > ROT_LIMIT_MAX) ){
+	fblog::logmsg("INVROT %d %f",axis,position);
+	sprintf(cmd,"BAD POS ax=%d pos=%f",axis,position);
+	ground::send_text(cmd);
+	return -1;
+      };
+
+    };
+    if (axis != ROTAXIS){
+      if (  ( position < LIN_LIMIT_MIN ) || (position > LIN_LIMIT_MAX) ){
+	fblog::logmsg("INVLIN %d %f",axis,position);
+	sprintf(cmd,"BAD POS ax=%d pos=%f",axis,position);
+	ground::send_text(cmd);
+	return -1;
+      };
+    };
+    if ( FOCUS_STAGE_ON || MASK_STAGE_ON ){
+    cmdlen = sprintf(cmd, "%1d%s%.3f\n\n\r",(int) axis, NEWPORT_ABS_MOVE,position);
+    fblog::logmsg("ABSMOV: %1d %.3f",axis,position);
+    WRITE_TO_STAGE(cmd);
+    usleep(MOTOR_SLEEP);
+    };
+    return 0;
+  }; // absmove
+
+  char relmove(axis_t axis, float position){
+    cmdlen = sprintf(cmd, "%1d%s%.3f\n\n\r",(int) axis, NEWPORT_REL_MOVE, position);
+    fblog::logmsg("RELMOV: %1d %.3s",axis,position);
+    WRITE_TO_STAGE(cmd);
+    usleep(MOTOR_SLEEP);
+    return geterr(axis);
+  }; // relomove
+
+
+  char getpos(axis_t axis, float *position){
+    static float pos;
+    static int ct, ax;
+    if (FOCUS_STAGE_ON || MASK_STAGE_ON){
+      cmdlen = sprintf(cmd,"%1d%s\n\n\r", (int) axis, NEWPORT_TELL_POSITION);
+      WRITE_TO_STAGE(cmd);
+      usleep(MOTOR_SLEEP);
+      cmdlen = read_buffer_from_stage((char *) &cmd[0]);
+      ct = sscanf(cmd,"%dTP%f\n",&ax, &pos);
+      fblog::logmsg("MOTPOS %1d %.3f",ax,pos);
+      DEBUGPRINT("stage TP %d %d %f",(int)axis,ax,pos);
+      //      printf("stage TP %d %d %f\n",(int) axis,ax,pos);
+      if (ct == 2 ){
+	motors::set_motorpos(axis,pos);
+      } else {
+	fblog::logmsg("Invalid motor response\n");
+      }
+    };
+    return geterr(axis);
+  }; // getpos
+
+  char getstatus(axis_t axis){
+    //   static char serr[255];
+    static int ax;			       
+    static unsigned int inp0,inp1,ct;
+    
+     if (MASK_STAGE_ON || FOCUS_STAGE_ON){
+    cmdlen = sprintf(cmd,"%1d%s\n\n\r",(int) axis, NEWPORT_TELL_STATUS);
+    WRITE_TO_STAGE(cmd);
+    usleep(MOTOR_SLEEP);
+    cmdlen = read_buffer_from_stage((char *) &cmd[0]);
+    
+    ct=sscanf(cmd,"%dTS%4x%2x\n",&ax, &inp0,&inp1);
+    if(ct==3){
+    set_stage_status((axis_t) ax,(unsigned short) inp0, (unsigned char) inp1);
+    };
+    //if (err != '@') fblog::logmsg("Move error: %s",cmd);
+    };
+    return 0;
+  };
+
+  char geterr(axis_t axis){
+    static char err;
+    static int ax,ct;
+    if (MASK_STAGE_ON || FOCUS_STAGE_ON){
+      cmdlen = sprintf(cmd,"%1d%s\n\n\r",(int) axis, NEWPORT_TELL_ERROR);
+      WRITE_TO_STAGE(cmd);
+      usleep(MOTOR_SLEEP);
+      cmdlen = read_buffer_from_stage((char *) &cmd[0]);
+      ct=sscanf(cmd,"%dTE%c\n",&ax, &err);
+      //printf("%s",cmd);
+      if(ct == 2){
+	set_stage_error((axis_t) ax, (unsigned char) err);
+      } else {
+	fblog::logmsg("Move error: %s",cmd);
+	ground::send_text(cmd);
+      };
+    };
+    return err;
+  };
+
+  void set_focus_delay(unsigned char delay){
+    if(delay == 0){
+      focus_delay=5;
+    } else if (delay > 15){
+      focus_delay=15;
+    } else {
+      focus_delay=delay;
+    };
+    printf("I set the focus delay to %d seconds\n",focus_delay);
+    return;
+  }; // set_focus_delayx
+
+  char load_abc_moves(){
+    // tip tilt moves for autocollimation, coma minimization
+    char fname[255];
+    FILE *fp;
+    int err;
+    int steps, ctr, retcnt;
+    float delay;
+    sprintf(fname,"/home/salo/FB/Fireball2/fbguider/ABCmoves/ABCmoves.txt");
+    printf("looking for: %s\n",fname);
+    float posA[255],posB[255],posC[255];
+    err = 0;
+
+    if( access( fname, R_OK ) != -1 ) {
+          // file exists
+          // open file
+          fp = fopen(fname,"r");
+          //number of steps
+          retcnt = fscanf(fp,"N %d\n",&steps);
+          if ( retcnt != 1) err = 1;
+          if ( steps > 255) steps=255;
+          if ( steps < 0) err=1;
+
+          retcnt = fscanf(fp,"delay %f\n",&delay);
+          if ( retcnt != 1) err = 1;
+          
+          fblog::logmsg("Fname: %s\n",fname);
+          fblog::logmsg("Steps: %d\n",steps);
+          fblog::logmsg("Delay: %f\n",delay);
+          
+          for(ctr=0;ctr<steps;ctr++){
+      retcnt = fscanf(fp,"%f %f %f",posA+ctr,posB+ctr,posC+ctr);
+      if ( retcnt == 3){
+        fblog::logmsg("Step %d %f %f %f \n",ctr,posA[ctr],posB[ctr],posC[ctr]);
+      } else {
+        err = 1;
+        printf("Did not read all 3 ABC values\n");
+      };// count per step
+        }; // loop over steps
+      
+      //Position sets.
+          // close file
+      fclose(fp);
+      posA[steps]=0.0;
+      posB[steps]=0.0;
+      posC[steps]=0.0;
+      
+      
+      if (!err){
+        memcpy(abc_moves_struct.posA,posA,1020);
+        memcpy(abc_moves_struct.posB,posB,1020);
+        memcpy(abc_moves_struct.posC,posC,1020);
+        abc_moves_struct.delay = delay;
+        //Loop to make ABC moves into relative moves to start position - ICA 08/15/23
+        for(ctr=0; ctr<=steps; ctr++){
+          
+            abc_moves_struct.posA[ctr] = abc_moves_struct.posA[ctr]+abc_moves_struct.posAi;
+            abc_moves_struct.posB[ctr] = abc_moves_struct.posB[ctr]+abc_moves_struct.posBi;
+            abc_moves_struct.posC[ctr] = abc_moves_struct.posC[ctr]+abc_moves_struct.posCi;
+                  };
+        abc_moves_struct.points=steps;
+        sprintf(fname,"Loaded ABC moves ");
+        ground::send_text(fname);
+            };
+          } else {
+            err=1;
+            printf("file problem.\n");
+            // file doesn't exist
+        sprintf(fname,"Failed to load ABC moves ");
+        ground::send_text(fname);
+          };
+    return err;
+  };
+
+void start_abc(){
+    int err;
+    static timeval tvs;
+    static unsigned char delay;
+    abc_moves_struct.posAi= get_motorpos(LINAAXIS);
+    abc_moves_struct.posBi= get_motorpos(LINBAXIS);
+    abc_moves_struct.posCi= get_motorpos(LINCAXIS);
+
+    err=load_abc_moves();
+
+    if(err){
+      sprintf(cmd,"ABC moves load failed ");      
+      ground::send_text(cmd);      
+      fblog::logmsg("ABC moves load failed ");
+      return;
+    };
+
+    char del = 10;
+    del = abc_moves_struct.delay;
+    static char do_det;
+    delay=del;
+    do_det=0;
+    if (del<0){
+      delay=-del;
+      do_det=1;
+    };
+
+    abc_moves_struct.do_abc_moves=1;
+    abc_moves_struct.delay=(1.0*delay);
+    if (abc_moves_struct.delay < 5) abc_moves_struct.delay=5.0;
+    if (abc_moves_struct.delay > 60) abc_moves_struct.delay=60.0;
+    abc_moves_struct.counter=0;
+
+    //abc_moves_struct.step = step;
+    //if ( step < 0.1 ) abc_moves_struct.step=0.1;
+    //if ( step > 1.5 ) abc_moves_struct.step=1.5;
+    
+    gettimeofday(&tvs,NULL);
+    abc_moves_struct.starttime=tvs.tv_sec + tvs.tv_usec/1000000.;
+
+    /*for(i=0;i<11;i++){
+      for(j=0;j<3;j++){
+  abc_moves_struct.xf[j][i]=abc_moves_struct.xi[j]-abc_moves_struct.step*(i-5);
+    }; //j
+    }; //i
+    for(j=0;j<3;j++)
+      abc_moves_struct.xf[j][11]=abc_moves_struct.xi[j];
+    */
+    abc_moves_struct.saveperiod=img::get_image_save_period();
+    img::set_image_save_period(0);
+    abc_moves_struct.tookpicture=0;
+    fblog::logmsg("Starting ABC moves");
+    sprintf(cmd,"ABC moves started");
+    ground::send_text(cmd);
+    printf("Initial position: A = %f, B= %f, C= %f\n",abc_moves_struct.posAi,abc_moves_struct.posBi,abc_moves_struct.posCi );
+    // are we commanding the detector?
+    detector::toggle_detector_command(do_det);    
+    return;
+  };
+
+    void abc_moves_step(){
+    static timeval tvc;
+    //static int len;
+    static double timenow;
+    if (abc_moves_struct.do_abc_moves){
+      gettimeofday(&tvc,NULL);
+      timenow=tvc.tv_sec+ tvc.tv_usec/1000000.0;
+      if(   (timenow-abc_moves_struct.starttime > 5.0  ) &&
+      !abc_moves_struct.tookpicture ){
+  printf("at dt= %f\n",timenow-abc_moves_struct.starttime);
+  printf("Take an autocol picture here!\n");
+  sprintf(cmd,"Focus %.2lf",abc_moves_struct.xf[1][abc_moves_struct.counter]);
+  detector::command_exposure(cmd);
+    write_to_detector(cmd,len);
+  abc_moves_struct.tookpicture=1;
+  //ICA: stack taken here, comment out for debugging
+
+  request_new_stack(1,20,0);
+  
+
+  fblog::logmsg("Taking stack");
+  printf("Taking stack\n");
+      }; // is it a good time to take a picture???
+      if( ( timenow-abc_moves_struct.starttime > abc_moves_struct.delay ) ||
+    (abc_moves_struct.counter == 0)){
+  // register when this move is happening
+  // command the move
+  
+  //ICA: motor commands -- comment out for debugging
+  absmove(LINAAXIS,abc_moves_struct.posA[abc_moves_struct.counter]);
+  absmove(LINBAXIS,abc_moves_struct.posB[abc_moves_struct.counter]);
+  absmove(LINCAXIS,abc_moves_struct.posC[abc_moves_struct.counter]);
+  
+  printf("at dt= %f\n",timenow-abc_moves_struct.starttime);
+  printf("moving A to %f\n",abc_moves_struct.posA[abc_moves_struct.counter]);
+  printf("moving B to %f\n",abc_moves_struct.posB[abc_moves_struct.counter]);
+  printf("moving C to %f\n",abc_moves_struct.posC[abc_moves_struct.counter]);
+  abc_moves_struct.starttime=timenow;
+  abc_moves_struct.tookpicture=0;
+  // increment the counter
+  abc_moves_struct.counter++;
+  if( abc_moves_struct.counter == abc_moves_struct.points+1){
+    end_abc_moves();
+  }; // if we finished, we stop focusing!
+      }; // sufficient time has elapsed or this is the first step;
+    };//are we doing abc moves? 
+    return;
+  };
+
+  void end_abc_moves(){
+    printf("ABC finished.\n");    
+    abc_moves_struct.do_abc_moves=0;
+    // turn off detector commanding
+    if(detector::get_detector_command()) detector::toggle_detector_command(0);
+    img::set_image_save_period(abc_moves_struct.saveperiod);
+    fblog::logmsg("ABC moves finished");
+    sprintf(cmd,"ABC moves finished");
+    ground::send_text(cmd);
+    return;
+  };
+
+  unsigned char is_abc_moves(){
+    return abc_moves_struct.do_abc_moves;
+  };
+
+
+}; // namespace motors

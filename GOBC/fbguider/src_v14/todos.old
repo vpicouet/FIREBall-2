@@ -1,0 +1,16 @@
+
+
+-- add a median image computation
+-- upload a,b; use that or CNES telemetry.
+-- list of star positions, valid values, as a table
+-- change blob sigma to 2 for now???
+-- add other information to headers (what?)
+-- average the temperature reading and see how it looks
+-- 
+=====================================================
+-- include row subtraction [DONE]
+-- add temperature/pressure readout 
+-- add temperature/pressure command
+-- command to move designated star to specified pix
+-- fix DIO readout
+-- add frameblob centroiding for small boxes

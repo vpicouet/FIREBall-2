@@ -1,0 +1,14 @@
+Take an image
+IMG 0 
+
+Last guider file
+SAV filename
+
+Stage positions 
+STG= 4 floats
+
+Lamps and shutters 
+LAM= 5 bits
+
+Gondola information
+GON= ra, dec, roll, el, az

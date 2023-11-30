@@ -1,0 +1,31 @@
+What information do we want to send to the ground? 
+
+1. guider status [HIGH]
+   -- image number
+   -- guider mode
+   -- display mode
+   -- three camera temperatures
+
+2. Stage positions [MEDIUM]
+   -- all 4 stages controlled by guider
+
+3. ADIO status [LOW]
+   -- all 8 DIO outputs controlled by guider
+   -- all analog IN channels
+
+4. guide target information [HIGH]
+   -- sent every N seconds
+   -- alpha, delta, theta
+   -- N targets, x, y, 
+
+5. star positions [HIGH]
+   -- sent once every N seconds
+   -- x,y,flux, fwhm, valid
+
+6. astrometry information after a save [LOW]
+   -- image number
+   -- effective exposure time
+   -- was the solution successful
+   -- solution alpha, delta, theta
+
+

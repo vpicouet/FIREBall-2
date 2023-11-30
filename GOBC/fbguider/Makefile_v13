@@ -1,0 +1,92 @@
+# Makefile for programs in this directory
+# Updated by matmat 170830
+# updating v03 --> v04
+# v03 has many changes, but not to the guiding algorithm. 
+# it is supposed to superceed src_master
+# v04 -- hopefully fixed some font issues, cleaned a few things up
+# corrected frame blob size and snr threshhold
+
+CXX = g++
+
+VERSION = v13
+
+CODE_PATH = ./src_$(VERSION)
+BINDIR = ./bin_$(VERSION)
+OBJDIR = ./obj_$(VERSION)
+PCODIR = ./lib/pco_include
+#SDLDIR = /home/salo/FB/Fireball2/sdl/SDL2-2.0.3/include
+SDLDIR = /home/salo/FB/Fireball2/sdl/SDL2_ttf-2.0.14
+LMDIR = /home/salo/FB/Fireball2/levmar-2.6
+PCOLIBDIR = ./lib/pco_lib
+CPCODIR = ./lib/pco_classes
+SISOLIB = ./lib/siso_lib
+CFITSIOLIB = /usr/local/include
+
+
+C11FLAG += -std=c++0x
+CFLAGS += -O -g -Wall -Wno-comments -DLINUX -L$(LMDIR) -I$(PCODIR) -I$(CPCODIR) -I$(LMDIR) -I$(CFITSIOLIB) -lrt  -lbiodaq -lm -pthread -lcfitsio -llevmar
+
+CLSERLIB = $(SISOLIB)/libclserme4.so
+FGLIB = $(SISOLIB)/libfglib5.so
+ 
+DISPLIB = $(PCOLIBDIR)/libpcodisp.a
+LOGLIB = $(PCOLIBDIR)/libpcolog.a
+FILELIB = $(PCOLIBDIR)/libpcofile.a
+FITSLIB = /usr/local/lib/libcfitsio.a
+LMLIB = /home/salo/FB/Fireball2/levmar-2.6/liblevmar.a
+
+HEADERS = $(PCODIR)/VersionNo.h $(CPCODIR)/Cpco_cl_com.h $(CPCODIR)/Cpco_me4.h $(CPCODIR)/Cpco_me4_GS.h
+
+CPCOCLASS_SRC = Cpco_cl_com.cpp Cpco_me4.cpp reorder_func.cpp
+CPCOCLASS = $(addprefix $(CPCODIR)/,$(CPCOCLASS_SRC) )
+
+SOURCES = $(CODE_PATH)/*.cpp
+
+
+
+TARGETS = clean fbguider
+
+#FBOBJECTS = fbcamera.o fblog.o fbvideo.o nocamera.o image_analysis.o  frameblob.o bloblist.o
+FBOBJ = fbcamera.o fblog.o fbvideo.o nocamera.o image_analysis.o  frameblob.o bloblist.o timing.o adio.o communication.o gondola_communication.o ground_communication.o ringbuffer.o stacking.o motors.o rotation.o fit.o detector_communication.o
+#communication.o motors.o
+FBOBJECTS = $(addprefix $(OBJDIR)/,$(FBOBJ) )
+# FBOBJECTS =  fireball_camera2.o frameblob.o bloblist.o image_function.o guide_data.o guiding_settings.o message_data.o message_function.o staticAO.o image_function.o rotation.o
+
+all:    clean $(TARGETS)
+
+clean:
+		@clear
+		@echo "Cleaning make (safety reasons)..."
+		@$(RM) *~ $(BINDIR)/$(TARGETS)  $(CPCODIR)/*~  *.log $(OBJDIR)/*.o
+
+$(OBJDIR)/%.o: $(CODE_PATH)/%.cpp
+		@echo -n "Compiling "$<"... "
+	        @mkdir -p $(OBJDIR)
+		@$(CXX) $(C11FLAG) $(CFLAGS)  $< -c -o $@
+		@echo " Done."
+
+$(OBJDIR)/%.o: $(CODE_PATH)/%.c
+		@echo -n "Compiling "$<"..."
+	        @mkdir -p $(OBJDIR)
+		@$(CC) $(CFLAGS) $< -c -o $@
+		@echo " Done."
+
+
+fbguider:      	$(CODE_PATH)/fbguider.cpp $(FBOBJECTS) $(FGLIB) $(CLSERLIB) $(CPCOCLASS) $(FILELIB) $(LOGLIB) $(FITSLIB) $(HEADERS)
+		@mkdir -p ./$(BINDIR)/
+		@mkdir -p ./$(BINDIR)/img/
+		@mkdir -p ./$(BINDIR)/img_save/
+		@mkdir -p ./$(BINDIR)/aux/
+		@$(CXX) $(C11FLAG) $(CFLAGS) $? -o $(BINDIR)/fbguider -lSDL2 -lSDL2_ttf -I$(CODE_PATH) $(FILELIB) $(LOGLIB) $(FGLIB) $(CLSERLIB) $(LMLIB) -lbiodaq -lrt -DVERSION_STRING="$(VERSION)"
+		@cp $(CODE_PATH)/run_astro.sh $(BINDIR)
+
+
+install:clean all
+		@echo "Installing fbguider..."
+		@mkdir -p /usr/fbguider/bin_$(VERSION)/
+		@mkdir -p /usr/fbguider/bin_$(VERSION)/img/
+		@mkdir -p /usr/fbguider/bin_$(VERSION)/aux/
+		@mkdir -p /usr/fbguider/bin_$(VERSION)/img_save/
+		@cp bin_$(VERSION)/* /usr/fbguider/bin_$(VERSION)/
+		@cp $(CODE_PATH)/run_astro.sh /usr/fbguider/bin_$(VERSION)/
+

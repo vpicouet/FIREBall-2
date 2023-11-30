@@ -1,0 +1,73 @@
+#ifndef GG_MESSAGE_DEFINITIONS_H_
+#define GG_MESSAGE_DEFINITIONS_H_
+
+/* Definitions and function declarations for 
+Guider <--> Ground communication.
+These form messages and issue a send command, also check
+message validity and process the messages. */
+
+
+
+#define GG_HEADER	\
+  unsigned char startb; \
+  unsigned short count;	\
+  unsigned short length; \
+  unsigned char mid 
+
+#define GG_FOOTER				\
+  unsigned char crc;				\
+  unsigned char endb
+
+
+#define SYNC_BYTE_START 0x55
+#define SYNC_BYTE_END 0xAA
+
+// definitions of message IDs and message lengths
+// some explanation of what each message is might be useful at some point
+
+#define GG_STATUS_ID 1
+#define GG_STATUS_LENGTH 8
+
+#define GG_DISPLAY_STATUS_ID 2
+#define GG_DISPLAY_STATUS_LENGTH 10
+
+#define GG_MESSAGE_RECEIVED_ID 255
+#define GG_MESSAGE_RECEIVED_LENGTH 8
+
+
+
+
+
+// type definitions for various message structures 
+#pragma pack(push,1)
+
+// status
+typedef struct gg_status_t{
+  GG_HEADER;
+  unsigned char status;
+  unsigned char valid;
+  GG_FOOTER;
+} gg_status_t;
+
+// video status
+typedef struct gg_video_status_t{
+  GG_HEADER;
+  unsigned char vidstatus;
+  unsigned char vidvalid;
+  GG_FOOTER;
+} gg_video_status_t;
+
+// received message
+typedef struct gg_message_received_t{
+  GG_HEADER;
+  unsigned char messid;
+  GG_FOOTER;
+}gg_message_received_t;
+  
+
+// end of type definitions for various message structures
+#pragma pack(pop)
+
+
+
+#endif // GG_MESSAGE_DEFINITIONS_H_
