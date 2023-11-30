@@ -1,0 +1,176 @@
+This is a list of commands and messages being implemented for the
+Fireball guider 2016. Command IDs are subject to change, but some care
+needs to be taken, since they are coded on both the ground and flight
+sides of the interface.
+
+Generally, any ID < 200 indicates a command being sent from the ground
+to the guider, while anything >= 200 are messages sent from the guider
+to the ground
+
+## General guider related commands
+
+ID 	 Command description
+1	 Reboot guider
+
+2	 Shutdown guider
+
+4	 Set exposure time 
+	 -- exposure time [int]
+
+5 	 Tag log 
+	 -- tag (string)
+
+### WCS solution related commands (see message 253 as well)
+
+10	 Save stack and solve, including mode
+	 -- lost in space/gondola values/uploaded values
+
+11	 Save stack only
+
+12 	 Stack size
+	 -- stack size [byte]
+
+13	 Coordinates to use for solution
+
+14	 solution radius
+
+
+### Physical display commands
+
+20  	 Set display stretch
+	 -- min (ushort)
+	 -- max (ushort)
+	 -- gamma (float)
+
+21	 Reset display stretch 
+	
+### Indicator display commands
+
+25	 toggle current target display
+
+26	 overlay next target field
+
+27 	 circle guide stars
+
+28	 switch display mode
+	 (large vs. small, small only possible when working with
+	 small boxes)
+
+
+## guiding related commands
+
+40 	 change guider mode
+	 0: idle
+	 1: acquire (equivalent to trapstar)
+	 2: multistar fixed
+	 3: multistar follow
+
+41	 convert next target to star (dx, dy, dr)
+	 take the next target coordinates sent and 
+	 convert to next star position
+
+42	 convert next target to stars using latest astrometry output
+	 
+
+44	 adjust tracking (dx, dy, dr)
+	 rotation around rotation origin happens first
+	 
+45	 change rotation origin (x,y)
+
+46	 reset rotation origin
+
+47 	 upload target information (BIG MESSAGE, try not to use)
+	 x[8], y[8], negative value disables
+
+48	 switch tracking to a different star in the field (x,y)
+
+49 	 load target information
+	 -- id (byte)	
+	 -- 0 clears 
+
+
+50	 apply loaded target information
+
+51	 switch sensor to Guider
+
+52	 switch sensor to DTU
+
+53	 upload coordinates for general purpose
+	 -- ra, dec (floats)
+
+// 170727 -- matmat
+54	 change USE mask
+
+60	 turn on/off auto-focus
+
+
+## lamp and shutter related commands
+
+80 	turn on TTL X
+81	turn off TTL X
+
+
+### 	stage related commands 
+
+100	home rotary stage
+
+101	move rotary stage to encoder/step position X
+	-- position (int)
+
+102 	move rotary stage to a particular mask (this is target dependent!)
+
+103 	set the stage offset (in case there is an offset)
+
+110	home linear stages (do they need to be homed?)
+
+111	move stage N to position X
+
+112	move linear stages to particular position (coordinated)
+
+115	configure rotary stage
+	-- velocity, acceleration, etc. 
+	-- perhaps automagically done? 
+
+116 	configure linear stages
+	-- velocity, acceleration, etc.
+	-- perhaps automagically done? 
+
+
+### Messages from guider to ground
+
+248 	 stage information (gets sent about 0.1 Hz and after a
+	 commanded move)
+	 -- stage positions
+	 -- homed? 
+	 
+249 	 GPS information (gets sent about 0.1 Hz)
+	 -- tbd
+
+250 	 shutter and lamp state (get sent about 0.1 Hz and
+	 when something is toggled)	 
+
+251 	 current display mode (gets sent at about 0.1 Hz) 
+	 -- stretch, etc.
+	 -- full/boxes
+	 -- etc. 
+
+252 	 current tracking information (gets sent about 1Hz or so)
+	 -- guider mode
+	 -- star id, valid
+	 -- star x,y,f (pixel coords)
+	 -- star tx, ty, tf (pixel coords)
+	 -- computed dx, dy, dr 
+
+253	 WCS Solution response
+	 Solution sent back 
+
+254	 Message echo  
+	 Echo message indicating that a particular command sent from
+	 the ground was received by the guider and at least parsed
+	 (to ground from guider)
+
+255	 String return message
+	 Generally an error message
+	 (to ground from guider)
+
+	 

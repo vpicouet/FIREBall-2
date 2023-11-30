@@ -1,0 +1,233 @@
+namespace eval var { 
+    # shutter related variables
+    variable shutAstatus -1000
+    variable shutBstatus -2000
+    variable shutCstatus -3000
+    variable shutDstatus -4000
+
+    variable lampAstatus -5000
+    variable lampBstatus -6000
+
+    # stage related variables
+    variable stagerpos -2.0
+    variable stage1pos 1.0
+    variable stage2pos 2.0
+    variable stage3pos 3.0
+
+    variable stagererr -1
+    variable stage1err -2
+    variable stage2err -3
+    variable stage3err -4
+    
+    variable posrerr -5
+    variable pos1err -6
+    variable pos2err -7
+    variable pos3err -8
+
+    variable stagerstat a
+    variable stage1stat b
+    variable stage2stat c
+    variable stage3stat d
+
+
+    # temperature sensor statuses
+    variable sensorAstatus -7000.0
+    variable sensorBstatus -8000.0
+    variable sensorCstatus -9000.0
+ 
+    variable guider_mode 0
+    variable display_mode 1
+    variable frame_number -100
+    variable exposure_time 100
+    variable ccd_temperature 0
+    variable cam_temperature 0
+    variable ps_temperature 0
+    variable ai_temperature 0
+    variable ai_pressure 0
+    variable ai_gobc_temp 0
+    variable ai_gobc_pressure 0
+    variable ai_cal_temp 0
+    variable ai_cal_pressure 0
+    
+
+    variable tx0 0
+    variable ty0 0
+
+    variable tx1 0
+    variable ty1 0
+
+    variable tx2 0
+    variable ty2 0
+
+    variable tx3 0
+    variable ty3 0
+
+    variable tx4 0
+    variable ty4 0
+
+    variable tx5 0
+    variable ty5 0
+
+    variable tx6 0
+    variable ty6 0
+
+    variable tx7 0
+    variable ty7 0
+
+    variable thresh 3.0
+    variable smin 1.0
+    variable smax 15.0
+
+
+    variable cx0 0 
+    variable cy0 0 
+    variable f0 0 
+    variable sx0 0 
+    variable sy0 0
+    variable mag0 0 
+
+    variable cx1 0 
+    variable cy1 0 
+    variable f1 0 
+    variable sx1 0 
+    variable sy1 0
+    variable mag1 0 
+
+    variable cx2 0 
+    variable cy2 0
+    variable f2 0  
+    variable sx2 0 
+    variable sy2 0
+    variable mag2 0 
+
+    variable cx3 0 
+    variable cy3 0 
+    variable f3 0 
+    variable sx3 0 
+    variable sy3 0
+    variable mag3 0 
+
+    variable cx4 0 
+    variable cy4 0 
+    variable f4 0 
+    variable sx4 0 
+    variable sy4 0
+    variable mag4 0 
+
+    variable cx5 0 
+    variable cy5 0 
+    variable f5 0 
+    variable sx5 0 
+    variable sy5 0
+    variable mag5 0 
+
+    variable cx6 0 
+    variable cy6 0 
+    variable f6 0 
+    variable sx6 0 
+    variable sy6 0
+    variable mag6 0 
+
+    variable cx7 0 
+    variable cy7 0 
+    variable f7 0 
+    variable sx7 0 
+    variable sy7 0
+    variable mag7 0 
+
+    variable use0 1
+    variable use1 1
+    variable use2 1
+    variable use3 1
+    variable use4 1
+    variable use5 1
+    variable use6 1
+    variable use7 1
+
+    variable valid0 1
+    variable valid1 1
+    variable valid2 1
+    variable valid3 1
+    variable valid4 1
+    variable valid5 1
+    variable valid6 1
+    variable valid7 1
+
+    variable dx 0.00
+    variable dy 1.00 
+    variable dr 2.00
+
+    variable rmsdx 0.00
+    variable rmsdy 1.00 
+    variable rmsdr 2.00
+
+    variable msx 0.00
+    variable msy 0.00
+
+    variable algorithm -1
+    variable subtract -1
+    variable saveperiod -1
+
+    variable totused -1
+    variable totvalid -1
+
+    variable imagetag 0
+
+    variable gaz -1
+    variable gel -1 
+    variable grot -1 
+    
+    variable gra -1
+    variable gdec -1
+    variable groll -1
+
+    variable profiledir ""
+
+    proc getTargX { id } { 
+	set x var::tx$id
+	return [ expr $$x]
+    } 
+    
+    proc getTargY { id } { 
+	set y var::ty$id
+	return [expr $$y]
+    } 
+
+    proc getStarX { id } { 
+	variable cx0 
+	variable cx1 
+	variable cx2 
+	variable cx3 
+	variable cx4 
+	variable cx5 
+	variable cx6 
+	variable cx7 
+	set x cx$id
+	return [expr $$x]
+    } 
+    
+    proc getStarY { id } { 
+	variable cy0 
+	variable cy1 
+	variable cy2 
+	variable cy3 
+	variable cy4 
+	variable cy5 
+	variable cy6 
+	variable cy7 
+	set y cy$id 
+	return [expr $$y]
+    } 
+    proc getValid { id } {
+	set v var::valid$id
+	return [expr $$v]
+    }
+    
+    proc getUse { id } { 
+	set u var::use$id
+	return [expr $$u]
+    }
+
+
+}
+#namespace eval var
