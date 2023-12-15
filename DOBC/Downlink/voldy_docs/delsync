@@ -1,0 +1,5 @@
+/sbin/rmmod comsync.ko
+rm -f /dev/csync1
+rm -f /dev/csync2
+rm -f /dev/csync3
+rm -f /dev/csync4

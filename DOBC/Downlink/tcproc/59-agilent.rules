@@ -1,0 +1,1 @@
+KERNELS=="usb2", SUBSYSTEMS=="usb", ATTRS{idVendor}=="1d6b", ATTRS{idProduct}=="0002", ATTRS{product}=="EHCI Host Controller", SYMLINK+="agilent", MODE="0666", GROUP="fireball2"

@@ -1,0 +1,4 @@
+KERNEL=="ttyUSB?", ATTRS{idVendor}=="050d", ATTRS{idProduct}=="0109", SYMLINK+="FLTMuxRx"
+KERNEL=="ttyUSB?", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", SYMLINK+="FLTMuxTx"
+KERNEL=="ttyUSB?", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="FLTUplink"
+KERNEL=="ttyUSB?", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", SYMLINK+="FLTDownlink"

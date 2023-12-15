@@ -1,0 +1,1 @@
+gcc -w -g test.c -lpthread  -o test
