@@ -1,0 +1,52 @@
+Virtual Camera
+
+Detector Type: CCD97
+Detector Size(W,H): 552, 528
+Temperature Range: -200, 30
+
+Readout Mode: 1
+Ampli Type: EM
+Vertical Frequency(Hz): 2000000 
+Horizontal Frequency(Hz): 10000000
+Active Size(W,H): 512, 512
+Number of Overscan Lines: 2
+Analog Gain Range: 0, 63
+Analog Offset Range: -255, 255
+EM Gain Range: 0, 11000
+Binning Available in X: 2, 4, 16
+
+Readout Mode: 2
+Ampli Type: Conv
+Vertical Frequency(Hz): 2000000
+Horizontal Frequency(Hz): 1000000
+Active Size(W,H): 512, 512
+Number of Overscan Lines: 2
+Analog Gain Range: 0, 63
+Analog Offset Range: -255, 255
+Binning Available in X: 2, 4, 8, 16
+
+
+ 
+
+
+Debugging Level:
+
+Level 0: 1 Temperature report
+Level 1: 0 Functions and parameters received
+Level 2: 0 Init Values/cmd in structure
+Level 3: 1 Info received from the camera
+Level 4: 1 Cmd sent to the camera
+Level 5: 0 Checksum received and calculated
+Lavel 6: 0 Number of caracters received and number of wait required
+Level 7: 0 Cmd retries and number 
+Level 8: 0 EDT calls and answered 
+Level 9: 0 Mutex Release status
+Level 10: 0 Error code and explanation 
+Level 11: 0 Internal parse results
+Level 12: 0 Number of images expected vs received
+Level 13: 0 NuvuCam and Grab struct at each functions
+Level 14: 0 Edt struct at each function it's being modified
+Level 15: 0 Image delays between the grab and in memory
+Level 16: 0 Metamorph functions
+Level 17: 0 NuPixel functions
+Level 18: 0 Virtual functions

@@ -1,0 +1,28 @@
+# kde.repo, v2.X
+# Access a specific reliable mirror for Qt package updates -- Nüvü Cameras, Inc.
+
+[kde]
+name=kde
+mirrorlist=https://ftp.heanet.ie/mirrors/kde-redhat/redhat/mirrors-stable
+gpgkey=https://ftp.heanet.ie/mirrors/kde-redhat/kde-redhat.RPM-GPG-KEY
+#gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-kde-redhat
+enabled=1
+skip_if_unavailable=1
+
+# NOTE: requires/depends on kde repo(s)
+[kde-testing]
+name=kde-testing
+mirrorlist=http://apt.kde-redhat.org/apt/kde-redhat/redhat/mirrors-testing
+gpgkey=http://apt.kde-redhat.org/apt/kde-redhat/kde-redhat.RPM-GPG-KEY
+#gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-kde-redhat
+enabled=0
+skip_if_unavailable=1
+
+# NOTE: requires/depends-on testing repo(s)
+[kde-unstable]
+name=kde-unstable
+mirrorlist=http://apt.kde-redhat.org/apt/kde-redhat/redhat/mirrors-unstable
+gpgkey=http://apt.kde-redhat.org/apt/kde-redhat/kde-redhat.RPM-GPG-KEY
+#gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-kde-redhat
+enabled=0
+skip_if_unavailable=1

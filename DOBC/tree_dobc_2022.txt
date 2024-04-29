@@ -1,0 +1,3669 @@
+.
+├── 1MHz_cccp
+├── 20151108_cccp_files
+│   └── update
+├── 20160830_cccp_files
+├── Arduino
+│   ├── code
+│   │   ├── backup
+│   │   ├── hello_world
+│   │   ├── led_control_sketch
+│   │   ├── lib
+│   │   │   └── PV_RTD_RS232_RS485_Shield
+│   │   ├── old_code
+│   │   │   ├── rtd
+│   │   │   │   ├── lib
+│   │   │   │   │   └── PV_RTD_RS232_RS485_Shield
+│   │   │   │   └── src
+│   │   │   ├── rtd_output
+│   │   │   │   ├── docs
+│   │   │   │   ├── lib
+│   │   │   │   └── src
+│   │   │   ├── rtd_output_v2
+│   │   │   ├── rtd_pid
+│   │   │   │   ├── lib
+│   │   │   │   │   └── PV_RTD_RS232_RS485_Shield
+│   │   │   │   └── src
+│   │   │   ├── rtd_pid_allcode
+│   │   │   └── rtdv3_spare
+│   │   │       ├── lib
+│   │   │       │   └── PV_RTD_RS232_RS485_Shield
+│   │   │       └── src
+│   │   ├── py
+│   │   │   └── ard_HW2.py
+│   │   ├── rtd
+│   │   │   ├── lib
+│   │   │   │   └── PV_RTD_RS232_RS485_Shield
+│   │   │   └── src
+│   │   ├── rtd_output
+│   │   │   ├── docs
+│   │   │   ├── lib
+│   │   │   └── src
+│   │   ├── rtd_output_v2
+│   │   ├── rtd_pid
+│   │   │   ├── lib
+│   │   │   │   └── PV_RTD_RS232_RS485_Shield
+│   │   │   └── src
+│   │   ├── rtd_pid_allcode
+│   │   ├── rtdtank
+│   │   │   ├── lib
+│   │   │   │   └── PV_RTD_RS232_RS485_Shield
+│   │   │   └── src
+│   │   ├── rtdv3
+│   │   │   ├── lib
+│   │   │   │   └── PV_RTD_RS232_RS485_Shield
+│   │   │   └── src
+│   │   │       └── rtd_pid
+│   │   ├── rtdv3.170619
+│   │   │   ├── lib
+│   │   │   │   └── PV_RTD_RS232_RS485_Shield
+│   │   │   └── src
+│   │   ├── rtdv3_spare
+│   │   │   ├── lib
+│   │   │   │   └── PV_RTD_RS232_RS485_Shield
+│   │   │   └── src
+│   │   ├── salo@172.20.4.111
+│   │   │   ├── lib
+│   │   │   │   └── PV_RTD_RS232_RS485_Shield
+│   │   │   └── src
+│   │   ├── simeon
+│   │   │   ├── lib
+│   │   │   │   └── PV_RTD_RS232_RS485_Shield
+│   │   │   └── src
+│   │   └── test
+│   │       ├── lib
+│   │       │   └── PV_RTD_RS232_RS485_Shield
+│   │       └── src
+│   │           ├── rtd_pid
+│   │           └── rtdv3
+│   ├── data
+│   │   ├── 161123
+│   │   ├── 161130
+│   │   └── 161201
+│   ├── Docs
+│   ├── libraries
+│   │   ├── FreeRTOS
+│   │   │   ├── examples
+│   │   │   │   ├── AnalogRead_DigitalRead
+│   │   │   │   ├── Blink_AnalogRead
+│   │   │   │   └── GoldilocksAnalogueTestSuite
+│   │   │   └── src
+│   │   ├── PID_AutoTune_v0
+│   │   ├── PID_v1
+│   │   │   └── examples
+│   │   │       ├── PID_AdaptiveTunings
+│   │   │       ├── PID_Basic
+│   │   │       └── PID_RelayOutput
+│   │   ├── PV_RTD_RS232_RS485_Shield
+│   │   └── Scheduler
+│   │       ├── examples
+│   │       │   └── MultipleBlinks
+│   │       └── src
+│   ├── PV_RTD_RS232_RS485_Shield
+│   └── test
+│       ├── lib
+│       └── src
+├── arduino-1.8.10
+│   ├── examples
+│   │   ├── 01.Basics
+│   │   │   ├── AnalogReadSerial
+│   │   │   ├── BareMinimum
+│   │   │   ├── Blink
+│   │   │   ├── DigitalReadSerial
+│   │   │   ├── Fade
+│   │   │   └── ReadAnalogVoltage
+│   │   ├── 02.Digital
+│   │   │   ├── BlinkWithoutDelay
+│   │   │   ├── Button
+│   │   │   ├── Debounce
+│   │   │   ├── DigitalInputPullup
+│   │   │   ├── StateChangeDetection
+│   │   │   ├── toneKeyboard
+│   │   │   ├── toneMelody
+│   │   │   ├── toneMultiple
+│   │   │   └── tonePitchFollower
+│   │   ├── 03.Analog
+│   │   │   ├── AnalogInOutSerial
+│   │   │   ├── AnalogInput
+│   │   │   ├── AnalogWriteMega
+│   │   │   ├── Calibration
+│   │   │   ├── Fading
+│   │   │   └── Smoothing
+│   │   ├── 04.Communication
+│   │   │   ├── ASCIITable
+│   │   │   ├── Dimmer
+│   │   │   ├── Graph
+│   │   │   ├── Midi
+│   │   │   ├── MultiSerial
+│   │   │   ├── PhysicalPixel
+│   │   │   ├── ReadASCIIString
+│   │   │   ├── SerialCallResponse
+│   │   │   ├── SerialCallResponseASCII
+│   │   │   ├── SerialEvent
+│   │   │   ├── SerialPassthrough
+│   │   │   └── VirtualColorMixer
+│   │   ├── 05.Control
+│   │   │   ├── Arrays
+│   │   │   ├── ForLoopIteration
+│   │   │   ├── IfStatementConditional
+│   │   │   ├── switchCase
+│   │   │   ├── switchCase2
+│   │   │   └── WhileStatementConditional
+│   │   ├── 06.Sensors
+│   │   │   ├── ADXL3xx
+│   │   │   ├── Knock
+│   │   │   ├── Memsic2125
+│   │   │   └── Ping
+│   │   ├── 07.Display
+│   │   │   ├── barGraph
+│   │   │   └── RowColumnScanning
+│   │   ├── 08.Strings
+│   │   │   ├── CharacterAnalysis
+│   │   │   ├── StringAdditionOperator
+│   │   │   ├── StringAppendOperator
+│   │   │   ├── StringCaseChanges
+│   │   │   ├── StringCharacters
+│   │   │   ├── StringComparisonOperators
+│   │   │   ├── StringConstructors
+│   │   │   ├── StringIndexOf
+│   │   │   ├── StringLength
+│   │   │   ├── StringLengthTrim
+│   │   │   ├── StringReplace
+│   │   │   ├── StringStartsWithEndsWith
+│   │   │   ├── StringSubstring
+│   │   │   └── StringToInt
+│   │   ├── 09.USB
+│   │   │   ├── Keyboard
+│   │   │   │   ├── KeyboardLogout
+│   │   │   │   ├── KeyboardMessage
+│   │   │   │   ├── KeyboardReprogram
+│   │   │   │   └── KeyboardSerial
+│   │   │   ├── KeyboardAndMouseControl
+│   │   │   └── Mouse
+│   │   │       ├── ButtonMouseControl
+│   │   │       └── JoystickMouseControl
+│   │   ├── 10.StarterKit_BasicKit
+│   │   │   ├── p02_SpaceshipInterface
+│   │   │   ├── p03_LoveOMeter
+│   │   │   ├── p04_ColorMixingLamp
+│   │   │   ├── p05_ServoMoodIndicator
+│   │   │   ├── p06_LightTheremin
+│   │   │   ├── p07_Keyboard
+│   │   │   ├── p08_DigitalHourglass
+│   │   │   ├── p09_MotorizedPinwheel
+│   │   │   ├── p10_Zoetrope
+│   │   │   ├── p11_CrystalBall
+│   │   │   ├── p12_KnockLock
+│   │   │   ├── p13_TouchSensorLamp
+│   │   │   ├── p14_TweakTheArduinoLogo
+│   │   │   └── p15_HackingButtons
+│   │   └── 11.ArduinoISP
+│   │       └── ArduinoISP
+│   ├── hardware
+│   │   ├── arduino
+│   │   │   └── avr
+│   │   │       ├── bootloaders
+│   │   │       │   ├── atmega
+│   │   │       │   ├── atmega8
+│   │   │       │   ├── bt
+│   │   │       │   ├── caterina
+│   │   │       │   ├── caterina-Arduino_Robot
+│   │   │       │   ├── caterina-LilyPadUSB
+│   │   │       │   ├── gemma
+│   │   │       │   ├── lilypad
+│   │   │       │   │   └── src
+│   │   │       │   ├── optiboot
+│   │   │       │   └── stk500v2
+│   │   │       ├── cores
+│   │   │       │   └── arduino
+│   │   │       ├── extras
+│   │   │       ├── firmwares
+│   │   │       │   ├── arduinoISP
+│   │   │       │   ├── atmegaxxu2
+│   │   │       │   │   ├── arduino-usbdfu
+│   │   │       │   │   │   └── Board
+│   │   │       │   │   └── arduino-usbserial
+│   │   │       │   │       ├── Board
+│   │   │       │   │       └── Lib
+│   │   │       │   └── wifishield
+│   │   │       │       ├── binary
+│   │   │       │       ├── scripts
+│   │   │       │       ├── wifi_dnld
+│   │   │       │       │   ├── Release
+│   │   │       │       │   └── src
+│   │   │       │       │       ├── CONFIG
+│   │   │       │       │       ├── Doc
+│   │   │       │       │       └── SOFTWARE_FRAMEWORK
+│   │   │       │       │           ├── ASM
+│   │   │       │       │           ├── BOARDS
+│   │   │       │       │           │   ├── ARDUINO
+│   │   │       │       │           │   └── EVK1105
+│   │   │       │       │           ├── COMPONENTS
+│   │   │       │       │           │   └── MEMORY
+│   │   │       │       │           │       └── DATA_FLASH
+│   │   │       │       │           │           └── AT45DBX
+│   │   │       │       │           ├── DRIVERS
+│   │   │       │       │           │   ├── FLASHC
+│   │   │       │       │           │   ├── GPIO
+│   │   │       │       │           │   ├── INTC
+│   │   │       │       │           │   ├── PM
+│   │   │       │       │           │   ├── SPI
+│   │   │       │       │           │   └── USART
+│   │   │       │       │           ├── SERVICES
+│   │   │       │       │           │   └── MEMORY
+│   │   │       │       │           │       └── CTRL_ACCESS
+│   │   │       │       │           └── UTILS
+│   │   │       │       │               ├── DEBUG
+│   │   │       │       │               ├── LIBS
+│   │   │       │       │               │   └── NEWLIB_ADDONS
+│   │   │       │       │               │       └── INCLUDE
+│   │   │       │       │               ├── LINKER_SCRIPTS
+│   │   │       │       │               │   └── AT32UC3A
+│   │   │       │       │               │       ├── 0512
+│   │   │       │       │               │       │   └── GCC
+│   │   │       │       │               │       └── 1256
+│   │   │       │       │               │           └── GCC
+│   │   │       │       │               ├── PREPROCESSOR
+│   │   │       │       │               └── STARTUP_FILES
+│   │   │       │       │                   └── GCC
+│   │   │       │       └── wifiHD
+│   │   │       │           ├── Release
+│   │   │       │           └── src
+│   │   │       │               ├── CONFIG
+│   │   │       │               └── SOFTWARE_FRAMEWORK
+│   │   │       │                   ├── ASM
+│   │   │       │                   ├── BOARDS
+│   │   │       │                   │   ├── ARDUINO
+│   │   │       │                   │   └── EVK1105
+│   │   │       │                   ├── COMPONENTS
+│   │   │       │                   │   ├── MEMORY
+│   │   │       │                   │   │   └── DATA_FLASH
+│   │   │       │                   │   │       └── AT45DBX
+│   │   │       │                   │   └── WIFI
+│   │   │       │                   │       └── HD
+│   │   │       │                   │           └── v2.7.0
+│   │   │       │                   │               ├── UCR1
+│   │   │       │                   │               │   └── GCC
+│   │   │       │                   │               └── UCR2
+│   │   │       │                   │                   └── GCC
+│   │   │       │                   ├── DRIVERS
+│   │   │       │                   │   ├── CPU
+│   │   │       │                   │   │   └── CYCLE_COUNTER
+│   │   │       │                   │   ├── EBI
+│   │   │       │                   │   │   └── SMC
+│   │   │       │                   │   ├── EIC
+│   │   │       │                   │   ├── FLASHC
+│   │   │       │                   │   ├── GPIO
+│   │   │       │                   │   ├── INTC
+│   │   │       │                   │   ├── PDCA
+│   │   │       │                   │   ├── PM
+│   │   │       │                   │   ├── RTC
+│   │   │       │                   │   ├── SPI
+│   │   │       │                   │   ├── TC
+│   │   │       │                   │   └── USART
+│   │   │       │                   ├── SERVICES
+│   │   │       │                   │   ├── DELAY
+│   │   │       │                   │   ├── LWIP
+│   │   │       │                   │   │   ├── lwip-1.3.2
+│   │   │       │                   │   │   │   └── src
+│   │   │       │                   │   │   │       ├── core
+│   │   │       │                   │   │   │       │   └── ipv4
+│   │   │       │                   │   │   │       ├── include
+│   │   │       │                   │   │   │       │   ├── ipv4
+│   │   │       │                   │   │   │       │   │   └── lwip
+│   │   │       │                   │   │   │       │   ├── lwip
+│   │   │       │                   │   │   │       │   └── netif
+│   │   │       │                   │   │   │       └── netif
+│   │   │       │                   │   │   └── lwip-port-1.3.2
+│   │   │       │                   │   │       └── HD
+│   │   │       │                   │   │           └── if
+│   │   │       │                   │   │               ├── include
+│   │   │       │                   │   │               │   ├── arch
+│   │   │       │                   │   │               │   └── netif
+│   │   │       │                   │   │               └── netif
+│   │   │       │                   │   └── MEMORY
+│   │   │       │                   │       └── CTRL_ACCESS
+│   │   │       │                   └── UTILS
+│   │   │       │                       ├── DEBUG
+│   │   │       │                       ├── LIBS
+│   │   │       │                       │   └── NEWLIB_ADDONS
+│   │   │       │                       │       └── INCLUDE
+│   │   │       │                       ├── LINKER_SCRIPTS
+│   │   │       │                       │   └── AT32UC3A
+│   │   │       │                       │       ├── 0512
+│   │   │       │                       │       │   └── GCC
+│   │   │       │                       │       └── 1256
+│   │   │       │                       │           └── GCC
+│   │   │       │                       ├── PREPROCESSOR
+│   │   │       │                       └── STARTUP_FILES
+│   │   │       │                           └── GCC
+│   │   │       ├── libraries
+│   │   │       │   ├── EEPROM
+│   │   │       │   │   ├── examples
+│   │   │       │   │   │   ├── eeprom_clear
+│   │   │       │   │   │   ├── eeprom_crc
+│   │   │       │   │   │   ├── eeprom_get
+│   │   │       │   │   │   ├── eeprom_iteration
+│   │   │       │   │   │   ├── eeprom_put
+│   │   │       │   │   │   ├── eeprom_read
+│   │   │       │   │   │   ├── eeprom_update
+│   │   │       │   │   │   └── eeprom_write
+│   │   │       │   │   └── src
+│   │   │       │   ├── HID
+│   │   │       │   │   └── src
+│   │   │       │   ├── SoftwareSerial
+│   │   │       │   │   ├── examples
+│   │   │       │   │   │   ├── SoftwareSerialExample
+│   │   │       │   │   │   └── TwoPortReceive
+│   │   │       │   │   └── src
+│   │   │       │   ├── SPI
+│   │   │       │   │   ├── examples
+│   │   │       │   │   │   ├── BarometricPressureSensor
+│   │   │       │   │   │   └── DigitalPotControl
+│   │   │       │   │   └── src
+│   │   │       │   └── Wire
+│   │   │       │       ├── examples
+│   │   │       │       │   ├── digital_potentiometer
+│   │   │       │       │   ├── master_reader
+│   │   │       │       │   ├── master_writer
+│   │   │       │       │   ├── SFRRanger_reader
+│   │   │       │       │   ├── slave_receiver
+│   │   │       │       │   └── slave_sender
+│   │   │       │       └── src
+│   │   │       │           └── utility
+│   │   │       └── variants
+│   │   │           ├── circuitplay32u4
+│   │   │           ├── eightanaloginputs
+│   │   │           ├── ethernet
+│   │   │           ├── gemma
+│   │   │           ├── leonardo
+│   │   │           ├── mega
+│   │   │           ├── micro
+│   │   │           ├── robot_control
+│   │   │           ├── robot_motor
+│   │   │           ├── standard
+│   │   │           └── yun
+│   │   └── tools
+│   │       └── avr
+│   │           ├── avr
+│   │           │   ├── bin
+│   │           │   ├── include
+│   │           │   │   ├── avr
+│   │           │   │   ├── compat
+│   │           │   │   ├── sys
+│   │           │   │   └── util
+│   │           │   └── lib
+│   │           │       ├── avr25
+│   │           │       │   └── tiny-stack
+│   │           │       ├── avr3
+│   │           │       ├── avr31
+│   │           │       ├── avr35
+│   │           │       ├── avr4
+│   │           │       ├── avr5
+│   │           │       ├── avr51
+│   │           │       ├── avr6
+│   │           │       ├── avrtiny
+│   │           │       ├── avrxmega2
+│   │           │       ├── avrxmega3
+│   │           │       │   └── short-calls
+│   │           │       ├── avrxmega4
+│   │           │       ├── avrxmega5
+│   │           │       ├── avrxmega6
+│   │           │       ├── avrxmega7
+│   │           │       ├── ldscripts
+│   │           │       └── tiny-stack
+│   │           ├── bin
+│   │           ├── etc
+│   │           ├── include
+│   │           │   ├── gdb
+│   │           │   └── libiberty
+│   │           ├── lib
+│   │           │   └── gcc
+│   │           │       └── avr
+│   │           │           └── 7.3.0
+│   │           │               ├── avr25
+│   │           │               │   └── tiny-stack
+│   │           │               ├── avr3
+│   │           │               ├── avr31
+│   │           │               ├── avr35
+│   │           │               ├── avr4
+│   │           │               ├── avr5
+│   │           │               ├── avr51
+│   │           │               ├── avr6
+│   │           │               ├── avrxmega2
+│   │           │               ├── avrxmega3
+│   │           │               │   └── short-calls
+│   │           │               ├── avrxmega4
+│   │           │               ├── avrxmega5
+│   │           │               ├── avrxmega6
+│   │           │               ├── device-specs
+│   │           │               ├── include
+│   │           │               ├── include-fixed
+│   │           │               ├── install-tools
+│   │           │               │   └── include
+│   │           │               ├── plugin
+│   │           │               │   └── include
+│   │           │               │       ├── ada
+│   │           │               │       │   └── gcc-interface
+│   │           │               │       ├── c-family
+│   │           │               │       ├── config
+│   │           │               │       │   └── avr
+│   │           │               │       ├── cp
+│   │           │               │       └── objc
+│   │           │               └── tiny-stack
+│   │           ├── libexec
+│   │           │   └── gcc
+│   │           │       └── avr
+│   │           │           └── 7.3.0
+│   │           │               ├── install-tools
+│   │           │               └── plugin
+│   │           └── x86_64-pc-linux-gnu
+│   │               └── avr
+│   │                   ├── include
+│   │                   └── lib
+│   ├── java
+│   │   ├── bin
+│   │   ├── lib
+│   │   │   ├── amd64
+│   │   │   │   ├── jli
+│   │   │   │   └── server
+│   │   │   ├── applet
+│   │   │   ├── cmm
+│   │   │   ├── deploy
+│   │   │   ├── desktop
+│   │   │   │   ├── applications
+│   │   │   │   ├── icons
+│   │   │   │   │   ├── hicolor
+│   │   │   │   │   │   ├── 16x16
+│   │   │   │   │   │   │   ├── apps
+│   │   │   │   │   │   │   └── mimetypes
+│   │   │   │   │   │   └── 48x48
+│   │   │   │   │   │       ├── apps
+│   │   │   │   │   │       └── mimetypes
+│   │   │   │   │   ├── HighContrast
+│   │   │   │   │   │   ├── 16x16
+│   │   │   │   │   │   │   ├── apps
+│   │   │   │   │   │   │   └── mimetypes
+│   │   │   │   │   │   └── 48x48
+│   │   │   │   │   │       ├── apps
+│   │   │   │   │   │       └── mimetypes
+│   │   │   │   │   ├── HighContrastInverse
+│   │   │   │   │   │   ├── 16x16
+│   │   │   │   │   │   │   ├── apps
+│   │   │   │   │   │   │   └── mimetypes
+│   │   │   │   │   │   └── 48x48
+│   │   │   │   │   │       ├── apps
+│   │   │   │   │   │       └── mimetypes
+│   │   │   │   │   └── LowContrast
+│   │   │   │   │       ├── 16x16
+│   │   │   │   │       │   ├── apps
+│   │   │   │   │       │   └── mimetypes
+│   │   │   │   │       └── 48x48
+│   │   │   │   │           ├── apps
+│   │   │   │   │           └── mimetypes
+│   │   │   │   └── mime
+│   │   │   │       └── packages
+│   │   │   ├── ext
+│   │   │   ├── fonts
+│   │   │   ├── images
+│   │   │   │   ├── cursors
+│   │   │   │   └── icons
+│   │   │   ├── jfr
+│   │   │   ├── locale
+│   │   │   │   ├── de
+│   │   │   │   │   └── LC_MESSAGES
+│   │   │   │   ├── es
+│   │   │   │   │   └── LC_MESSAGES
+│   │   │   │   ├── fr
+│   │   │   │   │   └── LC_MESSAGES
+│   │   │   │   ├── it
+│   │   │   │   │   └── LC_MESSAGES
+│   │   │   │   ├── ja
+│   │   │   │   │   └── LC_MESSAGES
+│   │   │   │   ├── ko
+│   │   │   │   │   └── LC_MESSAGES
+│   │   │   │   ├── ko.UTF-8
+│   │   │   │   │   └── LC_MESSAGES
+│   │   │   │   ├── pt_BR
+│   │   │   │   │   └── LC_MESSAGES
+│   │   │   │   ├── sv
+│   │   │   │   │   └── LC_MESSAGES
+│   │   │   │   ├── zh
+│   │   │   │   │   └── LC_MESSAGES
+│   │   │   │   ├── zh.GBK
+│   │   │   │   │   └── LC_MESSAGES
+│   │   │   │   ├── zh_HK.BIG5HK
+│   │   │   │   │   └── LC_MESSAGES
+│   │   │   │   ├── zh_TW
+│   │   │   │   │   └── LC_MESSAGES
+│   │   │   │   └── zh_TW.BIG5
+│   │   │   │       └── LC_MESSAGES
+│   │   │   ├── management
+│   │   │   ├── oblique-fonts
+│   │   │   └── security
+│   │   │       └── policy
+│   │   │           ├── limited
+│   │   │           └── unlimited
+│   │   ├── man
+│   │   │   ├── ja -> ja_JP.UTF-8
+│   │   │   ├── ja_JP.UTF-8
+│   │   │   │   └── man1
+│   │   │   └── man1
+│   │   └── plugin
+│   │       └── desktop
+│   ├── lib
+│   │   ├── icons
+│   │   │   ├── 128x128
+│   │   │   │   └── apps
+│   │   │   ├── 16x16
+│   │   │   │   └── apps
+│   │   │   ├── 24x24
+│   │   │   │   └── apps
+│   │   │   ├── 256x256
+│   │   │   │   └── apps
+│   │   │   ├── 32x32
+│   │   │   │   └── apps
+│   │   │   ├── 48x48
+│   │   │   │   └── apps
+│   │   │   ├── 64x64
+│   │   │   │   └── apps
+│   │   │   ├── 72x72
+│   │   │   │   └── apps
+│   │   │   └── 96x96
+│   │   │       └── apps
+│   │   └── theme
+│   │       └── syntax
+│   ├── libraries
+│   │   ├── Adafruit_Circuit_Playground
+│   │   │   ├── examples
+│   │   │   │   ├── accel_mouse
+│   │   │   │   ├── accelTap
+│   │   │   │   ├── analog_sensors
+│   │   │   │   ├── CircuitPlaygroundFirmata
+│   │   │   │   ├── CircuitPlaygroundFirmata_Express_CodeOrg
+│   │   │   │   ├── color_sense
+│   │   │   │   ├── comm_badge
+│   │   │   │   ├── demo
+│   │   │   │   ├── FidgetSpinner
+│   │   │   │   ├── Hello_CircuitPlayground
+│   │   │   │   │   ├── Hello_Accelerometer
+│   │   │   │   │   ├── Hello_Blink
+│   │   │   │   │   ├── Hello_Buttons
+│   │   │   │   │   ├── Hello_LightSensor
+│   │   │   │   │   ├── Hello_NeoPixels
+│   │   │   │   │   ├── Hello_SlideSwitch
+│   │   │   │   │   ├── Hello_SoundSensor
+│   │   │   │   │   ├── Hello_Speaker
+│   │   │   │   │   └── Hello_Temperature
+│   │   │   │   ├── Infrared_Demos
+│   │   │   │   │   ├── Infrared_NeoPixel
+│   │   │   │   │   ├── Infrared_Read
+│   │   │   │   │   ├── Infrared_Record
+│   │   │   │   │   ├── Infrared_Send
+│   │   │   │   │   └── Infrared_Testpattern
+│   │   │   │   ├── mega_demo
+│   │   │   │   ├── Microphone_Demos
+│   │   │   │   │   ├── Birthday_Candles
+│   │   │   │   │   ├── mic_FFT_classic
+│   │   │   │   │   ├── mic_FFT_express
+│   │   │   │   │   ├── pretty_meter
+│   │   │   │   │   ├── soundPressureLevel
+│   │   │   │   │   └── vu_meter
+│   │   │   │   ├── ScratchSensorBoard
+│   │   │   │   ├── Speech_Demos
+│   │   │   │   │   ├── Talk_UK_Acorn
+│   │   │   │   │   ├── Talk_US_Clock
+│   │   │   │   │   ├── Talk_US_Large
+│   │   │   │   │   ├── Talk_US_Male
+│   │   │   │   │   └── Talk_US_TI99
+│   │   │   │   ├── tachometer
+│   │   │   │   └── tachometer_led_display
+│   │   │   └── utility
+│   │   ├── Bridge
+│   │   │   ├── examples
+│   │   │   │   ├── Bridge
+│   │   │   │   ├── ConsoleAsciiTable
+│   │   │   │   ├── ConsolePixel
+│   │   │   │   ├── ConsoleRead
+│   │   │   │   ├── Datalogger
+│   │   │   │   ├── FileWriteScript
+│   │   │   │   ├── HttpClient
+│   │   │   │   ├── HttpClientConsole
+│   │   │   │   ├── MailboxReadMessage
+│   │   │   │   ├── Process
+│   │   │   │   ├── RemoteDueBlink
+│   │   │   │   ├── ShellCommands
+│   │   │   │   ├── TemperatureWebPanel
+│   │   │   │   │   └── www
+│   │   │   │   ├── TimeCheck
+│   │   │   │   ├── WiFiStatus
+│   │   │   │   ├── YunFirstConfig
+│   │   │   │   └── YunSerialTerminal
+│   │   │   └── src
+│   │   ├── Esplora
+│   │   │   ├── examples
+│   │   │   │   ├── Beginners
+│   │   │   │   │   ├── EsploraAccelerometer
+│   │   │   │   │   ├── EsploraBlink
+│   │   │   │   │   ├── EsploraJoystickMouse
+│   │   │   │   │   ├── EsploraLedShow
+│   │   │   │   │   ├── EsploraLedShow2
+│   │   │   │   │   ├── EsploraLightCalibrator
+│   │   │   │   │   ├── EsploraMusic
+│   │   │   │   │   ├── EsploraSoundSensor
+│   │   │   │   │   └── EsploraTemperatureSensor
+│   │   │   │   └── Experts
+│   │   │   │       ├── EsploraKart
+│   │   │   │       ├── EsploraPong
+│   │   │   │       ├── EsploraRemote
+│   │   │   │       └── EsploraTable
+│   │   │   └── src
+│   │   ├── Ethernet
+│   │   │   ├── examples
+│   │   │   │   ├── AdvancedChatServer
+│   │   │   │   ├── BarometricPressureWebServer
+│   │   │   │   ├── ChatServer
+│   │   │   │   ├── DhcpAddressPrinter
+│   │   │   │   ├── DhcpChatServer
+│   │   │   │   ├── LinkStatus
+│   │   │   │   ├── TelnetClient
+│   │   │   │   ├── UdpNtpClient
+│   │   │   │   ├── UDPSendReceiveString
+│   │   │   │   ├── WebClient
+│   │   │   │   ├── WebClientRepeating
+│   │   │   │   └── WebServer
+│   │   │   └── src
+│   │   │       └── utility
+│   │   ├── Firmata
+│   │   │   ├── examples
+│   │   │   │   ├── AllInputsFirmata
+│   │   │   │   ├── AnalogFirmata
+│   │   │   │   ├── EchoString
+│   │   │   │   ├── OldStandardFirmata
+│   │   │   │   ├── ServoFirmata
+│   │   │   │   ├── SimpleAnalogFirmata
+│   │   │   │   ├── SimpleDigitalFirmata
+│   │   │   │   ├── StandardFirmata
+│   │   │   │   ├── StandardFirmataBLE
+│   │   │   │   ├── StandardFirmataChipKIT
+│   │   │   │   ├── StandardFirmataEthernet
+│   │   │   │   ├── StandardFirmataPlus
+│   │   │   │   └── StandardFirmataWiFi
+│   │   │   ├── extras
+│   │   │   ├── test
+│   │   │   │   └── firmata_test
+│   │   │   └── utility
+│   │   ├── GSM
+│   │   │   ├── examples
+│   │   │   │   ├── GsmWebClient
+│   │   │   │   ├── GsmWebServer
+│   │   │   │   ├── MakeVoiceCall
+│   │   │   │   ├── ReceiveSMS
+│   │   │   │   ├── ReceiveVoiceCall
+│   │   │   │   ├── SendSMS
+│   │   │   │   └── Tools
+│   │   │   │       ├── BandManagement
+│   │   │   │       ├── GsmScanNetworks
+│   │   │   │       ├── PinManagement
+│   │   │   │       ├── TestGPRS
+│   │   │   │       ├── TestModem
+│   │   │   │       └── TestWebServer
+│   │   │   ├── extras
+│   │   │   └── src
+│   │   ├── Keyboard
+│   │   │   └── src
+│   │   ├── LiquidCrystal
+│   │   │   ├── examples
+│   │   │   │   ├── Autoscroll
+│   │   │   │   ├── Blink
+│   │   │   │   ├── Cursor
+│   │   │   │   ├── CustomCharacter
+│   │   │   │   ├── Display
+│   │   │   │   ├── HelloWorld
+│   │   │   │   ├── Scroll
+│   │   │   │   ├── SerialDisplay
+│   │   │   │   ├── setCursor
+│   │   │   │   └── TextDirection
+│   │   │   └── src
+│   │   ├── Mouse
+│   │   │   └── src
+│   │   ├── Robot_Control
+│   │   │   ├── examples
+│   │   │   │   ├── explore
+│   │   │   │   │   ├── R01_Logo
+│   │   │   │   │   ├── R02_Line_Follow
+│   │   │   │   │   ├── R03_Disco_Bot
+│   │   │   │   │   ├── R04_Compass
+│   │   │   │   │   ├── R05_Inputs
+│   │   │   │   │   ├── R06_Wheel_Calibration
+│   │   │   │   │   ├── R07_Runaway_Robot
+│   │   │   │   │   ├── R08_Remote_Control
+│   │   │   │   │   ├── R09_Picture_Browser
+│   │   │   │   │   ├── R10_Rescue
+│   │   │   │   │   └── R11_Hello_User
+│   │   │   │   └── learn
+│   │   │   │       ├── AllIOPorts
+│   │   │   │       ├── Beep
+│   │   │   │       ├── CleanEEPROM
+│   │   │   │       ├── Compass
+│   │   │   │       ├── IRArray
+│   │   │   │       ├── keyboardTest
+│   │   │   │       ├── LCDDebugPrint
+│   │   │   │       ├── LCDPrint
+│   │   │   │       ├── LCDWriteText
+│   │   │   │       ├── LineFollowWithPause
+│   │   │   │       ├── Melody
+│   │   │   │       ├── MotorTest
+│   │   │   │       ├── SpeedByPotentiometer
+│   │   │   │       └── TurnTest
+│   │   │   └── src
+│   │   │       └── utility
+│   │   ├── RobotIRremote
+│   │   │   ├── extras
+│   │   │   └── src
+│   │   ├── Robot_Motor
+│   │   │   ├── examples
+│   │   │   │   ├── Robot_IR_Array_Test
+│   │   │   │   └── Robot_Motor_Core
+│   │   │   └── src
+│   │   ├── SD
+│   │   │   ├── examples
+│   │   │   │   ├── CardInfo
+│   │   │   │   ├── Datalogger
+│   │   │   │   ├── DumpFile
+│   │   │   │   ├── Files
+│   │   │   │   ├── listfiles
+│   │   │   │   └── ReadWrite
+│   │   │   └── src
+│   │   │       └── utility
+│   │   ├── Servo
+│   │   │   ├── examples
+│   │   │   │   ├── Knob
+│   │   │   │   └── Sweep
+│   │   │   └── src
+│   │   │       ├── avr
+│   │   │       ├── megaavr
+│   │   │       ├── nrf52
+│   │   │       ├── sam
+│   │   │       ├── samd
+│   │   │       └── stm32f4
+│   │   ├── SpacebrewYun
+│   │   │   ├── examples
+│   │   │   │   ├── inputOutput
+│   │   │   │   ├── spacebrewBoolean
+│   │   │   │   ├── spacebrewRange
+│   │   │   │   └── spacebrewString
+│   │   │   └── src
+│   │   ├── Stepper
+│   │   │   ├── examples
+│   │   │   │   ├── MotorKnob
+│   │   │   │   ├── stepper_oneRevolution
+│   │   │   │   ├── stepper_oneStepAtATime
+│   │   │   │   └── stepper_speedControl
+│   │   │   └── src
+│   │   ├── Temboo
+│   │   │   ├── examples
+│   │   │   │   ├── ArduinoYun
+│   │   │   │   │   ├── GetYahooWeatherReport
+│   │   │   │   │   ├── ReadATweet
+│   │   │   │   │   ├── SendAnEmail
+│   │   │   │   │   ├── SendAnSMS
+│   │   │   │   │   ├── SendATweet
+│   │   │   │   │   ├── SendDataToGoogleSpreadsheet
+│   │   │   │   │   ├── TembooDeviceConfig
+│   │   │   │   │   ├── ToxicFacilitiesSearch
+│   │   │   │   │   ├── UpdateFacebookStatus
+│   │   │   │   │   └── UploadToDropbox
+│   │   │   │   └── YunShield
+│   │   │   │       └── TembooDeviceConfig
+│   │   │   └── src
+│   │   │       └── utility
+│   │   ├── TFT
+│   │   │   ├── examples
+│   │   │   │   ├── Arduino
+│   │   │   │   │   ├── TFTBitmapLogo
+│   │   │   │   │   ├── TFTColorPicker
+│   │   │   │   │   ├── TFTDisplayText
+│   │   │   │   │   ├── TFTEtchASketch
+│   │   │   │   │   ├── TFTGraph
+│   │   │   │   │   └── TFTPong
+│   │   │   │   └── Esplora
+│   │   │   │       ├── EsploraTFTBitmapLogo
+│   │   │   │       ├── EsploraTFTColorPicker
+│   │   │   │       ├── EsploraTFTEtchASketch
+│   │   │   │       ├── EsploraTFTGraph
+│   │   │   │       ├── EsploraTFTHorizon
+│   │   │   │       ├── EsploraTFTPong
+│   │   │   │       └── EsploraTFTTemp
+│   │   │   ├── extras
+│   │   │   └── src
+│   │   │       └── utility
+│   │   └── WiFi
+│   │       ├── examples
+│   │       │   ├── ConnectNoEncryption
+│   │       │   ├── ConnectWithWEP
+│   │       │   ├── ConnectWithWPA
+│   │       │   ├── ScanNetworks
+│   │       │   ├── SimpleWebServerWiFi
+│   │       │   ├── WiFiChatServer
+│   │       │   ├── WiFiUdpNtpClient
+│   │       │   ├── WiFiUdpSendReceiveString
+│   │       │   ├── WiFiWebClient
+│   │       │   ├── WiFiWebClientRepeating
+│   │       │   └── WiFiWebServer
+│   │       ├── extras
+│   │       │   ├── binary
+│   │       │   ├── scripts
+│   │       │   ├── wifi_dnld
+│   │       │   │   ├── Release
+│   │       │   │   └── src
+│   │       │   │       ├── CONFIG
+│   │       │   │       ├── Doc
+│   │       │   │       └── SOFTWARE_FRAMEWORK
+│   │       │   │           ├── ASM
+│   │       │   │           ├── BOARDS
+│   │       │   │           │   ├── ARDUINO
+│   │       │   │           │   └── EVK1105
+│   │       │   │           ├── COMPONENTS
+│   │       │   │           │   └── MEMORY
+│   │       │   │           │       └── DATA_FLASH
+│   │       │   │           │           └── AT45DBX
+│   │       │   │           ├── DRIVERS
+│   │       │   │           │   ├── FLASHC
+│   │       │   │           │   ├── GPIO
+│   │       │   │           │   ├── INTC
+│   │       │   │           │   ├── PM
+│   │       │   │           │   ├── SPI
+│   │       │   │           │   └── USART
+│   │       │   │           ├── SERVICES
+│   │       │   │           │   └── MEMORY
+│   │       │   │           │       └── CTRL_ACCESS
+│   │       │   │           └── UTILS
+│   │       │   │               ├── DEBUG
+│   │       │   │               ├── LIBS
+│   │       │   │               │   └── NEWLIB_ADDONS
+│   │       │   │               │       └── INCLUDE
+│   │       │   │               ├── LINKER_SCRIPTS
+│   │       │   │               │   └── AT32UC3A
+│   │       │   │               │       ├── 0512
+│   │       │   │               │       │   └── GCC
+│   │       │   │               │       └── 1256
+│   │       │   │               │           └── GCC
+│   │       │   │               ├── PREPROCESSOR
+│   │       │   │               └── STARTUP_FILES
+│   │       │   │                   └── GCC
+│   │       │   └── wifiHD
+│   │       │       ├── Release
+│   │       │       └── src
+│   │       │           ├── CONFIG
+│   │       │           └── SOFTWARE_FRAMEWORK
+│   │       │               ├── ASM
+│   │       │               ├── BOARDS
+│   │       │               │   ├── ARDUINO
+│   │       │               │   └── EVK1105
+│   │       │               ├── COMPONENTS
+│   │       │               │   ├── MEMORY
+│   │       │               │   │   └── DATA_FLASH
+│   │       │               │   │       └── AT45DBX
+│   │       │               │   └── WIFI
+│   │       │               │       └── HD
+│   │       │               │           └── v2.7.0
+│   │       │               │               ├── UCR1
+│   │       │               │               │   └── GCC
+│   │       │               │               └── UCR2
+│   │       │               │                   └── GCC
+│   │       │               ├── DRIVERS
+│   │       │               │   ├── CPU
+│   │       │               │   │   └── CYCLE_COUNTER
+│   │       │               │   ├── EBI
+│   │       │               │   │   └── SMC
+│   │       │               │   ├── EIC
+│   │       │               │   ├── FLASHC
+│   │       │               │   ├── GPIO
+│   │       │               │   ├── INTC
+│   │       │               │   ├── PDCA
+│   │       │               │   ├── PM
+│   │       │               │   ├── RTC
+│   │       │               │   ├── SPI
+│   │       │               │   ├── TC
+│   │       │               │   └── USART
+│   │       │               ├── SERVICES
+│   │       │               │   ├── DELAY
+│   │       │               │   ├── LWIP
+│   │       │               │   │   ├── lwip-1.3.2
+│   │       │               │   │   │   └── src
+│   │       │               │   │   │       ├── core
+│   │       │               │   │   │       │   └── ipv4
+│   │       │               │   │   │       ├── include
+│   │       │               │   │   │       │   ├── ipv4
+│   │       │               │   │   │       │   │   └── lwip
+│   │       │               │   │   │       │   ├── lwip
+│   │       │               │   │   │       │   └── netif
+│   │       │               │   │   │       └── netif
+│   │       │               │   │   └── lwip-port-1.3.2
+│   │       │               │   │       └── HD
+│   │       │               │   │           └── if
+│   │       │               │   │               ├── include
+│   │       │               │   │               │   ├── arch
+│   │       │               │   │               │   └── netif
+│   │       │               │   │               └── netif
+│   │       │               │   └── MEMORY
+│   │       │               │       └── CTRL_ACCESS
+│   │       │               └── UTILS
+│   │       │                   ├── DEBUG
+│   │       │                   ├── LIBS
+│   │       │                   │   └── NEWLIB_ADDONS
+│   │       │                   │       └── INCLUDE
+│   │       │                   ├── LINKER_SCRIPTS
+│   │       │                   │   └── AT32UC3A
+│   │       │                   │       ├── 0512
+│   │       │                   │       │   └── GCC
+│   │       │                   │       └── 1256
+│   │       │                   │           └── GCC
+│   │       │                   ├── PREPROCESSOR
+│   │       │                   └── STARTUP_FILES
+│   │       │                       └── GCC
+│   │       └── src
+│   │           └── utility
+│   ├── reference
+│   │   ├── code.jquery.com
+│   │   │   └── ui
+│   │   │       └── 1.10.3
+│   │   │           └── themes
+│   │   │               └── smoothness
+│   │   ├── Edison_help_files
+│   │   ├── Galileo_help_files
+│   │   └── www.arduino.cc
+│   │       ├── css
+│   │       ├── en
+│   │       │   ├── Guide
+│   │       │   ├── Main
+│   │       │   ├── pub
+│   │       │   │   └── skins
+│   │       │   │       └── arduinoWide_SSO
+│   │       │   │           ├── css
+│   │       │   │           └── img
+│   │       │   ├── Reference
+│   │       │   ├── Serial
+│   │       │   └── uploads
+│   │       │       ├── Guide
+│   │       │       ├── Main
+│   │       │       └── Reference
+│   │       ├── font
+│   │       ├── fonts
+│   │       ├── img
+│   │       └── new_home
+│   │           └── assets
+│   ├── tools
+│   │   ├── Mangler
+│   │   │   └── src
+│   │   └── WiFi101
+│   │       └── tool
+│   │           └── firmwares
+│   │               ├── NINA
+│   │               │   ├── 1.0.0
+│   │               │   ├── 1.1.0
+│   │               │   ├── 1.2.1
+│   │               │   ├── 1.2.2
+│   │               │   ├── 1.2.3
+│   │               │   └── 1.2.4
+│   │               └── WINC1500
+│   │                   ├── 19.4.4
+│   │                   ├── 19.5.2
+│   │                   ├── 19.5.4
+│   │                   └── 19.6.1
+│   └── tools-builder
+│       ├── arduino-preprocessor
+│       │   └── 0.1.5
+│       └── ctags
+│           └── 5.8-arduino11
+├── beep
+│   ├── lib
+│   └── src
+├── cccp_files
+├── cccp_Scripts_2015
+├── cccp_Scripts_Nov2015
+│   └── NUVU_V2_tests
+├── cccp_Scripts_Nov2015_old
+├── cccp_Scripts_Oct2015
+├── Code
+│   ├── cooler
+│   ├── FITS
+│   ├── iongauge
+│   ├── omega
+│   ├── PressureRSS485
+│   ├── pyserial-2.7
+│   │   ├── build
+│   │   │   ├── lib
+│   │   │   │   └── serial
+│   │   │   │       ├── tools
+│   │   │   │       └── urlhandler
+│   │   │   ├── lib.linux-x86_64-2.7
+│   │   │   │   └── serial
+│   │   │   │       ├── tools
+│   │   │   │       └── urlhandler
+│   │   │   ├── scripts-2.6
+│   │   │   └── scripts-2.7
+│   │   ├── documentation
+│   │   ├── examples
+│   │   ├── serial
+│   │   │   ├── tools
+│   │   │   └── urlhandler
+│   │   └── test
+│   ├── TemperatureRSS232
+│   └── zeren
+├── Current_draw
+│   ├── 20220302
+│   │   └── test_2019_sequence
+│   ├── 20220324
+│   │   ├── warm_test_4in_flex_cable
+│   │   └── warm_test_9in_flex_cable_Samtec
+│   ├── 20220331
+│   │   └── warm_test_9in_flex_cable
+│   ├── 20220413
+│   │   └── warm_test_Samtec_cable
+│   ├── 20220414
+│   ├── 20220420
+│   ├── 20220422
+│   ├── 20220423
+│   ├── 20220423_D_lamp
+│   ├── 20220423_monochromator
+│   ├── 20220423_new_sequence
+│   ├── 20220425
+│   ├── 20220425_monochromator
+│   ├── 20220426
+│   ├── 20220426_dark
+│   ├── 20220428
+│   ├── 20220430
+│   ├── 20220430_zinc
+│   ├── 20220501
+│   ├── 20220504
+│   ├── 20220508
+│   │   ├── Darks
+│   │   ├── Darks_new
+│   │   ├── EMGain_temp-100
+│   │   │   └── smearing
+│   │   ├── EMGain_temp-110
+│   │   │   └── smearing
+│   │   ├── EMGain_temp-92
+│   │   │   └── smearing
+│   │   ├── HV_8448
+│   │   └── PTC
+│   │       └── redux
+│   │           └── figures
+│   ├── manual
+│   └── Samtec_cables_D_lamp
+├── CWI
+│   ├── Documents
+│   │   ├── 20151108_cccp_files
+│   │   ├── cccp_files
+│   │   ├── cccp_Scripts_2015
+│   │   ├── cccp_Scripts_Nov2015
+│   │   ├── cccp_Scripts_Oct2015
+│   │   ├── Code
+│   │   │   ├── FITS
+│   │   │   ├── PressureRSS485
+│   │   │   ├── pyserial-2.7
+│   │   │   │   ├── build
+│   │   │   │   │   ├── lib
+│   │   │   │   │   │   └── serial
+│   │   │   │   │   │       ├── tools
+│   │   │   │   │   │       └── urlhandler
+│   │   │   │   │   ├── lib.linux-x86_64-2.7
+│   │   │   │   │   │   └── serial
+│   │   │   │   │   │       ├── tools
+│   │   │   │   │   │       └── urlhandler
+│   │   │   │   │   ├── scripts-2.6
+│   │   │   │   │   └── scripts-2.7
+│   │   │   │   ├── documentation
+│   │   │   │   ├── examples
+│   │   │   │   ├── serial
+│   │   │   │   │   ├── tools
+│   │   │   │   │   └── urlhandler
+│   │   │   │   └── test
+│   │   │   └── TemperatureRSS232
+│   │   ├── FIREBall2_docs
+│   │   │   ├── Code
+│   │   │   │   ├── FITS
+│   │   │   │   ├── PressureRSS485
+│   │   │   │   ├── pyserial-2.7
+│   │   │   │   │   ├── build
+│   │   │   │   │   │   ├── lib
+│   │   │   │   │   │   │   └── serial
+│   │   │   │   │   │   │       ├── tools
+│   │   │   │   │   │   │       └── urlhandler
+│   │   │   │   │   │   └── scripts-2.6
+│   │   │   │   │   ├── documentation
+│   │   │   │   │   ├── examples
+│   │   │   │   │   ├── serial
+│   │   │   │   │   │   ├── tools
+│   │   │   │   │   │   └── urlhandler
+│   │   │   │   │   └── test
+│   │   │   │   └── TemperatureRSS232
+│   │   │   ├── Cryocooler
+│   │   │   ├── Detector_papers
+│   │   │   ├── Documents
+│   │   │   │   └── Reports
+│   │   │   ├── e2V
+│   │   │   ├── Flight_computer
+│   │   │   │   ├── Manuals
+│   │   │   │   ├── Photos
+│   │   │   │   ├── Quotes
+│   │   │   │   ├── USB
+│   │   │   │   └── VNC
+│   │   │   ├── Nuvu
+│   │   │   │   ├── Documentation
+│   │   │   │   │   ├── CalTech-CCCP_v3(CCD_connector_wiring)
+│   │   │   │   │   │   ├── CalTech
+│   │   │   │   │   │   └── __MACOSX
+│   │   │   │   │   │       └── CalTech
+│   │   │   │   │   └── SDKUserManual_files
+│   │   │   │   │       └── search
+│   │   │   │   └── Software
+│   │   │   │       └── cccpSuite-3_2_3
+│   │   │   ├── Observing
+│   │   │   ├── PCB_board
+│   │   │   ├── Pictures
+│   │   │   ├── Pleora
+│   │   │   ├── Presentations
+│   │   │   ├── Proposals
+│   │   │   │   ├── APRA_proposal_2015
+│   │   │   │   └── Palomar2015B
+│   │   │   └── Scripts
+│   │   │       ├── CTE
+│   │   │       │   ├── Matlab
+│   │   │       │   └── Python
+│   │   │       ├── Detector_reduction
+│   │   │       ├── EMgain
+│   │   │       └── PTC
+│   │   │           ├── Matlab
+│   │   │           └── python
+│   │   ├── Ubuntu12.04_troubleshoot_20150827
+│   │   └── Ubuntu12_files
+│   │       ├── Code
+│   │       │   ├── FITS
+│   │       │   ├── PressureRSS485
+│   │       │   ├── pyserial-2.7
+│   │       │   │   ├── build
+│   │       │   │   │   ├── lib
+│   │       │   │   │   │   └── serial
+│   │       │   │   │   │       ├── tools
+│   │       │   │   │   │       └── urlhandler
+│   │       │   │   │   ├── lib.linux-x86_64-2.7
+│   │       │   │   │   │   └── serial
+│   │       │   │   │   │       ├── tools
+│   │       │   │   │   │       └── urlhandler
+│   │       │   │   │   ├── scripts-2.6
+│   │       │   │   │   └── scripts-2.7
+│   │       │   │   ├── documentation
+│   │       │   │   ├── examples
+│   │       │   │   ├── serial
+│   │       │   │   │   ├── tools
+│   │       │   │   │   └── urlhandler
+│   │       │   │   └── test
+│   │       │   └── TemperatureRSS232
+│   │       ├── NuvuSW_3.6.4
+│   │       │   ├── Documentation
+│   │       │   │   └── SDKUserManual_files
+│   │       │   │       └── search
+│   │       │   └── NuvuInstaller
+│   │       │       ├── Dependencies
+│   │       │       │   └── Third-party
+│   │       │       │       ├── EDT
+│   │       │       │       ├── Matrox
+│   │       │       │       └── Pleora
+│   │       │       ├── NuvuCameras
+│   │       │       │   ├── bin
+│   │       │       │   ├── GrabExamples
+│   │       │       │   │   ├── Chronological Acquisition
+│   │       │       │   │   │   └── Chronological Acquisition
+│   │       │       │   │   ├── Continuous Acquisition
+│   │       │       │   │   │   └── Continuous Acquisition
+│   │       │       │   │   ├── Image Resize and Serial Command
+│   │       │       │   │   │   └── Image Resize and Serial Command
+│   │       │       │   │   ├── Processing - PC and LM
+│   │       │       │   │   │   └── Processing - PC and LM
+│   │       │       │   │   ├── Simple Acquisition
+│   │       │       │   │   │   └── Simple Acquisition
+│   │       │       │   │   └── Timed Acquisition
+│   │       │       │   │       └── Timed Acquisition
+│   │       │       │   ├── include
+│   │       │       │   ├── lib
+│   │       │       │   ├── Plugins
+│   │       │       │   │   ├── nc_grab_edt
+│   │       │       │   │   └── nc_grab_mil
+│   │       │       │   └── tools
+│   │       │       └── tools
+│   │       └── old_cccp_files
+│   ├── matmat
+│   │   ├── gpio
+│   │   └── palomar
+│   │       └── py
+│   ├── palomar
+│   │   ├── logs
+│   │   ├── ns
+│   │   ├── py
+│   │   ├── settings
+│   │   └── software
+│   ├── palomar_guider_source
+│   │   └── palomar
+│   │       ├── exploder
+│   │       │   ├── include
+│   │       │   ├── linux
+│   │       │   ├── sparc
+│   │       │   └── src
+│   │       ├── guider
+│   │       │   ├── include
+│   │       │   ├── linux
+│   │       │   ├── sparc
+│   │       │   └── src
+│   │       ├── libdir
+│   │       ├── linux
+│   │       └── sparc
+│   └── Software
+│       └── old
+│           └── palomar
+│               ├── exploder
+│               │   ├── include
+│               │   ├── linux
+│               │   ├── sparc
+│               │   └── src
+│               ├── guider
+│               │   ├── include
+│               │   ├── linux
+│               │   ├── sparc
+│               │   └── src
+│               ├── linux
+│               └── sparc
+├── data
+│   ├── 200206
+│   │   └── mapping
+│   ├── 200207
+│   │   └── mapping
+│   ├── 220217
+│   ├── 220218
+│   ├── 220223
+│   ├── 220308
+│   │   ├── darks
+│   │   └── zinc lamp
+│   ├── 220424
+│   ├── 220425
+│   ├── 220426
+│   ├── 220427
+│   ├── 220428
+│   ├── 220429
+│   ├── 220430
+│   ├── 220501
+│   ├── 220502
+│   ├── 220503
+│   ├── 220504
+│   ├── 220505
+│   ├── 220506
+│   ├── 220507
+│   ├── 220508
+│   ├── 220509
+│   │   ├── emgain
+│   │   ├── Focus_data
+│   │   ├── PTC_phonelight
+│   │   │   └── test
+│   │   └── redux
+│   ├── 220510
+│   └── 220511
+├── databackup0
+├── databackup1
+├── Desktop
+├── Documents
+│   ├── boot_repair
+│   ├── Communications
+│   │   ├── comsync-r12
+│   │   ├── comsync-r12-port1
+│   │   ├── comsync-r12-port2
+│   │   ├── comsync-r13
+│   │   ├── comsync-r15
+│   │   ├── comsync-r15.170908
+│   │   ├── comsync-r15.190925
+│   │   │   ├── home
+│   │   │   │   └── fireball2
+│   │   │   │       └── data
+│   │   │   │           ├── 180526
+│   │   │   │           └── 180530
+│   │   │   ├── matmat
+│   │   │   ├── python_env
+│   │   │   │   ├── bin
+│   │   │   │   ├── include
+│   │   │   │   ├── lib
+│   │   │   │   │   └── python2.7
+│   │   │   │   │       ├── distutils
+│   │   │   │   │       └── site-packages
+│   │   │   │   │           ├── astropy
+│   │   │   │   │           │   ├── analytic_functions
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── config
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   ├── constants
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── convolution
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── coordinates
+│   │   │   │   │           │   │   ├── builtin_frames
+│   │   │   │   │           │   │   ├── data
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── accuracy
+│   │   │   │   │           │   ├── cosmology
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── _erfa
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── extern
+│   │   │   │   │           │   │   ├── bundled
+│   │   │   │   │           │   │   ├── configobj
+│   │   │   │   │           │   │   ├── css
+│   │   │   │   │           │   │   ├── js
+│   │   │   │   │           │   │   └── ply
+│   │   │   │   │           │   ├── io
+│   │   │   │   │           │   │   ├── ascii
+│   │   │   │   │           │   │   │   └── tests
+│   │   │   │   │           │   │   │       └── t
+│   │   │   │   │           │   │   │           ├── cds
+│   │   │   │   │           │   │   │           │   ├── description
+│   │   │   │   │           │   │   │           │   ├── glob
+│   │   │   │   │           │   │   │           │   └── multi
+│   │   │   │   │           │   │   │           └── vizier
+│   │   │   │   │           │   │   ├── fits
+│   │   │   │   │           │   │   │   ├── hdu
+│   │   │   │   │           │   │   │   ├── scripts
+│   │   │   │   │           │   │   │   └── tests
+│   │   │   │   │           │   │   │       └── data
+│   │   │   │   │           │   │   ├── misc
+│   │   │   │   │           │   │   │   └── tests
+│   │   │   │   │           │   │   ├── tests
+│   │   │   │   │           │   │   └── votable
+│   │   │   │   │           │   │       ├── data
+│   │   │   │   │           │   │       ├── tests
+│   │   │   │   │           │   │       │   └── data
+│   │   │   │   │           │   │       └── validator
+│   │   │   │   │           │   │           └── urls
+│   │   │   │   │           │   ├── modeling
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   ├── nddata
+│   │   │   │   │           │   │   ├── mixins
+│   │   │   │   │           │   │   │   └── tests
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   ├── samp
+│   │   │   │   │           │   │   ├── data
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── stats
+│   │   │   │   │           │   │   ├── lombscargle
+│   │   │   │   │           │   │   │   ├── implementations
+│   │   │   │   │           │   │   │   │   └── tests
+│   │   │   │   │           │   │   │   └── tests
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── table
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── tests
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   ├── time
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── units
+│   │   │   │   │           │   │   ├── format
+│   │   │   │   │           │   │   ├── function
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── utils
+│   │   │   │   │           │   │   ├── compat
+│   │   │   │   │           │   │   │   ├── futures
+│   │   │   │   │           │   │   │   └── numpy
+│   │   │   │   │           │   │   │       ├── core
+│   │   │   │   │           │   │   │       ├── lib
+│   │   │   │   │           │   │   │       └── tests
+│   │   │   │   │           │   │   ├── iers
+│   │   │   │   │           │   │   │   ├── data
+│   │   │   │   │           │   │   │   └── tests
+│   │   │   │   │           │   │   ├── tests
+│   │   │   │   │           │   │   │   └── data
+│   │   │   │   │           │   │   │       └── test_package
+│   │   │   │   │           │   │   │           └── data
+│   │   │   │   │           │   │   └── xml
+│   │   │   │   │           │   │       └── tests
+│   │   │   │   │           │   ├── visualization
+│   │   │   │   │           │   │   ├── scripts
+│   │   │   │   │           │   │   │   └── tests
+│   │   │   │   │           │   │   ├── tests
+│   │   │   │   │           │   │   └── wcsaxes
+│   │   │   │   │           │   │       └── tests
+│   │   │   │   │           │   │           └── data
+│   │   │   │   │           │   ├── vo
+│   │   │   │   │           │   │   ├── client
+│   │   │   │   │           │   │   │   └── tests
+│   │   │   │   │           │   │   │       └── data
+│   │   │   │   │           │   │   ├── samp
+│   │   │   │   │           │   │   └── validator
+│   │   │   │   │           │   │       ├── data
+│   │   │   │   │           │   │       └── tests
+│   │   │   │   │           │   │           └── data
+│   │   │   │   │           │   └── wcs
+│   │   │   │   │           │       ├── include
+│   │   │   │   │           │       │   ├── astropy_wcs
+│   │   │   │   │           │       │   └── wcslib
+│   │   │   │   │           │       └── tests
+│   │   │   │   │           │           ├── data
+│   │   │   │   │           │           ├── extension
+│   │   │   │   │           │           ├── maps
+│   │   │   │   │           │           └── spectra
+│   │   │   │   │           ├── astropy-2.0.2.dist-info
+│   │   │   │   │           ├── cycler-0.10.0.dist-info
+│   │   │   │   │           ├── dateutil
+│   │   │   │   │           │   ├── tz
+│   │   │   │   │           │   └── zoneinfo
+│   │   │   │   │           ├── functools32
+│   │   │   │   │           ├── functools32-3.2.3.post2.dist-info
+│   │   │   │   │           ├── matplotlib
+│   │   │   │   │           │   ├── axes
+│   │   │   │   │           │   ├── backends
+│   │   │   │   │           │   │   ├── qt_editor
+│   │   │   │   │           │   │   └── web_backend
+│   │   │   │   │           │   │       ├── css
+│   │   │   │   │           │   │       └── jquery
+│   │   │   │   │           │   │           ├── css
+│   │   │   │   │           │   │           │   └── themes
+│   │   │   │   │           │   │           │       └── base
+│   │   │   │   │           │   │           │           └── images
+│   │   │   │   │           │   │           └── js
+│   │   │   │   │           │   ├── compat
+│   │   │   │   │           │   ├── delaunay
+│   │   │   │   │           │   ├── mpl-data
+│   │   │   │   │           │   │   ├── fonts
+│   │   │   │   │           │   │   │   ├── afm
+│   │   │   │   │           │   │   │   ├── pdfcorefonts
+│   │   │   │   │           │   │   │   └── ttf
+│   │   │   │   │           │   │   ├── images
+│   │   │   │   │           │   │   ├── sample_data
+│   │   │   │   │           │   │   │   └── axes_grid
+│   │   │   │   │           │   │   └── stylelib
+│   │   │   │   │           │   ├── projections
+│   │   │   │   │           │   ├── sphinxext
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── tinypages
+│   │   │   │   │           │   │           └── _static
+│   │   │   │   │           │   ├── style
+│   │   │   │   │           │   ├── testing
+│   │   │   │   │           │   │   └── jpl_units
+│   │   │   │   │           │   ├── tests
+│   │   │   │   │           │   └── tri
+│   │   │   │   │           ├── matplotlib-2.0.2.dist-info
+│   │   │   │   │           ├── mpl_toolkits
+│   │   │   │   │           │   ├── axes_grid
+│   │   │   │   │           │   ├── axes_grid1
+│   │   │   │   │           │   ├── axisartist
+│   │   │   │   │           │   ├── mplot3d
+│   │   │   │   │           │   └── tests
+│   │   │   │   │           │       └── baseline_images
+│   │   │   │   │           │           ├── test_axes_grid
+│   │   │   │   │           │           ├── test_axes_grid1
+│   │   │   │   │           │           └── test_mplot3d
+│   │   │   │   │           ├── numpy
+│   │   │   │   │           │   ├── compat
+│   │   │   │   │           │   ├── core
+│   │   │   │   │           │   │   ├── include
+│   │   │   │   │           │   │   │   └── numpy
+│   │   │   │   │           │   │   ├── lib
+│   │   │   │   │           │   │   │   └── npy-pkg-config
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   ├── distutils
+│   │   │   │   │           │   │   ├── command
+│   │   │   │   │           │   │   ├── fcompiler
+│   │   │   │   │           │   │   ├── mingw
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── doc
+│   │   │   │   │           │   ├── f2py
+│   │   │   │   │           │   │   ├── src
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── src
+│   │   │   │   │           │   │           ├── array_from_pyobj
+│   │   │   │   │           │   │           ├── assumed_shape
+│   │   │   │   │           │   │           ├── common
+│   │   │   │   │           │   │           ├── kind
+│   │   │   │   │           │   │           ├── mixed
+│   │   │   │   │           │   │           ├── parameter
+│   │   │   │   │           │   │           ├── regression
+│   │   │   │   │           │   │           ├── size
+│   │   │   │   │           │   │           └── string
+│   │   │   │   │           │   ├── fft
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── lib
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   ├── linalg
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── ma
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── matrixlib
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── polynomial
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── random
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── testing
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   └── tests
+│   │   │   │   │           ├── numpy-1.13.1.dist-info
+│   │   │   │   │           ├── pip
+│   │   │   │   │           │   ├── commands
+│   │   │   │   │           │   ├── compat
+│   │   │   │   │           │   ├── models
+│   │   │   │   │           │   ├── operations
+│   │   │   │   │           │   ├── req
+│   │   │   │   │           │   ├── utils
+│   │   │   │   │           │   ├── vcs
+│   │   │   │   │           │   └── _vendor
+│   │   │   │   │           ├── pip-9.0.1.dist-info
+│   │   │   │   │           ├── pkg_resources
+│   │   │   │   │           │   ├── extern
+│   │   │   │   │           │   └── _vendor
+│   │   │   │   │           │       └── packaging
+│   │   │   │   │           ├── pkg_resources-0.0.0.dist-info
+│   │   │   │   │           ├── py
+│   │   │   │   │           │   ├── _code
+│   │   │   │   │           │   ├── _io
+│   │   │   │   │           │   ├── _log
+│   │   │   │   │           │   ├── _path
+│   │   │   │   │           │   └── _process
+│   │   │   │   │           ├── py-1.4.34.dist-info
+│   │   │   │   │           ├── pyparsing-2.2.0.dist-info
+│   │   │   │   │           ├── _pytest
+│   │   │   │   │           │   ├── assertion
+│   │   │   │   │           │   ├── _code
+│   │   │   │   │           │   └── vendored_packages
+│   │   │   │   │           ├── pytest-3.2.2.dist-info
+│   │   │   │   │           ├── python_dateutil-2.6.1.dist-info
+│   │   │   │   │           ├── pytz
+│   │   │   │   │           │   └── zoneinfo
+│   │   │   │   │           │       ├── Africa
+│   │   │   │   │           │       ├── America
+│   │   │   │   │           │       │   ├── Argentina
+│   │   │   │   │           │       │   ├── Indiana
+│   │   │   │   │           │       │   ├── Kentucky
+│   │   │   │   │           │       │   └── North_Dakota
+│   │   │   │   │           │       ├── Antarctica
+│   │   │   │   │           │       ├── Arctic
+│   │   │   │   │           │       ├── Asia
+│   │   │   │   │           │       ├── Atlantic
+│   │   │   │   │           │       ├── Australia
+│   │   │   │   │           │       ├── Brazil
+│   │   │   │   │           │       ├── Canada
+│   │   │   │   │           │       ├── Chile
+│   │   │   │   │           │       ├── Etc
+│   │   │   │   │           │       ├── Europe
+│   │   │   │   │           │       ├── Indian
+│   │   │   │   │           │       ├── Mexico
+│   │   │   │   │           │       ├── Pacific
+│   │   │   │   │           │       └── US
+│   │   │   │   │           ├── pytz-2017.2.dist-info
+│   │   │   │   │           ├── scipy
+│   │   │   │   │           │   ├── _build_utils
+│   │   │   │   │           │   ├── cluster
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── constants
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── fftpack
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── integrate
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── interpolate
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   ├── io
+│   │   │   │   │           │   │   ├── arff
+│   │   │   │   │           │   │   │   └── tests
+│   │   │   │   │           │   │   │       └── data
+│   │   │   │   │           │   │   ├── harwell_boeing
+│   │   │   │   │           │   │   │   └── tests
+│   │   │   │   │           │   │   ├── matlab
+│   │   │   │   │           │   │   │   └── tests
+│   │   │   │   │           │   │   │       └── data
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   ├── _lib
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── linalg
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   ├── misc
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   ├── ndimage
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   ├── odr
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── optimize
+│   │   │   │   │           │   │   ├── _lsq
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── signal
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   ├── sparse
+│   │   │   │   │           │   │   ├── csgraph
+│   │   │   │   │           │   │   │   └── tests
+│   │   │   │   │           │   │   ├── linalg
+│   │   │   │   │           │   │   │   ├── dsolve
+│   │   │   │   │           │   │   │   │   └── tests
+│   │   │   │   │           │   │   │   ├── eigen
+│   │   │   │   │           │   │   │   │   ├── arpack
+│   │   │   │   │           │   │   │   │   │   └── tests
+│   │   │   │   │           │   │   │   │   └── lobpcg
+│   │   │   │   │           │   │   │   │       └── tests
+│   │   │   │   │           │   │   │   ├── isolve
+│   │   │   │   │           │   │   │   │   └── tests
+│   │   │   │   │           │   │   │   └── tests
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   ├── spatial
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   ├── special
+│   │   │   │   │           │   │   ├── _precompute
+│   │   │   │   │           │   │   └── tests
+│   │   │   │   │           │   │       └── data
+│   │   │   │   │           │   └── stats
+│   │   │   │   │           │       └── tests
+│   │   │   │   │           │           └── data
+│   │   │   │   │           │               ├── nist_anova
+│   │   │   │   │           │               └── nist_linregress
+│   │   │   │   │           ├── scipy-0.19.1.dist-info
+│   │   │   │   │           ├── setuptools
+│   │   │   │   │           │   ├── command
+│   │   │   │   │           │   └── extern
+│   │   │   │   │           ├── setuptools-36.5.0.dist-info
+│   │   │   │   │           ├── six-1.11.0.dist-info
+│   │   │   │   │           ├── subprocess32-3.2.7.dist-info
+│   │   │   │   │           ├── wheel
+│   │   │   │   │           │   ├── signatures
+│   │   │   │   │           │   └── tool
+│   │   │   │   │           └── wheel-0.30.0.dist-info
+│   │   │   │   ├── local
+│   │   │   │   └── share
+│   │   │   │       └── python-wheels
+│   │   │   └── txtar
+│   │   ├── comsync-r15.backup
+│   │   ├── comsync-r15-beta
+│   │   ├── comsync-r15-beta.old
+│   │   ├── comsync-r15-beta-port1
+│   │   ├── comsync-r15-beta-port2
+│   │   ├── comsync-r16
+│   │   ├── comsync-r16-original-port1
+│   │   ├── comsync-r16-original-port2
+│   │   ├── comsync-r16-port1
+│   │   ├── comsync-r16-port2
+│   │   ├── mcomsync-r15
+│   │   │   └── matmat
+│   │   ├── mux
+│   │   ├── tcproc
+│   │   ├── tcproc.old
+│   │   └── voldy_docs
+│   │       └── Users
+│   │           └── User
+│   │               └── Documents
+│   │                   └── FIREBall-2 python
+│   │                       └── 170831
+│   ├── diskissues
+│   ├── downlink
+│   │   ├── comsync-r16-port1
+│   │   ├── comsync-r17-port0
+│   │   │   └── python_env
+│   │   │       ├── bin
+│   │   │       ├── include
+│   │   │       ├── lib
+│   │   │       │   └── python2.7
+│   │   │       │       ├── distutils
+│   │   │       │       └── site-packages
+│   │   │       │           ├── astropy
+│   │   │       │           │   ├── analytic_functions
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── config
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── constants
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── convolution
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── coordinates
+│   │   │       │           │   │   ├── builtin_frames
+│   │   │       │           │   │   ├── data
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── accuracy
+│   │   │       │           │   ├── cosmology
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── _erfa
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── extern
+│   │   │       │           │   │   ├── bundled
+│   │   │       │           │   │   ├── configobj
+│   │   │       │           │   │   ├── css
+│   │   │       │           │   │   ├── js
+│   │   │       │           │   │   └── ply
+│   │   │       │           │   ├── io
+│   │   │       │           │   │   ├── ascii
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   │       └── t
+│   │   │       │           │   │   │           ├── cds
+│   │   │       │           │   │   │           │   ├── description
+│   │   │       │           │   │   │           │   ├── glob
+│   │   │       │           │   │   │           │   └── multi
+│   │   │       │           │   │   │           └── vizier
+│   │   │       │           │   │   ├── fits
+│   │   │       │           │   │   │   ├── hdu
+│   │   │       │           │   │   │   ├── scripts
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   │       └── data
+│   │   │       │           │   │   ├── misc
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   ├── tests
+│   │   │       │           │   │   └── votable
+│   │   │       │           │   │       ├── data
+│   │   │       │           │   │       ├── tests
+│   │   │       │           │   │       │   └── data
+│   │   │       │           │   │       └── validator
+│   │   │       │           │   │           └── urls
+│   │   │       │           │   ├── modeling
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── nddata
+│   │   │       │           │   │   ├── mixins
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── samp
+│   │   │       │           │   │   ├── data
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── stats
+│   │   │       │           │   │   ├── lombscargle
+│   │   │       │           │   │   │   ├── implementations
+│   │   │       │           │   │   │   │   └── tests
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── table
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── tests
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── time
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── units
+│   │   │       │           │   │   ├── format
+│   │   │       │           │   │   ├── function
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── utils
+│   │   │       │           │   │   ├── compat
+│   │   │       │           │   │   │   ├── futures
+│   │   │       │           │   │   │   └── numpy
+│   │   │       │           │   │   │       ├── core
+│   │   │       │           │   │   │       ├── lib
+│   │   │       │           │   │   │       └── tests
+│   │   │       │           │   │   ├── iers
+│   │   │       │           │   │   │   ├── data
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   ├── tests
+│   │   │       │           │   │   │   └── data
+│   │   │       │           │   │   │       └── test_package
+│   │   │       │           │   │   │           └── data
+│   │   │       │           │   │   └── xml
+│   │   │       │           │   │       └── tests
+│   │   │       │           │   ├── visualization
+│   │   │       │           │   │   ├── scripts
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   ├── tests
+│   │   │       │           │   │   └── wcsaxes
+│   │   │       │           │   │       └── tests
+│   │   │       │           │   │           └── data
+│   │   │       │           │   ├── vo
+│   │   │       │           │   │   ├── client
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   │       └── data
+│   │   │       │           │   │   ├── samp
+│   │   │       │           │   │   └── validator
+│   │   │       │           │   │       ├── data
+│   │   │       │           │   │       └── tests
+│   │   │       │           │   │           └── data
+│   │   │       │           │   └── wcs
+│   │   │       │           │       ├── include
+│   │   │       │           │       │   ├── astropy_wcs
+│   │   │       │           │       │   └── wcslib
+│   │   │       │           │       └── tests
+│   │   │       │           │           ├── data
+│   │   │       │           │           ├── extension
+│   │   │       │           │           ├── maps
+│   │   │       │           │           └── spectra
+│   │   │       │           ├── astropy-2.0.2.dist-info
+│   │   │       │           ├── cycler-0.10.0.dist-info
+│   │   │       │           ├── dateutil
+│   │   │       │           │   ├── tz
+│   │   │       │           │   └── zoneinfo
+│   │   │       │           ├── functools32
+│   │   │       │           ├── functools32-3.2.3.post2.dist-info
+│   │   │       │           ├── matplotlib
+│   │   │       │           │   ├── axes
+│   │   │       │           │   ├── backends
+│   │   │       │           │   │   ├── qt_editor
+│   │   │       │           │   │   └── web_backend
+│   │   │       │           │   │       ├── css
+│   │   │       │           │   │       └── jquery
+│   │   │       │           │   │           ├── css
+│   │   │       │           │   │           │   └── themes
+│   │   │       │           │   │           │       └── base
+│   │   │       │           │   │           │           └── images
+│   │   │       │           │   │           └── js
+│   │   │       │           │   ├── compat
+│   │   │       │           │   ├── delaunay
+│   │   │       │           │   ├── mpl-data
+│   │   │       │           │   │   ├── fonts
+│   │   │       │           │   │   │   ├── afm
+│   │   │       │           │   │   │   ├── pdfcorefonts
+│   │   │       │           │   │   │   └── ttf
+│   │   │       │           │   │   ├── images
+│   │   │       │           │   │   ├── sample_data
+│   │   │       │           │   │   │   └── axes_grid
+│   │   │       │           │   │   └── stylelib
+│   │   │       │           │   ├── projections
+│   │   │       │           │   ├── sphinxext
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── tinypages
+│   │   │       │           │   │           └── _static
+│   │   │       │           │   ├── style
+│   │   │       │           │   ├── testing
+│   │   │       │           │   │   └── jpl_units
+│   │   │       │           │   ├── tests
+│   │   │       │           │   └── tri
+│   │   │       │           ├── matplotlib-2.0.2.dist-info
+│   │   │       │           ├── mpl_toolkits
+│   │   │       │           │   ├── axes_grid
+│   │   │       │           │   ├── axes_grid1
+│   │   │       │           │   ├── axisartist
+│   │   │       │           │   ├── mplot3d
+│   │   │       │           │   └── tests
+│   │   │       │           │       └── baseline_images
+│   │   │       │           │           ├── test_axes_grid
+│   │   │       │           │           ├── test_axes_grid1
+│   │   │       │           │           └── test_mplot3d
+│   │   │       │           ├── numpy
+│   │   │       │           │   ├── compat
+│   │   │       │           │   ├── core
+│   │   │       │           │   │   ├── include
+│   │   │       │           │   │   │   └── numpy
+│   │   │       │           │   │   ├── lib
+│   │   │       │           │   │   │   └── npy-pkg-config
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── distutils
+│   │   │       │           │   │   ├── command
+│   │   │       │           │   │   ├── fcompiler
+│   │   │       │           │   │   ├── mingw
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── doc
+│   │   │       │           │   ├── f2py
+│   │   │       │           │   │   ├── src
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── src
+│   │   │       │           │   │           ├── array_from_pyobj
+│   │   │       │           │   │           ├── assumed_shape
+│   │   │       │           │   │           ├── common
+│   │   │       │           │   │           ├── kind
+│   │   │       │           │   │           ├── mixed
+│   │   │       │           │   │           ├── parameter
+│   │   │       │           │   │           ├── regression
+│   │   │       │           │   │           ├── size
+│   │   │       │           │   │           └── string
+│   │   │       │           │   ├── fft
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── lib
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── linalg
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── ma
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── matrixlib
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── polynomial
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── random
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── testing
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   └── tests
+│   │   │       │           ├── numpy-1.13.1.dist-info
+│   │   │       │           ├── pip
+│   │   │       │           │   ├── commands
+│   │   │       │           │   ├── compat
+│   │   │       │           │   ├── models
+│   │   │       │           │   ├── operations
+│   │   │       │           │   ├── req
+│   │   │       │           │   ├── utils
+│   │   │       │           │   ├── vcs
+│   │   │       │           │   └── _vendor
+│   │   │       │           ├── pip-9.0.1.dist-info
+│   │   │       │           ├── pkg_resources
+│   │   │       │           │   ├── extern
+│   │   │       │           │   └── _vendor
+│   │   │       │           │       └── packaging
+│   │   │       │           ├── pkg_resources-0.0.0.dist-info
+│   │   │       │           ├── py
+│   │   │       │           │   ├── _code
+│   │   │       │           │   ├── _io
+│   │   │       │           │   ├── _log
+│   │   │       │           │   ├── _path
+│   │   │       │           │   └── _process
+│   │   │       │           ├── py-1.4.34.dist-info
+│   │   │       │           ├── pyparsing-2.2.0.dist-info
+│   │   │       │           ├── _pytest
+│   │   │       │           │   ├── assertion
+│   │   │       │           │   ├── _code
+│   │   │       │           │   └── vendored_packages
+│   │   │       │           ├── pytest-3.2.2.dist-info
+│   │   │       │           ├── python_dateutil-2.6.1.dist-info
+│   │   │       │           ├── pytz
+│   │   │       │           │   └── zoneinfo
+│   │   │       │           │       ├── Africa
+│   │   │       │           │       ├── America
+│   │   │       │           │       │   ├── Argentina
+│   │   │       │           │       │   ├── Indiana
+│   │   │       │           │       │   ├── Kentucky
+│   │   │       │           │       │   └── North_Dakota
+│   │   │       │           │       ├── Antarctica
+│   │   │       │           │       ├── Arctic
+│   │   │       │           │       ├── Asia
+│   │   │       │           │       ├── Atlantic
+│   │   │       │           │       ├── Australia
+│   │   │       │           │       ├── Brazil
+│   │   │       │           │       ├── Canada
+│   │   │       │           │       ├── Chile
+│   │   │       │           │       ├── Etc
+│   │   │       │           │       ├── Europe
+│   │   │       │           │       ├── Indian
+│   │   │       │           │       ├── Mexico
+│   │   │       │           │       ├── Pacific
+│   │   │       │           │       └── US
+│   │   │       │           ├── pytz-2017.2.dist-info
+│   │   │       │           ├── scipy
+│   │   │       │           │   ├── _build_utils
+│   │   │       │           │   ├── cluster
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── constants
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── fftpack
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── integrate
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── interpolate
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── io
+│   │   │       │           │   │   ├── arff
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   │       └── data
+│   │   │       │           │   │   ├── harwell_boeing
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   ├── matlab
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   │       └── data
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── _lib
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── linalg
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── misc
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── ndimage
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── odr
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── optimize
+│   │   │       │           │   │   ├── _lsq
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── signal
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── sparse
+│   │   │       │           │   │   ├── csgraph
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   ├── linalg
+│   │   │       │           │   │   │   ├── dsolve
+│   │   │       │           │   │   │   │   └── tests
+│   │   │       │           │   │   │   ├── eigen
+│   │   │       │           │   │   │   │   ├── arpack
+│   │   │       │           │   │   │   │   │   └── tests
+│   │   │       │           │   │   │   │   └── lobpcg
+│   │   │       │           │   │   │   │       └── tests
+│   │   │       │           │   │   │   ├── isolve
+│   │   │       │           │   │   │   │   └── tests
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── spatial
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── special
+│   │   │       │           │   │   ├── _precompute
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   └── stats
+│   │   │       │           │       └── tests
+│   │   │       │           │           └── data
+│   │   │       │           │               ├── nist_anova
+│   │   │       │           │               └── nist_linregress
+│   │   │       │           ├── scipy-0.19.1.dist-info
+│   │   │       │           ├── setuptools
+│   │   │       │           │   ├── command
+│   │   │       │           │   └── extern
+│   │   │       │           ├── setuptools-36.5.0.dist-info
+│   │   │       │           ├── six-1.11.0.dist-info
+│   │   │       │           ├── subprocess32-3.2.7.dist-info
+│   │   │       │           ├── wheel
+│   │   │       │           │   ├── signatures
+│   │   │       │           │   └── tool
+│   │   │       │           └── wheel-0.30.0.dist-info
+│   │   │       ├── local
+│   │   │       └── share
+│   │   │           └── python-wheels
+│   │   ├── comsync-r17-port1
+│   │   │   └── python_env
+│   │   │       ├── bin
+│   │   │       ├── include
+│   │   │       ├── lib
+│   │   │       │   └── python2.7
+│   │   │       │       ├── distutils
+│   │   │       │       └── site-packages
+│   │   │       │           ├── astropy
+│   │   │       │           │   ├── analytic_functions
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── config
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── constants
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── convolution
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── coordinates
+│   │   │       │           │   │   ├── builtin_frames
+│   │   │       │           │   │   ├── data
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── accuracy
+│   │   │       │           │   ├── cosmology
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── _erfa
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── extern
+│   │   │       │           │   │   ├── bundled
+│   │   │       │           │   │   ├── configobj
+│   │   │       │           │   │   ├── css
+│   │   │       │           │   │   ├── js
+│   │   │       │           │   │   └── ply
+│   │   │       │           │   ├── io
+│   │   │       │           │   │   ├── ascii
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   │       └── t
+│   │   │       │           │   │   │           ├── cds
+│   │   │       │           │   │   │           │   ├── description
+│   │   │       │           │   │   │           │   ├── glob
+│   │   │       │           │   │   │           │   └── multi
+│   │   │       │           │   │   │           └── vizier
+│   │   │       │           │   │   ├── fits
+│   │   │       │           │   │   │   ├── hdu
+│   │   │       │           │   │   │   ├── scripts
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   │       └── data
+│   │   │       │           │   │   ├── misc
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   ├── tests
+│   │   │       │           │   │   └── votable
+│   │   │       │           │   │       ├── data
+│   │   │       │           │   │       ├── tests
+│   │   │       │           │   │       │   └── data
+│   │   │       │           │   │       └── validator
+│   │   │       │           │   │           └── urls
+│   │   │       │           │   ├── modeling
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── nddata
+│   │   │       │           │   │   ├── mixins
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── samp
+│   │   │       │           │   │   ├── data
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── stats
+│   │   │       │           │   │   ├── lombscargle
+│   │   │       │           │   │   │   ├── implementations
+│   │   │       │           │   │   │   │   └── tests
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── table
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── tests
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── time
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── units
+│   │   │       │           │   │   ├── format
+│   │   │       │           │   │   ├── function
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── utils
+│   │   │       │           │   │   ├── compat
+│   │   │       │           │   │   │   ├── futures
+│   │   │       │           │   │   │   └── numpy
+│   │   │       │           │   │   │       ├── core
+│   │   │       │           │   │   │       ├── lib
+│   │   │       │           │   │   │       └── tests
+│   │   │       │           │   │   ├── iers
+│   │   │       │           │   │   │   ├── data
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   ├── tests
+│   │   │       │           │   │   │   └── data
+│   │   │       │           │   │   │       └── test_package
+│   │   │       │           │   │   │           └── data
+│   │   │       │           │   │   └── xml
+│   │   │       │           │   │       └── tests
+│   │   │       │           │   ├── visualization
+│   │   │       │           │   │   ├── scripts
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   ├── tests
+│   │   │       │           │   │   └── wcsaxes
+│   │   │       │           │   │       └── tests
+│   │   │       │           │   │           └── data
+│   │   │       │           │   ├── vo
+│   │   │       │           │   │   ├── client
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   │       └── data
+│   │   │       │           │   │   ├── samp
+│   │   │       │           │   │   └── validator
+│   │   │       │           │   │       ├── data
+│   │   │       │           │   │       └── tests
+│   │   │       │           │   │           └── data
+│   │   │       │           │   └── wcs
+│   │   │       │           │       ├── include
+│   │   │       │           │       │   ├── astropy_wcs
+│   │   │       │           │       │   └── wcslib
+│   │   │       │           │       └── tests
+│   │   │       │           │           ├── data
+│   │   │       │           │           ├── extension
+│   │   │       │           │           ├── maps
+│   │   │       │           │           └── spectra
+│   │   │       │           ├── astropy-2.0.2.dist-info
+│   │   │       │           ├── cycler-0.10.0.dist-info
+│   │   │       │           ├── dateutil
+│   │   │       │           │   ├── tz
+│   │   │       │           │   └── zoneinfo
+│   │   │       │           ├── functools32
+│   │   │       │           ├── functools32-3.2.3.post2.dist-info
+│   │   │       │           ├── matplotlib
+│   │   │       │           │   ├── axes
+│   │   │       │           │   ├── backends
+│   │   │       │           │   │   ├── qt_editor
+│   │   │       │           │   │   └── web_backend
+│   │   │       │           │   │       ├── css
+│   │   │       │           │   │       └── jquery
+│   │   │       │           │   │           ├── css
+│   │   │       │           │   │           │   └── themes
+│   │   │       │           │   │           │       └── base
+│   │   │       │           │   │           │           └── images
+│   │   │       │           │   │           └── js
+│   │   │       │           │   ├── compat
+│   │   │       │           │   ├── delaunay
+│   │   │       │           │   ├── mpl-data
+│   │   │       │           │   │   ├── fonts
+│   │   │       │           │   │   │   ├── afm
+│   │   │       │           │   │   │   ├── pdfcorefonts
+│   │   │       │           │   │   │   └── ttf
+│   │   │       │           │   │   ├── images
+│   │   │       │           │   │   ├── sample_data
+│   │   │       │           │   │   │   └── axes_grid
+│   │   │       │           │   │   └── stylelib
+│   │   │       │           │   ├── projections
+│   │   │       │           │   ├── sphinxext
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── tinypages
+│   │   │       │           │   │           └── _static
+│   │   │       │           │   ├── style
+│   │   │       │           │   ├── testing
+│   │   │       │           │   │   └── jpl_units
+│   │   │       │           │   ├── tests
+│   │   │       │           │   └── tri
+│   │   │       │           ├── matplotlib-2.0.2.dist-info
+│   │   │       │           ├── mpl_toolkits
+│   │   │       │           │   ├── axes_grid
+│   │   │       │           │   ├── axes_grid1
+│   │   │       │           │   ├── axisartist
+│   │   │       │           │   ├── mplot3d
+│   │   │       │           │   └── tests
+│   │   │       │           │       └── baseline_images
+│   │   │       │           │           ├── test_axes_grid
+│   │   │       │           │           ├── test_axes_grid1
+│   │   │       │           │           └── test_mplot3d
+│   │   │       │           ├── numpy
+│   │   │       │           │   ├── compat
+│   │   │       │           │   ├── core
+│   │   │       │           │   │   ├── include
+│   │   │       │           │   │   │   └── numpy
+│   │   │       │           │   │   ├── lib
+│   │   │       │           │   │   │   └── npy-pkg-config
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── distutils
+│   │   │       │           │   │   ├── command
+│   │   │       │           │   │   ├── fcompiler
+│   │   │       │           │   │   ├── mingw
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── doc
+│   │   │       │           │   ├── f2py
+│   │   │       │           │   │   ├── src
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── src
+│   │   │       │           │   │           ├── array_from_pyobj
+│   │   │       │           │   │           ├── assumed_shape
+│   │   │       │           │   │           ├── common
+│   │   │       │           │   │           ├── kind
+│   │   │       │           │   │           ├── mixed
+│   │   │       │           │   │           ├── parameter
+│   │   │       │           │   │           ├── regression
+│   │   │       │           │   │           ├── size
+│   │   │       │           │   │           └── string
+│   │   │       │           │   ├── fft
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── lib
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── linalg
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── ma
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── matrixlib
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── polynomial
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── random
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── testing
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   └── tests
+│   │   │       │           ├── numpy-1.13.1.dist-info
+│   │   │       │           ├── pip
+│   │   │       │           │   ├── commands
+│   │   │       │           │   ├── compat
+│   │   │       │           │   ├── models
+│   │   │       │           │   ├── operations
+│   │   │       │           │   ├── req
+│   │   │       │           │   ├── utils
+│   │   │       │           │   ├── vcs
+│   │   │       │           │   └── _vendor
+│   │   │       │           ├── pip-9.0.1.dist-info
+│   │   │       │           ├── pkg_resources
+│   │   │       │           │   ├── extern
+│   │   │       │           │   └── _vendor
+│   │   │       │           │       └── packaging
+│   │   │       │           ├── pkg_resources-0.0.0.dist-info
+│   │   │       │           ├── py
+│   │   │       │           │   ├── _code
+│   │   │       │           │   ├── _io
+│   │   │       │           │   ├── _log
+│   │   │       │           │   ├── _path
+│   │   │       │           │   └── _process
+│   │   │       │           ├── py-1.4.34.dist-info
+│   │   │       │           ├── pyparsing-2.2.0.dist-info
+│   │   │       │           ├── _pytest
+│   │   │       │           │   ├── assertion
+│   │   │       │           │   ├── _code
+│   │   │       │           │   └── vendored_packages
+│   │   │       │           ├── pytest-3.2.2.dist-info
+│   │   │       │           ├── python_dateutil-2.6.1.dist-info
+│   │   │       │           ├── pytz
+│   │   │       │           │   └── zoneinfo
+│   │   │       │           │       ├── Africa
+│   │   │       │           │       ├── America
+│   │   │       │           │       │   ├── Argentina
+│   │   │       │           │       │   ├── Indiana
+│   │   │       │           │       │   ├── Kentucky
+│   │   │       │           │       │   └── North_Dakota
+│   │   │       │           │       ├── Antarctica
+│   │   │       │           │       ├── Arctic
+│   │   │       │           │       ├── Asia
+│   │   │       │           │       ├── Atlantic
+│   │   │       │           │       ├── Australia
+│   │   │       │           │       ├── Brazil
+│   │   │       │           │       ├── Canada
+│   │   │       │           │       ├── Chile
+│   │   │       │           │       ├── Etc
+│   │   │       │           │       ├── Europe
+│   │   │       │           │       ├── Indian
+│   │   │       │           │       ├── Mexico
+│   │   │       │           │       ├── Pacific
+│   │   │       │           │       └── US
+│   │   │       │           ├── pytz-2017.2.dist-info
+│   │   │       │           ├── scipy
+│   │   │       │           │   ├── _build_utils
+│   │   │       │           │   ├── cluster
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── constants
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── fftpack
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── integrate
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── interpolate
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── io
+│   │   │       │           │   │   ├── arff
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   │       └── data
+│   │   │       │           │   │   ├── harwell_boeing
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   ├── matlab
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   │       └── data
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── _lib
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── linalg
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── misc
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── ndimage
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── odr
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── optimize
+│   │   │       │           │   │   ├── _lsq
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── signal
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   ├── sparse
+│   │   │       │           │   │   ├── csgraph
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   ├── linalg
+│   │   │       │           │   │   │   ├── dsolve
+│   │   │       │           │   │   │   │   └── tests
+│   │   │       │           │   │   │   ├── eigen
+│   │   │       │           │   │   │   │   ├── arpack
+│   │   │       │           │   │   │   │   │   └── tests
+│   │   │       │           │   │   │   │   └── lobpcg
+│   │   │       │           │   │   │   │       └── tests
+│   │   │       │           │   │   │   ├── isolve
+│   │   │       │           │   │   │   │   └── tests
+│   │   │       │           │   │   │   └── tests
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── spatial
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   ├── special
+│   │   │       │           │   │   ├── _precompute
+│   │   │       │           │   │   └── tests
+│   │   │       │           │   │       └── data
+│   │   │       │           │   └── stats
+│   │   │       │           │       └── tests
+│   │   │       │           │           └── data
+│   │   │       │           │               ├── nist_anova
+│   │   │       │           │               └── nist_linregress
+│   │   │       │           ├── scipy-0.19.1.dist-info
+│   │   │       │           ├── setuptools
+│   │   │       │           │   ├── command
+│   │   │       │           │   └── extern
+│   │   │       │           ├── setuptools-36.5.0.dist-info
+│   │   │       │           ├── six-1.11.0.dist-info
+│   │   │       │           ├── subprocess32-3.2.7.dist-info
+│   │   │       │           ├── wheel
+│   │   │       │           │   ├── signatures
+│   │   │       │           │   └── tool
+│   │   │       │           └── wheel-0.30.0.dist-info
+│   │   │       ├── local
+│   │   │       └── share
+│   │   │           └── python-wheels
+│   │   └── transfer-dir
+│   │       └── mapping
+│   └── NUVU_errors
+│       ├── 151203_oldplugin
+│       └── 151203_pluginfix
+├── Downloads
+│   ├── arduino-1.0
+│   │   ├── examples
+│   │   │   ├── 1.Basics
+│   │   │   │   ├── AnalogReadSerial
+│   │   │   │   ├── BareMinimum
+│   │   │   │   ├── Blink
+│   │   │   │   ├── DigitalReadSerial
+│   │   │   │   └── Fade
+│   │   │   ├── 2.Digital
+│   │   │   │   ├── BlinkWithoutDelay
+│   │   │   │   ├── Button
+│   │   │   │   ├── Debounce
+│   │   │   │   ├── StateChangeDetection
+│   │   │   │   ├── toneKeyboard
+│   │   │   │   ├── toneMelody
+│   │   │   │   ├── toneMultiple
+│   │   │   │   └── tonePitchFollower
+│   │   │   ├── 3.Analog
+│   │   │   │   ├── AnalogInOutSerial
+│   │   │   │   ├── AnalogInput
+│   │   │   │   ├── AnalogWriteMega
+│   │   │   │   ├── Calibration
+│   │   │   │   ├── Fading
+│   │   │   │   └── Smoothing
+│   │   │   ├── 4.Communication
+│   │   │   │   ├── ASCIITable
+│   │   │   │   ├── Dimmer
+│   │   │   │   ├── Graph
+│   │   │   │   ├── MIDI
+│   │   │   │   ├── MultiSerialMega
+│   │   │   │   ├── PhysicalPixel
+│   │   │   │   ├── SerialCallResponse
+│   │   │   │   ├── SerialCallResponseASCII
+│   │   │   │   ├── SerialEvent
+│   │   │   │   └── VirtualColorMixer
+│   │   │   ├── 5.Control
+│   │   │   │   ├── Arrays
+│   │   │   │   ├── ForLoopIteration
+│   │   │   │   ├── IfStatementConditional
+│   │   │   │   ├── switchCase
+│   │   │   │   ├── switchCase2
+│   │   │   │   └── WhileStatementConditional
+│   │   │   ├── 6.Sensors
+│   │   │   │   ├── ADXL3xx
+│   │   │   │   ├── Knock
+│   │   │   │   ├── Memsic2125
+│   │   │   │   └── Ping
+│   │   │   ├── 7.Display
+│   │   │   │   ├── barGraph
+│   │   │   │   └── RowColumnScanning
+│   │   │   ├── 8.Strings
+│   │   │   │   ├── CharacterAnalysis
+│   │   │   │   ├── StringAdditionOperator
+│   │   │   │   ├── StringAppendOperator
+│   │   │   │   ├── StringCaseChanges
+│   │   │   │   ├── StringCharacters
+│   │   │   │   ├── StringComparisonOperators
+│   │   │   │   ├── StringConstructors
+│   │   │   │   ├── StringIndexOf
+│   │   │   │   ├── StringLength
+│   │   │   │   ├── StringLengthTrim
+│   │   │   │   ├── StringReplace
+│   │   │   │   ├── StringStartsWithEndsWith
+│   │   │   │   ├── StringSubstring
+│   │   │   │   ├── StringToInt
+│   │   │   │   └── StringToIntRGB
+│   │   │   └── ArduinoISP
+│   │   ├── hardware
+│   │   │   ├── arduino
+│   │   │   │   ├── bootloaders
+│   │   │   │   │   ├── atmega
+│   │   │   │   │   ├── atmega8
+│   │   │   │   │   ├── bt
+│   │   │   │   │   ├── diskloader
+│   │   │   │   │   │   └── src
+│   │   │   │   │   ├── lilypad
+│   │   │   │   │   │   └── src
+│   │   │   │   │   ├── optiboot
+│   │   │   │   │   └── stk500v2
+│   │   │   │   ├── cores
+│   │   │   │   │   └── arduino
+│   │   │   │   ├── firmwares
+│   │   │   │   │   ├── arduino-usbdfu
+│   │   │   │   │   │   └── Board
+│   │   │   │   │   └── arduino-usbserial
+│   │   │   │   │       ├── Board
+│   │   │   │   │       └── Lib
+│   │   │   │   └── variants
+│   │   │   │       ├── eightanaloginputs
+│   │   │   │       ├── leonardo
+│   │   │   │       ├── mega
+│   │   │   │       ├── micro
+│   │   │   │       └── standard
+│   │   │   └── tools
+│   │   ├── lib
+│   │   │   └── theme
+│   │   ├── libraries
+│   │   │   ├── EEPROM
+│   │   │   │   └── examples
+│   │   │   │       ├── eeprom_clear
+│   │   │   │       ├── eeprom_read
+│   │   │   │       └── eeprom_write
+│   │   │   ├── Ethernet
+│   │   │   │   ├── examples
+│   │   │   │   │   ├── BarometricPressureWebServer
+│   │   │   │   │   ├── ChatServer
+│   │   │   │   │   ├── DhcpAddressPrinter
+│   │   │   │   │   ├── DhcpChatServer
+│   │   │   │   │   ├── DnsWebClient
+│   │   │   │   │   ├── PachubeClient
+│   │   │   │   │   ├── PachubeClientString
+│   │   │   │   │   ├── TelnetClient
+│   │   │   │   │   ├── TwitterClient
+│   │   │   │   │   ├── UdpNtpClient
+│   │   │   │   │   ├── UDPSendReceiveString
+│   │   │   │   │   ├── WebClient
+│   │   │   │   │   └── WebServer
+│   │   │   │   └── utility
+│   │   │   ├── Firmata
+│   │   │   │   └── examples
+│   │   │   │       ├── AllInputsFirmata
+│   │   │   │       ├── AnalogFirmata
+│   │   │   │       ├── EchoString
+│   │   │   │       ├── I2CFirmata
+│   │   │   │       ├── OldStandardFirmata
+│   │   │   │       ├── ServoFirmata
+│   │   │   │       ├── SimpleAnalogFirmata
+│   │   │   │       ├── SimpleDigitalFirmata
+│   │   │   │       └── StandardFirmata
+│   │   │   ├── LiquidCrystal
+│   │   │   │   └── examples
+│   │   │   │       ├── Autoscroll
+│   │   │   │       ├── Blink
+│   │   │   │       ├── Cursor
+│   │   │   │       ├── CustomCharacter
+│   │   │   │       ├── Display
+│   │   │   │       ├── HelloWorld
+│   │   │   │       ├── Scroll
+│   │   │   │       ├── SerialDisplay
+│   │   │   │       ├── setCursor
+│   │   │   │       └── TextDirection
+│   │   │   ├── SD
+│   │   │   │   ├── examples
+│   │   │   │   │   ├── CardInfo
+│   │   │   │   │   ├── Datalogger
+│   │   │   │   │   ├── DumpFile
+│   │   │   │   │   ├── Files
+│   │   │   │   │   ├── listfiles
+│   │   │   │   │   └── ReadWrite
+│   │   │   │   └── utility
+│   │   │   ├── Servo
+│   │   │   │   └── examples
+│   │   │   │       ├── Knob
+│   │   │   │       └── Sweep
+│   │   │   ├── SoftwareSerial
+│   │   │   │   └── examples
+│   │   │   │       ├── SoftwareSerialExample
+│   │   │   │       └── TwoPortReceive
+│   │   │   ├── SPI
+│   │   │   │   └── examples
+│   │   │   │       ├── BarometricPressureSensor
+│   │   │   │       │   └── BarometricPressureSensor
+│   │   │   │       └── DigitalPotControl
+│   │   │   ├── Stepper
+│   │   │   │   └── examples
+│   │   │   │       ├── MotorKnob
+│   │   │   │       ├── stepper_oneRevolution
+│   │   │   │       ├── stepper_oneStepAtATime
+│   │   │   │       └── stepper_speedControl
+│   │   │   └── Wire
+│   │   │       ├── examples
+│   │   │       │   ├── digital_potentiometer
+│   │   │       │   ├── master_reader
+│   │   │       │   ├── master_writer
+│   │   │       │   ├── SFRRanger_reader
+│   │   │       │   ├── slave_receiver
+│   │   │       │   └── slave_sender
+│   │   │       └── utility
+│   │   ├── __MACOSX
+│   │   │   └── reference
+│   │   ├── reference
+│   │   │   └── img
+│   │   └── tools
+│   │       └── Mangler
+│   │           └── src
+│   ├── comsync-r15-beta
+│   ├── comsync-r16
+│   ├── comsync-r17
+│   ├── ino
+│   │   ├── bin
+│   │   ├── build
+│   │   │   ├── lib.linux-x86_64-2.7
+│   │   │   │   └── ino
+│   │   │   │       ├── commands
+│   │   │   │       ├── make
+│   │   │   │       └── templates
+│   │   │   │           ├── blink
+│   │   │   │           │   ├── lib
+│   │   │   │           │   └── src
+│   │   │   │           └── empty
+│   │   │   │               ├── lib
+│   │   │   │               └── src
+│   │   │   └── scripts-2.7
+│   │   ├── doc
+│   │   │   ├── _static
+│   │   │   └── _templates
+│   │   ├── ino
+│   │   │   ├── commands
+│   │   │   ├── make
+│   │   │   └── templates
+│   │   │       ├── blink
+│   │   │       │   ├── lib
+│   │   │       │   └── src
+│   │   │       └── empty
+│   │   │           ├── lib
+│   │   │           └── src
+│   │   ├── ino.egg-info [error opening dir]
+│   │   └── tests
+│   └── vncsetup-helper
+├── FC_backup
+│   ├── Desktop
+│   │   ├── data_analysis
+│   │   ├── files_from_NUVU
+│   │   └── nuvu_tests
+│   │       ├── NUVU_timeout_tests
+│   │       └── update
+│   ├── Downloads
+│   │   └── arduino-1.0
+│   │       ├── examples
+│   │       │   ├── 1.Basics
+│   │       │   │   ├── AnalogReadSerial
+│   │       │   │   ├── BareMinimum
+│   │       │   │   ├── Blink
+│   │       │   │   ├── DigitalReadSerial
+│   │       │   │   └── Fade
+│   │       │   ├── 2.Digital
+│   │       │   │   ├── BlinkWithoutDelay
+│   │       │   │   ├── Button
+│   │       │   │   ├── Debounce
+│   │       │   │   ├── StateChangeDetection
+│   │       │   │   ├── toneKeyboard
+│   │       │   │   ├── toneMelody
+│   │       │   │   ├── toneMultiple
+│   │       │   │   └── tonePitchFollower
+│   │       │   ├── 3.Analog
+│   │       │   │   ├── AnalogInOutSerial
+│   │       │   │   ├── AnalogInput
+│   │       │   │   ├── AnalogWriteMega
+│   │       │   │   ├── Calibration
+│   │       │   │   ├── Fading
+│   │       │   │   └── Smoothing
+│   │       │   ├── 4.Communication
+│   │       │   │   ├── ASCIITable
+│   │       │   │   ├── Dimmer
+│   │       │   │   ├── Graph
+│   │       │   │   ├── MIDI
+│   │       │   │   ├── MultiSerialMega
+│   │       │   │   ├── PhysicalPixel
+│   │       │   │   ├── SerialCallResponse
+│   │       │   │   ├── SerialCallResponseASCII
+│   │       │   │   ├── SerialEvent
+│   │       │   │   └── VirtualColorMixer
+│   │       │   ├── 5.Control
+│   │       │   │   ├── Arrays
+│   │       │   │   ├── ForLoopIteration
+│   │       │   │   ├── IfStatementConditional
+│   │       │   │   ├── switchCase
+│   │       │   │   ├── switchCase2
+│   │       │   │   └── WhileStatementConditional
+│   │       │   ├── 6.Sensors
+│   │       │   │   ├── ADXL3xx
+│   │       │   │   ├── Knock
+│   │       │   │   ├── Memsic2125
+│   │       │   │   └── Ping
+│   │       │   ├── 7.Display
+│   │       │   │   ├── barGraph
+│   │       │   │   └── RowColumnScanning
+│   │       │   ├── 8.Strings
+│   │       │   │   ├── CharacterAnalysis
+│   │       │   │   ├── StringAdditionOperator
+│   │       │   │   ├── StringAppendOperator
+│   │       │   │   ├── StringCaseChanges
+│   │       │   │   ├── StringCharacters
+│   │       │   │   ├── StringComparisonOperators
+│   │       │   │   ├── StringConstructors
+│   │       │   │   ├── StringIndexOf
+│   │       │   │   ├── StringLength
+│   │       │   │   ├── StringLengthTrim
+│   │       │   │   ├── StringReplace
+│   │       │   │   ├── StringStartsWithEndsWith
+│   │       │   │   ├── StringSubstring
+│   │       │   │   ├── StringToInt
+│   │       │   │   └── StringToIntRGB
+│   │       │   └── ArduinoISP
+│   │       ├── hardware
+│   │       │   ├── arduino
+│   │       │   │   ├── bootloaders
+│   │       │   │   │   ├── atmega
+│   │       │   │   │   ├── atmega8
+│   │       │   │   │   ├── bt
+│   │       │   │   │   ├── diskloader
+│   │       │   │   │   │   └── src
+│   │       │   │   │   ├── lilypad
+│   │       │   │   │   │   └── src
+│   │       │   │   │   ├── optiboot
+│   │       │   │   │   └── stk500v2
+│   │       │   │   ├── cores
+│   │       │   │   │   └── arduino
+│   │       │   │   ├── firmwares
+│   │       │   │   │   ├── arduino-usbdfu
+│   │       │   │   │   │   └── Board
+│   │       │   │   │   └── arduino-usbserial
+│   │       │   │   │       ├── Board
+│   │       │   │   │       └── Lib
+│   │       │   │   └── variants
+│   │       │   │       ├── eightanaloginputs
+│   │       │   │       ├── leonardo
+│   │       │   │       ├── mega
+│   │       │   │       ├── micro
+│   │       │   │       └── standard
+│   │       │   └── tools
+│   │       ├── lib
+│   │       │   └── theme
+│   │       ├── libraries
+│   │       │   ├── EEPROM
+│   │       │   │   └── examples
+│   │       │   │       ├── eeprom_clear
+│   │       │   │       ├── eeprom_read
+│   │       │   │       └── eeprom_write
+│   │       │   ├── Ethernet
+│   │       │   │   ├── examples
+│   │       │   │   │   ├── BarometricPressureWebServer
+│   │       │   │   │   ├── ChatServer
+│   │       │   │   │   ├── DhcpAddressPrinter
+│   │       │   │   │   ├── DhcpChatServer
+│   │       │   │   │   ├── DnsWebClient
+│   │       │   │   │   ├── PachubeClient
+│   │       │   │   │   ├── PachubeClientString
+│   │       │   │   │   ├── TelnetClient
+│   │       │   │   │   ├── TwitterClient
+│   │       │   │   │   ├── UdpNtpClient
+│   │       │   │   │   ├── UDPSendReceiveString
+│   │       │   │   │   ├── WebClient
+│   │       │   │   │   └── WebServer
+│   │       │   │   └── utility
+│   │       │   ├── Firmata
+│   │       │   │   └── examples
+│   │       │   │       ├── AllInputsFirmata
+│   │       │   │       ├── AnalogFirmata
+│   │       │   │       ├── EchoString
+│   │       │   │       ├── I2CFirmata
+│   │       │   │       ├── OldStandardFirmata
+│   │       │   │       ├── ServoFirmata
+│   │       │   │       ├── SimpleAnalogFirmata
+│   │       │   │       ├── SimpleDigitalFirmata
+│   │       │   │       └── StandardFirmata
+│   │       │   ├── LiquidCrystal
+│   │       │   │   └── examples
+│   │       │   │       ├── Autoscroll
+│   │       │   │       ├── Blink
+│   │       │   │       ├── Cursor
+│   │       │   │       ├── CustomCharacter
+│   │       │   │       ├── Display
+│   │       │   │       ├── HelloWorld
+│   │       │   │       ├── Scroll
+│   │       │   │       ├── SerialDisplay
+│   │       │   │       ├── setCursor
+│   │       │   │       └── TextDirection
+│   │       │   ├── SD
+│   │       │   │   ├── examples
+│   │       │   │   │   ├── CardInfo
+│   │       │   │   │   ├── Datalogger
+│   │       │   │   │   ├── DumpFile
+│   │       │   │   │   ├── Files
+│   │       │   │   │   ├── listfiles
+│   │       │   │   │   └── ReadWrite
+│   │       │   │   └── utility
+│   │       │   ├── Servo
+│   │       │   │   └── examples
+│   │       │   │       ├── Knob
+│   │       │   │       └── Sweep
+│   │       │   ├── SoftwareSerial
+│   │       │   │   └── examples
+│   │       │   │       ├── SoftwareSerialExample
+│   │       │   │       └── TwoPortReceive
+│   │       │   ├── SPI
+│   │       │   │   └── examples
+│   │       │   │       ├── BarometricPressureSensor
+│   │       │   │       │   └── BarometricPressureSensor
+│   │       │   │       └── DigitalPotControl
+│   │       │   ├── Stepper
+│   │       │   │   └── examples
+│   │       │   │       ├── MotorKnob
+│   │       │   │       ├── stepper_oneRevolution
+│   │       │   │       ├── stepper_oneStepAtATime
+│   │       │   │       └── stepper_speedControl
+│   │       │   └── Wire
+│   │       │       ├── examples
+│   │       │       │   ├── digital_potentiometer
+│   │       │       │   ├── master_reader
+│   │       │       │   ├── master_writer
+│   │       │       │   ├── SFRRanger_reader
+│   │       │       │   ├── slave_receiver
+│   │       │       │   └── slave_sender
+│   │       │       └── utility
+│   │       ├── __MACOSX
+│   │       │   └── reference
+│   │       ├── reference
+│   │       │   └── img
+│   │       └── tools
+│   │           └── Mangler
+│   │               └── src
+│   ├── sketchbook
+│   │   └── libraries
+│   └── Ubuntu12_files
+│       ├── Code
+│       │   ├── FITS
+│       │   ├── PressureRSS485
+│       │   ├── pyserial-2.7
+│       │   │   ├── build
+│       │   │   │   ├── lib
+│       │   │   │   │   └── serial
+│       │   │   │   │       ├── tools
+│       │   │   │   │       └── urlhandler
+│       │   │   │   ├── lib.linux-x86_64-2.7
+│       │   │   │   │   └── serial
+│       │   │   │   │       ├── tools
+│       │   │   │   │       └── urlhandler
+│       │   │   │   ├── scripts-2.6
+│       │   │   │   └── scripts-2.7
+│       │   │   ├── documentation
+│       │   │   ├── examples
+│       │   │   ├── serial
+│       │   │   │   ├── tools
+│       │   │   │   └── urlhandler
+│       │   │   └── test
+│       │   └── TemperatureRSS232
+│       ├── NuvuSW_3.6.4
+│       │   ├── Documentation
+│       │   │   └── SDKUserManual_files
+│       │   │       └── search
+│       │   └── NuvuInstaller
+│       │       ├── Dependencies
+│       │       │   └── Third-party
+│       │       │       ├── EDT
+│       │       │       ├── Matrox
+│       │       │       └── Pleora
+│       │       ├── NuvuCameras
+│       │       │   ├── bin
+│       │       │   ├── GrabExamples
+│       │       │   │   ├── Chronological Acquisition
+│       │       │   │   │   └── Chronological Acquisition
+│       │       │   │   ├── Continuous Acquisition
+│       │       │   │   │   └── Continuous Acquisition
+│       │       │   │   ├── Image Resize and Serial Command
+│       │       │   │   │   └── Image Resize and Serial Command
+│       │       │   │   ├── Processing - PC and LM
+│       │       │   │   │   └── Processing - PC and LM
+│       │       │   │   ├── Simple Acquisition
+│       │       │   │   │   └── Simple Acquisition
+│       │       │   │   └── Timed Acquisition
+│       │       │   │       └── Timed Acquisition
+│       │       │   ├── include
+│       │       │   ├── lib
+│       │       │   ├── Plugins
+│       │       │   │   ├── nc_grab_edt
+│       │       │   │   └── nc_grab_mil
+│       │       │   └── tools
+│       │       └── tools
+│       └── old_cccp_files
+├── gillian
+│   ├── Code
+│   └── my_project
+│       ├── bin
+│       ├── include
+│       ├── lib
+│       │   └── python2.7
+│       │       ├── distutils
+│       │       └── site-packages
+│       │           ├── astropy
+│       │           │   ├── analytic_functions
+│       │           │   │   └── tests
+│       │           │   ├── config
+│       │           │   │   └── tests
+│       │           │   │       └── data
+│       │           │   ├── constants
+│       │           │   │   └── tests
+│       │           │   ├── convolution
+│       │           │   │   └── tests
+│       │           │   ├── coordinates
+│       │           │   │   ├── builtin_frames
+│       │           │   │   ├── data
+│       │           │   │   └── tests
+│       │           │   │       └── accuracy
+│       │           │   ├── cosmology
+│       │           │   │   └── tests
+│       │           │   ├── _erfa
+│       │           │   │   └── tests
+│       │           │   ├── extern
+│       │           │   │   ├── bundled
+│       │           │   │   ├── configobj
+│       │           │   │   ├── css
+│       │           │   │   ├── js
+│       │           │   │   ├── plugins
+│       │           │   │   │   ├── pytest_doctestplus
+│       │           │   │   │   ├── pytest_openfiles
+│       │           │   │   │   └── pytest_remotedata
+│       │           │   │   └── ply
+│       │           │   ├── io
+│       │           │   │   ├── ascii
+│       │           │   │   │   └── tests
+│       │           │   │   │       └── t
+│       │           │   │   │           ├── cds
+│       │           │   │   │           │   ├── description
+│       │           │   │   │           │   ├── glob
+│       │           │   │   │           │   └── multi
+│       │           │   │   │           └── vizier
+│       │           │   │   ├── fits
+│       │           │   │   │   ├── hdu
+│       │           │   │   │   ├── scripts
+│       │           │   │   │   └── tests
+│       │           │   │   │       └── data
+│       │           │   │   ├── misc
+│       │           │   │   │   └── tests
+│       │           │   │   ├── tests
+│       │           │   │   └── votable
+│       │           │   │       ├── data
+│       │           │   │       ├── tests
+│       │           │   │       │   └── data
+│       │           │   │       └── validator
+│       │           │   │           └── urls
+│       │           │   ├── modeling
+│       │           │   │   └── tests
+│       │           │   │       └── data
+│       │           │   ├── nddata
+│       │           │   │   ├── mixins
+│       │           │   │   │   └── tests
+│       │           │   │   └── tests
+│       │           │   │       └── data
+│       │           │   ├── samp
+│       │           │   │   ├── data
+│       │           │   │   └── tests
+│       │           │   ├── stats
+│       │           │   │   ├── lombscargle
+│       │           │   │   │   ├── implementations
+│       │           │   │   │   │   └── tests
+│       │           │   │   │   └── tests
+│       │           │   │   └── tests
+│       │           │   ├── table
+│       │           │   │   └── tests
+│       │           │   ├── tests
+│       │           │   │   └── tests
+│       │           │   │       └── data
+│       │           │   ├── time
+│       │           │   │   └── tests
+│       │           │   ├── units
+│       │           │   │   ├── format
+│       │           │   │   ├── function
+│       │           │   │   └── tests
+│       │           │   ├── utils
+│       │           │   │   ├── compat
+│       │           │   │   │   ├── futures
+│       │           │   │   │   └── numpy
+│       │           │   │   │       ├── core
+│       │           │   │   │       ├── lib
+│       │           │   │   │       └── tests
+│       │           │   │   ├── iers
+│       │           │   │   │   ├── data
+│       │           │   │   │   └── tests
+│       │           │   │   ├── tests
+│       │           │   │   │   └── data
+│       │           │   │   │       ├── dataurl
+│       │           │   │   │       ├── dataurl_mirror
+│       │           │   │   │       └── test_package
+│       │           │   │   │           └── data
+│       │           │   │   └── xml
+│       │           │   │       └── tests
+│       │           │   ├── visualization
+│       │           │   │   ├── scripts
+│       │           │   │   │   └── tests
+│       │           │   │   ├── tests
+│       │           │   │   └── wcsaxes
+│       │           │   │       └── tests
+│       │           │   │           └── data
+│       │           │   ├── vo
+│       │           │   │   ├── client
+│       │           │   │   │   └── tests
+│       │           │   │   │       └── data
+│       │           │   │   ├── samp
+│       │           │   │   └── validator
+│       │           │   │       ├── data
+│       │           │   │       └── tests
+│       │           │   │           └── data
+│       │           │   └── wcs
+│       │           │       ├── include
+│       │           │       │   ├── astropy_wcs
+│       │           │       │   └── wcslib
+│       │           │       └── tests
+│       │           │           ├── data
+│       │           │           ├── extension
+│       │           │           ├── maps
+│       │           │           └── spectra
+│       │           ├── astropy-2.0.16.dist-info
+│       │           ├── atomicwrites
+│       │           ├── atomicwrites-1.4.0.dist-info
+│       │           ├── attr
+│       │           ├── attrs-19.3.0.dist-info
+│       │           ├── backports
+│       │           ├── backports.functools_lru_cache-1.6.1.dist-info
+│       │           ├── cycler-0.10.0.dist-info
+│       │           ├── dateutil
+│       │           │   ├── parser
+│       │           │   ├── tz
+│       │           │   └── zoneinfo
+│       │           ├── funcsigs
+│       │           ├── funcsigs-1.0.2.dist-info
+│       │           ├── kiwisolver-1.1.0.dist-info
+│       │           ├── matplotlib
+│       │           │   ├── axes
+│       │           │   ├── backends
+│       │           │   │   ├── qt_editor
+│       │           │   │   └── web_backend
+│       │           │   │       ├── css
+│       │           │   │       ├── jquery
+│       │           │   │       │   └── js
+│       │           │   │       ├── jquery-ui-1.12.1
+│       │           │   │       │   ├── external
+│       │           │   │       │   │   └── jquery
+│       │           │   │       │   └── images
+│       │           │   │       └── js
+│       │           │   ├── cbook
+│       │           │   ├── compat
+│       │           │   ├── mpl-data
+│       │           │   │   ├── fonts
+│       │           │   │   │   ├── afm
+│       │           │   │   │   ├── pdfcorefonts
+│       │           │   │   │   └── ttf
+│       │           │   │   ├── images
+│       │           │   │   ├── sample_data
+│       │           │   │   │   └── axes_grid
+│       │           │   │   └── stylelib
+│       │           │   ├── projections
+│       │           │   ├── sphinxext
+│       │           │   │   └── tests
+│       │           │   │       └── tinypages
+│       │           │   │           └── _static
+│       │           │   ├── style
+│       │           │   ├── testing
+│       │           │   │   ├── jpl_units
+│       │           │   │   └── _nose
+│       │           │   │       └── plugins
+│       │           │   ├── tests
+│       │           │   └── tri
+│       │           ├── matplotlib-2.2.5.dist-info
+│       │           ├── more_itertools
+│       │           │   └── tests
+│       │           ├── more_itertools-5.0.0.dist-info
+│       │           ├── mpl_toolkits
+│       │           │   ├── axes_grid
+│       │           │   ├── axes_grid1
+│       │           │   ├── axisartist
+│       │           │   ├── mplot3d
+│       │           │   └── tests
+│       │           │       └── baseline_images
+│       │           │           ├── test_axes_grid
+│       │           │           ├── test_axes_grid1
+│       │           │           ├── test_axisartist_axis_artist
+│       │           │           ├── test_axisartist_axislines
+│       │           │           ├── test_axisartist_clip_path
+│       │           │           ├── test_axisartist_floating_axes
+│       │           │           ├── test_axisartist_grid_helper_curvelinear
+│       │           │           └── test_mplot3d
+│       │           ├── numpy
+│       │           │   ├── compat
+│       │           │   │   └── tests
+│       │           │   ├── core
+│       │           │   │   ├── include
+│       │           │   │   │   └── numpy
+│       │           │   │   ├── lib
+│       │           │   │   │   └── npy-pkg-config
+│       │           │   │   └── tests
+│       │           │   │       └── data
+│       │           │   ├── distutils
+│       │           │   │   ├── command
+│       │           │   │   ├── fcompiler
+│       │           │   │   ├── mingw
+│       │           │   │   └── tests
+│       │           │   ├── doc
+│       │           │   ├── f2py
+│       │           │   │   ├── src
+│       │           │   │   └── tests
+│       │           │   │       └── src
+│       │           │   │           ├── array_from_pyobj
+│       │           │   │           ├── assumed_shape
+│       │           │   │           ├── common
+│       │           │   │           ├── kind
+│       │           │   │           ├── mixed
+│       │           │   │           ├── parameter
+│       │           │   │           ├── regression
+│       │           │   │           ├── size
+│       │           │   │           └── string
+│       │           │   ├── fft
+│       │           │   │   └── tests
+│       │           │   ├── lib
+│       │           │   │   └── tests
+│       │           │   │       └── data
+│       │           │   ├── linalg
+│       │           │   │   └── tests
+│       │           │   ├── ma
+│       │           │   │   └── tests
+│       │           │   ├── matrixlib
+│       │           │   │   └── tests
+│       │           │   ├── polynomial
+│       │           │   │   └── tests
+│       │           │   ├── random
+│       │           │   │   └── tests
+│       │           │   ├── testing
+│       │           │   │   ├── _private
+│       │           │   │   └── tests
+│       │           │   └── tests
+│       │           ├── numpy-1.16.6.dist-info
+│       │           ├── pip
+│       │           │   ├── _internal
+│       │           │   │   ├── cli
+│       │           │   │   ├── commands
+│       │           │   │   ├── distributions
+│       │           │   │   ├── index
+│       │           │   │   ├── models
+│       │           │   │   ├── network
+│       │           │   │   ├── operations
+│       │           │   │   │   ├── build
+│       │           │   │   │   └── install
+│       │           │   │   ├── req
+│       │           │   │   ├── resolution
+│       │           │   │   │   ├── legacy
+│       │           │   │   │   └── resolvelib
+│       │           │   │   ├── utils
+│       │           │   │   └── vcs
+│       │           │   └── _vendor
+│       │           │       ├── cachecontrol
+│       │           │       │   └── caches
+│       │           │       ├── certifi
+│       │           │       ├── chardet
+│       │           │       │   └── cli
+│       │           │       ├── colorama
+│       │           │       ├── distlib
+│       │           │       │   └── _backport
+│       │           │       ├── html5lib
+│       │           │       │   ├── filters
+│       │           │       │   ├── treeadapters
+│       │           │       │   ├── treebuilders
+│       │           │       │   ├── treewalkers
+│       │           │       │   └── _trie
+│       │           │       ├── idna
+│       │           │       ├── msgpack
+│       │           │       ├── packaging
+│       │           │       ├── pep517
+│       │           │       ├── pkg_resources
+│       │           │       ├── progress
+│       │           │       ├── requests
+│       │           │       ├── resolvelib
+│       │           │       ├── toml
+│       │           │       ├── urllib3
+│       │           │       │   ├── contrib
+│       │           │       │   │   └── _securetransport
+│       │           │       │   ├── packages
+│       │           │       │   │   ├── backports
+│       │           │       │   │   └── ssl_match_hostname
+│       │           │       │   └── util
+│       │           │       └── webencodings
+│       │           ├── pip-20.1.1.dist-info
+│       │           ├── pkg_resources
+│       │           │   ├── extern
+│       │           │   └── _vendor
+│       │           │       └── packaging
+│       │           ├── pkg_resources-0.0.0.dist-info
+│       │           ├── pluggy
+│       │           ├── pluggy-0.7.1.dist-info
+│       │           ├── py
+│       │           │   ├── _code
+│       │           │   ├── _io
+│       │           │   ├── _log
+│       │           │   ├── _path
+│       │           │   ├── _process
+│       │           │   └── _vendored_packages
+│       │           │       ├── apipkg-1.4.dist-info
+│       │           │       └── iniconfig-1.0.0.dist-info
+│       │           ├── py-1.9.0.dist-info
+│       │           ├── pyfits
+│       │           │   ├── _compat
+│       │           │   │   ├── _odict_py2
+│       │           │   │   └── _weakset_py2
+│       │           │   ├── extern
+│       │           │   ├── hdu
+│       │           │   ├── scripts
+│       │           │   └── tests
+│       │           │       └── data
+│       │           ├── pyfits-3.5.dist-info
+│       │           ├── pyparsing-2.4.7.dist-info
+│       │           ├── _pytest
+│       │           │   ├── assertion
+│       │           │   ├── _code
+│       │           │   ├── config
+│       │           │   └── mark
+│       │           ├── pytest-3.6.4.dist-info
+│       │           ├── python_dateutil-2.8.1.dist-info
+│       │           ├── pytz
+│       │           │   └── zoneinfo
+│       │           │       ├── Africa
+│       │           │       ├── America
+│       │           │       │   ├── Argentina
+│       │           │       │   ├── Indiana
+│       │           │       │   ├── Kentucky
+│       │           │       │   └── North_Dakota
+│       │           │       ├── Antarctica
+│       │           │       ├── Arctic
+│       │           │       ├── Asia
+│       │           │       ├── Atlantic
+│       │           │       ├── Australia
+│       │           │       ├── Brazil
+│       │           │       ├── Canada
+│       │           │       ├── Chile
+│       │           │       ├── Etc
+│       │           │       ├── Europe
+│       │           │       ├── Indian
+│       │           │       ├── Mexico
+│       │           │       ├── Pacific
+│       │           │       └── US
+│       │           ├── pytz-2020.1.dist-info
+│       │           ├── scipy
+│       │           │   ├── _build_utils
+│       │           │   ├── cluster
+│       │           │   │   └── tests
+│       │           │   ├── constants
+│       │           │   │   └── tests
+│       │           │   ├── fftpack
+│       │           │   │   └── tests
+│       │           │   ├── integrate
+│       │           │   │   ├── _ivp
+│       │           │   │   └── tests
+│       │           │   ├── interpolate
+│       │           │   │   └── tests
+│       │           │   │       └── data
+│       │           │   ├── io
+│       │           │   │   ├── arff
+│       │           │   │   │   └── tests
+│       │           │   │   │       └── data
+│       │           │   │   ├── harwell_boeing
+│       │           │   │   │   └── tests
+│       │           │   │   ├── matlab
+│       │           │   │   │   └── tests
+│       │           │   │   │       └── data
+│       │           │   │   └── tests
+│       │           │   │       └── data
+│       │           │   ├── _lib
+│       │           │   │   └── tests
+│       │           │   ├── linalg
+│       │           │   │   ├── src
+│       │           │   │   │   ├── id_dist
+│       │           │   │   │   │   └── doc
+│       │           │   │   │   └── lapack_deprecations
+│       │           │   │   └── tests
+│       │           │   │       └── data
+│       │           │   ├── misc
+│       │           │   │   └── tests
+│       │           │   │       └── data
+│       │           │   ├── ndimage
+│       │           │   │   └── tests
+│       │           │   │       └── data
+│       │           │   ├── odr
+│       │           │   │   └── tests
+│       │           │   ├── optimize
+│       │           │   │   ├── lbfgsb_src
+│       │           │   │   ├── _lsq
+│       │           │   │   ├── _shgo_lib
+│       │           │   │   ├── tests
+│       │           │   │   ├── _trlib
+│       │           │   │   └── _trustregion_constr
+│       │           │   │       └── tests
+│       │           │   ├── signal
+│       │           │   │   ├── tests
+│       │           │   │   └── windows
+│       │           │   ├── sparse
+│       │           │   │   ├── csgraph
+│       │           │   │   │   └── tests
+│       │           │   │   ├── linalg
+│       │           │   │   │   ├── dsolve
+│       │           │   │   │   │   ├── SuperLU
+│       │           │   │   │   │   └── tests
+│       │           │   │   │   ├── eigen
+│       │           │   │   │   │   ├── arpack
+│       │           │   │   │   │   │   ├── ARPACK
+│       │           │   │   │   │   │   └── tests
+│       │           │   │   │   │   └── lobpcg
+│       │           │   │   │   │       └── tests
+│       │           │   │   │   ├── isolve
+│       │           │   │   │   │   └── tests
+│       │           │   │   │   └── tests
+│       │           │   │   └── tests
+│       │           │   │       └── data
+│       │           │   ├── spatial
+│       │           │   │   ├── qhull_src
+│       │           │   │   ├── tests
+│       │           │   │   │   └── data
+│       │           │   │   └── transform
+│       │           │   │       └── tests
+│       │           │   ├── special
+│       │           │   │   ├── _precompute
+│       │           │   │   └── tests
+│       │           │   │       └── data
+│       │           │   └── stats
+│       │           │       └── tests
+│       │           │           └── data
+│       │           │               ├── nist_anova
+│       │           │               └── nist_linregress
+│       │           ├── scipy-1.2.3.dist-info
+│       │           ├── setuptools
+│       │           │   ├── command
+│       │           │   ├── extern
+│       │           │   └── _vendor
+│       │           │       └── packaging
+│       │           ├── setuptools-44.1.1.dist-info
+│       │           ├── six-1.15.0.dist-info
+│       │           ├── subprocess32-3.5.4.dist-info
+│       │           ├── wheel
+│       │           │   └── cli
+│       │           └── wheel-0.34.2.dist-info
+│       ├── local
+│       └── share
+│           └── python-wheels
+├── laser
+├── matmat
+├── Music
+├── Nuvu
+│   ├── 2022
+│   │   └── server_CIT
+│   │       ├── bin
+│   │       │   └── image
+│   │       ├── obj
+│   │       └── py
+│   ├── py
+│   ├── server
+│   │   ├── bin
+│   │   ├── obj
+│   │   └── py
+│   ├── server.170522
+│   │   ├── bin
+│   │   ├── obj
+│   │   └── py
+│   ├── server.170817
+│   │   ├── bin
+│   │   ├── obj
+│   │   └── py
+│   ├── server.170907
+│   │   ├── bin
+│   │   ├── obj
+│   │   ├── py
+│   │   └── server
+│   │       ├── bin
+│   │       ├── obj
+│   │       └── py
+│   ├── server.bak
+│   │   ├── bin
+│   │   ├── obj
+│   │   └── py
+│   ├── server_CIT
+│   │   ├── bin
+│   │   │   └── image
+│   │   ├── obj
+│   │   └── py
+│   ├── server.V3
+│   │   ├── bin
+│   │   ├── obj
+│   │   └── py
+│   └── software
+│       ├── EDT
+│       ├── NuvuSW_3.6.4
+│       │   ├── Documentation
+│       │   │   └── SDKUserManual_files
+│       │   │       └── search
+│       │   └── NuvuInstaller
+│       │       ├── Dependencies
+│       │       │   └── Third-party
+│       │       │       ├── EDT
+│       │       │       ├── Matrox
+│       │       │       └── Pleora
+│       │       ├── NuvuCameras
+│       │       │   ├── bin
+│       │       │   ├── GrabExamples
+│       │       │   │   ├── Chronological Acquisition
+│       │       │   │   │   └── Chronological Acquisition
+│       │       │   │   ├── Continuous Acquisition
+│       │       │   │   │   └── Continuous Acquisition
+│       │       │   │   ├── Image Resize and Serial Command
+│       │       │   │   │   └── Image Resize and Serial Command
+│       │       │   │   ├── Processing - PC and LM
+│       │       │   │   │   └── Processing - PC and LM
+│       │       │   │   ├── Simple Acquisition
+│       │       │   │   │   └── Simple Acquisition
+│       │       │   │   └── Timed Acquisition
+│       │       │   │       └── Timed Acquisition
+│       │       │   ├── include
+│       │       │   ├── lib
+│       │       │   ├── LockFiles
+│       │       │   ├── Plugins
+│       │       │   │   ├── nc_grab_edt
+│       │       │   │   ├── nc_grab_mil
+│       │       │   │   └── nc_grab_pleora
+│       │       │   └── tools
+│       │       └── tools
+│       └── NuvuSW_4.2.1
+│           ├── Documentation
+│           │   └── SDKUserManual_files
+│           │       └── search
+│           └── NuvuInstaller
+│               ├── Dependencies
+│               │   ├── cfitsio
+│               │   ├── Repositories
+│               │   └── Third-party
+│               │       └── EDTpdv
+│               │           └── nc_grab_edt
+│               └── NuvuCameras
+│                   ├── bin
+│                   ├── Extras
+│                   │   ├── SerialControl
+│                   │   │   └── nc_grab_serial
+│                   │   ├── StatusLogging
+│                   │   │   └── nc_status_log
+│                   │   └── VirtualCamera
+│                   │       └── nc_grab_virtual
+│                   ├── GrabExamples
+│                   │   ├── Chronological Acquisition
+│                   │   │   └── Chronological Acquisition
+│                   │   ├── Continuous Acquisition
+│                   │   │   └── Continuous Acquisition
+│                   │   ├── Image Resize and Serial Command
+│                   │   │   └── Image Resize and Serial Command
+│                   │   ├── Processing - PC and LM
+│                   │   │   └── Processing - PC and LM
+│                   │   ├── Simple Acquisition
+│                   │   │   ├── ipch
+│                   │   │   │   └── simple acquisition-be9f2003
+│                   │   │   └── Simple Acquisition
+│                   │   └── Timed Acquisition
+│                   │       └── Timed Acquisition
+│                   ├── include
+│                   ├── lib
+│                   ├── LockFiles
+│                   ├── Plugins
+│                   └── tools
+├── NUVU.190822
+│   ├── py
+│   ├── server
+│   │   ├── bin
+│   │   ├── obj
+│   │   └── py
+│   ├── server.170522
+│   │   ├── bin
+│   │   ├── obj
+│   │   └── py
+│   ├── server.170817
+│   │   ├── bin
+│   │   ├── obj
+│   │   └── py
+│   ├── server.170907
+│   │   ├── bin
+│   │   ├── obj
+│   │   ├── py
+│   │   └── server
+│   │       ├── bin
+│   │       ├── obj
+│   │       └── py
+│   ├── server.bak
+│   │   ├── bin
+│   │   ├── obj
+│   │   └── py
+│   └── server.V3
+│       ├── bin
+│       ├── obj
+│       └── py
+├── NuvuSW_3.6.4
+│   ├── Documentation
+│   │   └── SDKUserManual_files
+│   │       └── search
+│   └── NuvuInstaller
+│       ├── Dependencies
+│       │   └── Third-party
+│       │       ├── EDT
+│       │       ├── Matrox
+│       │       └── Pleora
+│       ├── NuvuCameras
+│       │   ├── bin
+│       │   ├── GrabExamples
+│       │   │   ├── Chronological Acquisition
+│       │   │   │   └── Chronological Acquisition
+│       │   │   ├── Continuous Acquisition
+│       │   │   │   └── Continuous Acquisition
+│       │   │   ├── Image Resize and Serial Command
+│       │   │   │   └── Image Resize and Serial Command
+│       │   │   ├── Processing - PC and LM
+│       │   │   │   └── Processing - PC and LM
+│       │   │   ├── Simple Acquisition
+│       │   │   │   └── Simple Acquisition
+│       │   │   └── Timed Acquisition
+│       │   │       └── Timed Acquisition
+│       │   ├── include
+│       │   ├── lib
+│       │   ├── LockFiles
+│       │   ├── Plugins
+│       │   │   ├── nc_grab_edt
+│       │   │   └── nc_grab_mil
+│       │   └── tools
+│       └── tools
+├── NuvuSW_4.2.1
+│   ├── Documentation
+│   │   └── SDKUserManual_files
+│   │       └── search
+│   └── NuvuInstaller
+│       ├── Dependencies
+│       │   ├── cfitsio
+│       │   ├── Repositories
+│       │   └── Third-party
+│       │       └── EDTpdv
+│       │           └── nc_grab_edt
+│       └── NuvuCameras
+│           ├── bin
+│           ├── Extras
+│           │   ├── SerialControl
+│           │   │   └── nc_grab_serial
+│           │   ├── StatusLogging
+│           │   │   └── nc_status_log
+│           │   └── VirtualCamera
+│           │       └── nc_grab_virtual
+│           ├── GrabExamples
+│           │   ├── Chronological Acquisition
+│           │   │   └── Chronological Acquisition
+│           │   ├── Continuous Acquisition
+│           │   │   └── Continuous Acquisition
+│           │   ├── Image Resize and Serial Command
+│           │   │   └── Image Resize and Serial Command
+│           │   ├── Processing - PC and LM
+│           │   │   └── Processing - PC and LM
+│           │   ├── Simple Acquisition
+│           │   │   ├── ipch
+│           │   │   │   └── simple acquisition-be9f2003
+│           │   │   └── Simple Acquisition
+│           │   └── Timed Acquisition
+│           │       └── Timed Acquisition
+│           ├── include
+│           ├── lib
+│           ├── LockFiles
+│           ├── Plugins
+│           └── tools
+├── NUVU_timeout_tests
+├── old
+├── Pictures
+├── Public
+├── serial_default
+├── sketchbook
+│   └── libraries
+├── snap
+│   └── tree
+│       ├── 18
+│       ├── common
+│       └── current -> 18
+├── SpectroAlign
+│   ├── 02262021test
+│   ├── 02262021test_focus
+│   ├── 03022021test_zn
+│   ├── 03152021test
+│   │   └── 210315
+│   ├── 03292021test_robot
+│   ├── 201519_1
+│   ├── 210315
+│   ├── 210429
+│   ├── 210504_center
+│   ├── 210504_test1
+│   ├── 210504_y-11
+│   ├── 210504_y+11
+│   ├── 210504_y-5
+│   ├── 210504_y+5
+│   ├── 210512
+│   ├── 210514
+│   ├── 210519
+│   ├── 210526
+│   ├── 210816
+│   ├── D lamp
+│   ├── dorna
+│   │   ├── build
+│   │   │   ├── bdist.linux-x86_64
+│   │   │   └── lib
+│   │   │       └── dorna
+│   │   │           └── resources
+│   │   │               ├── firmware
+│   │   │               ├── mac
+│   │   │               └── windows
+│   │   ├── dist
+│   │   ├── dorna
+│   │   │   ├── __pycache__
+│   │   │   ├── resources
+│   │   │   │   ├── firmware
+│   │   │   │   ├── mac
+│   │   │   │   └── windows
+│   │   │   └── sample_code
+│   │   └── dorna.egg-info
+│   ├── DornaAlign
+│   │   └── __pycache__
+│   ├── manual
+│   ├── test
+│   └── Z lamp
+├── Templates
+├── test_vincent
+│   └── pyds9plugin
+│       ├── CI
+│       │   ├── docker
+│       │   ├── script
+│       │   └── scriptOSX
+│       ├── pyds9plugin
+│       │   ├── Images
+│       │   ├── Macros
+│       │   │   ├── FIREBall
+│       │   │   ├── Fitting_Functions
+│       │   │   └── Macros_Header_catalog
+│       │   ├── Sextractor
+│       │   └── testing
+│       ├── pyds9plugin.egg-info
+│       ├── report
+│       └── wheel
+├── usb_modules
+└── Videos
+
+3666 directories

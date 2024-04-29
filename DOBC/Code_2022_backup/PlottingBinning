@@ -1,0 +1,36 @@
+
+IDL> j=mrdfits('B0000_0027.fits',0,hdr,/unsigned,/silent)
+
+j = array with image B27, corresponding to the HV set to 25.4 V 
+regular image, no amplification!
+
+
+IDL> sum = total(j,2)         
+IDL> plot, sum
+
+Collapsed all lines into one, to look for the "wavy" phenomenon that I see in the amplified image:
+% PLOT: Expression must be an array in this context: YNOZERO.
+% Execution halted at: $MAIN$          
+IDL> plot, sum, yr=[4e8,5e8], /ys
+IDL> plot, sum                   
+IDL> plot, sum, yr=[4e8,5e8], /ys
+IDL> plot, sum, yr=[4e7,5e8], /ys
+IDL> plot, sum, yr=[0,5e8], /ys  
+IDL> plot, sum, yr=[4e3,5e3], /ys
+IDL> plot, sum, yr=[0,5e3], /ys  
+IDL> plot, sum, yr=[0,5e4], /ys
+IDL> plot, sum, yr=[0,5e5], /ys
+IDL> plot, sum, yr=[0,5e6], /ys
+IDL> plot, sum, yr=[4e6,5e6], /ys
+IDL> plot, sum, yr=[4.4e6,4.6e6], /ys
+IDL> plot, sum, yr=[4.5e6,4.55e6], /ys
+IDL> device, reatin=2
+% Keyword REATIN not allowed in call to: DEVICE
+% Execution halted at: $MAIN$          
+IDL> device, retain=2
+IDL> window, 1       
+IDL> plot, sum, yr=[4.5e6,4.55e6], /ys
+IDL> plot, smooth(sum,6), yr=[4.5e6,4.55e6], /ys
+IDL> 
+
+

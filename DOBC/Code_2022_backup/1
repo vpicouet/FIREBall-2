@@ -1,0 +1,61 @@
+#!/usr/bin/python
+
+import signal
+import serial
+import os
+import sys
+import time
+from datetime import datetime,timedelta
+
+
+def omega_cmd(ser, cmd):
+
+    ser0.write('%s\r' % cmd)
+    time.sleep(1)
+
+    reply = ''
+
+    while ser0.inWaiting() > -1:
+        print 'Waiting for read..'
+	rtd=ser0.read(1)
+        reply+=rtd
+        if rtd == '\n':
+           break
+    
+    return(reply)
+
+#---------------------------------------------------------------------------
+# The main function starts here
+#-----------------------------------------------------------------------------
+if __name__ == "__main__":
+
+    try:
+
+    # open the serial device
+
+        ser0  = serial.Serial(port='/dev/ttyS1',
+                              baudrate=9600,
+                              parity=serial.PARITY_NONE,
+                              stopbits=serial.STOPBITS_ONE,
+                              bytesize=serial.EIGHTBITS)
+        ser0.timeout = 1.5
+        ser0.xonxoff = False
+        ser0.rtscts = False
+        ser0.dsrdtr = False
+
+        #temp = omega_cmd(ser0, sys.argv[1:])
+        print 'Querying the pump pressure...\n'
+        result = int('80',16)^int('32',16)^int('30',16)^int('35',16)^int('30',16)^int('03',16)
+        cksum = '{:x}'.format(result)
+        cksum =  cksum.encode('hex')
+        cmd = '0x02-0x80-0x32-0x30-0x35-0x30-0x03-0x' + cksum[0:2] + '-0x' + cksum[2:4]
+        #cmd = '02803230353103' + cksum
+        print 'The command sent was ' + cmd
+        temp = omega_cmd(ser0, cmd)
+	print temp
+        print 'The command should have printed..\n'
+	
+    finally:
+        
+        ser0.close()
+

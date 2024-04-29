@@ -1,0 +1,25 @@
+var group__group4 =
+[
+    [ "ncControllerListOpen", "group__group4.html#gabee46ef5837857929f3ea644ffb1aa12", null ],
+    [ "ncControllerListOpenBasic", "group__group4.html#ga91bc3e88e0014586a168c6cba5918472", null ],
+    [ "ncControllerListFree", "group__group4.html#gaab5090bd388054da1cf92d25d923d260", null ],
+    [ "ncControllerListGetSize", "group__group4.html#ga815f59b8079c1cd005a8e4c3c81fc908", null ],
+    [ "ncControllerListGetSerial", "group__group4.html#ga753885ae972a59992921ed11a7c99ca6", null ],
+    [ "ncControllerListGetModel", "group__group4.html#ga033d80e4cae5c8be4aaf75ffb5b1bd42", null ],
+    [ "ncControllerListGetPortUnit", "group__group4.html#gaf345ef3bcbea059db224016930b4c378", null ],
+    [ "ncControllerListGetPortChannel", "group__group4.html#gacda7a70428dbe75eebfaf9d4455eadcb", null ],
+    [ "ncControllerListGetPortInterface", "group__group4.html#gacb6ccfa245a56adc07ea69cbb1eb7740", null ],
+    [ "ncControllerListGetUniqueID", "group__group4.html#ga6e43ccd47e0cf0000a89b37910db515f", null ],
+    [ "ncControllerListGetFullSizeSize", "group__group4.html#gaa9e83c882313031fdefd5b018c02bc6e", null ],
+    [ "ncControllerListGetDetectorSize", "group__group4.html#ga8c5281e7986122e1033779f6503f8f24", null ],
+    [ "ncControllerListGetDetectorType", "group__group4.html#gaa41359cd4921657173d0acf1abcaf942", null ],
+    [ "ncControllerListGetLargestCLinkMode", "group__group4.html#gab3828b9e48293bc0402a280368b50bf1", null ],
+    [ "ncControllerListGetFreePortCount", "group__group4.html#ga09f48f14ce4ae539dfc57811d7d9f86b", null ],
+    [ "ncControllerListGetFreePortUnit", "group__group4.html#ga94e12c026bd95e3145ab91e8d6e6d940", null ],
+    [ "ncControllerListGetFreePortChannel", "group__group4.html#ga502f5789be472dacd992d1e5a2b56eb4", null ],
+    [ "ncControllerListGetFreePortInterface", "group__group4.html#ga95328f4df4a089b43b52c2597903bc24", null ],
+    [ "ncControllerListGetFreePortUniqueID", "group__group4.html#gad9bae6cb361c9df4a8b4ca9eb8b3960f", null ],
+    [ "ncControllerListGetFreePortReason", "group__group4.html#ga9bb8c2262c0b2c561f919f332038c9cc", null ],
+    [ "ncControllerListGetPluginCount", "group__group4.html#ga82e0f1a943dbc464c0f8213ba6659657", null ],
+    [ "ncControllerListGetPluginName", "group__group4.html#gaf74ebb539a6eeade475456d369e278c1", null ]
+];

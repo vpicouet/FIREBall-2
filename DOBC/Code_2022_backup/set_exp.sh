@@ -1,0 +1,1 @@
+cam exptime=$1

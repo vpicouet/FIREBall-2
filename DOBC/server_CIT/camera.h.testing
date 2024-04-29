@@ -1,0 +1,130 @@
+/*
+  This header file contains the structure definitions and function
+  declarations needed to operate the EMCCD with the NUVU
+  controller. It is based on Nov 2015.
+*/
+
+#ifndef CAMERA_H_
+#define CAMERA_H_
+
+#define SIMULATE 0
+
+// legact from NUVU software stuff
+#define COMMAND_LINE_BUILD 1
+
+#define STRING_LENGTH 255
+
+// structure for camera parameters
+typedef struct NcPtcArgs {
+  // nuvu params
+  int emgain;
+  int abd; //nominally set to 18V. Should be checked if any changes are made to the clocking config.
+  int dd; //nominally set to 24V. Should be checked if any changes are made to the clocking config.
+  int rd; //nominally set to 17V. Should be checked if any changes are made to the clocking config.
+  int phidc; //nominally set to 3V. Should be checked if any changes are made to the clocking config.
+  int og; //nominally set to 13V. Should be checked if any changes are made to the clocking config.
+  int odl; //nominally set to 25V. Should be checked if any changes are made to the clocking config.
+  int odh; //nominally set to 25V. Should be checked if any changes are made to the clocking config.
+  int ig; //nominally set to -5V. Should be checked if any changes are made to the clocking config.
+  int vhvh0; //nominally set to 28.6V. Should be checked if any changes are made to the clocking config.
+  int vhvl0; //nominally set to -2.6V. Should be checked if any changes are made to the clocking config.
+  float preamp;
+  int vss;
+  int cdsoffset;
+  int imagenum;
+  int exptime;
+  int unit;
+  int channel;
+  int nbias;
+  int maxFiles;
+  int xsize;
+  int ysize;
+  double waitingTime;
+  int readoutSeq;
+  int ROS;
+  //char shutter[1024];
+  int compress;
+  char *extraOpt;
+  int shutter;
+  int trigger;
+  int extshutter;
+  int shutterdelay;
+  // additional params
+  char image_path[STRING_LENGTH];
+  char root_name[STRING_LENGTH];
+  char last_fname[STRING_LENGTH];
+  int imagenumber;
+  int imageburst;
+  char simulate;
+}NcPtcArgs;
+
+
+//  open and close functions
+int open_camera(int ROS);
+int close_camera();
+
+// set various parameters functions
+int set_emgain(int emgain); // done
+int set_abd(int abd); // done
+int set_dd(int dd); // done
+int set_rd(int rd); // done
+int set_phidc(int phidc); // done
+int set_og(int og); // done
+int set_odl(int odl); // done
+int set_odh(int odh); // done
+int set_ig(int ig); // done
+int set_vhvh0(int vhvh0); // done
+int set_vhvl0(int vhvl0); // done
+int set_vss(int vss); // done
+int set_cdsoffset(int cdsoffset); // done
+int set_exposure_time(int exptime); // done
+int set_shutterdelay(int shutterdelay); // done
+int set_exposure_burst(int burst); //done
+int set_exposure_number(int number); // done
+int set_shutter(int setting); 
+int set_trigger(int trigger);
+int set_extshutter(int extshutter);
+int set_imagename_root(char *root);
+int set_imagename_path(char *path);
+
+
+// get various parameters functions
+int get_emgain(int *emgain); //done
+int get_abd(int *abd); // done
+int get_dd(int *dd); // done
+int get_rd(int *rd); // done
+int get_phidc(int *phidc); // done
+int get_og(int *og); // done
+int get_odl(int *odl); // done
+int get_odh(int *odh); // done
+int get_ig(int *ig); // done
+int get_vhvh0(int *vhvh0); // done
+int get_vhvl0(int *vhvl0); // done
+int get_vss(int *vss); //done
+int get_cdsoffset(int *cdsoffset); //done
+int get_exposure_time(int *exptime); // done
+int get_shutterdelay(int *shutterdelay); // done
+int get_exposure_burst(int *burst); //done
+int get_exposure_number(int *number); // done
+int get_shutter(int *setting);
+int get_trigger(int *trigger);
+int get_extshutter(int *extshutter);
+int get_imagename_root(char *root);
+int get_imagename_path(char *path);
+int get_last_filename(char *fname);
+int get_next_filename(char *fname);
+
+// expose!
+int expose();
+int dark();
+int bias();
+
+// **** 161102 START
+// add_header
+int add_header(char *fname);
+int add_temps(char *dat, char*tim, char *celsius1, char *celsius2);
+// **** 161102 END
+
+
+
+#endif // CAMERA_H_

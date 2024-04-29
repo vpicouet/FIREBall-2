@@ -1,0 +1,1 @@
+cam emgain=$1
