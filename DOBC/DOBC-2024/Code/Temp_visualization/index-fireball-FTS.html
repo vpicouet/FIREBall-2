@@ -1,0 +1,175 @@
+<html>
+
+<head>
+  <title>Fireball2</title>
+  <script type="text/javascript" src="dygraph-combined.js"></script>
+  <script type="text/javascript" src="../dygraph-combined.js"></script> 
+  <style type="text/css">
+    #temperature .dygraph-legend {
+      width: 100px;
+      background-color: transparent !important;
+      left: 60px !important;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+  <table>
+    <tr>
+      <td valign="top">
+        <div id="temperature" style="width:800px; height:400px;"></div>
+      </td>
+      <td valign="top"></td>
+      <td valign="top">
+        <div id="labels"></div>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <script type="text/javascript">
+    tempgraph = new Dygraph(
+      document.getElementById("temperature"),
+      "alltemps.csv",
+      {
+        labels: ["time", "DOBC[C]:", "Getter[C]:", "CuClamp2[C]:", "EMCCDBack[C]:", "Coldhead[C]:", "Reject[C]:"],
+        labelsDiv: document.getElementById("labels"),
+        xlabel: 'Time [ UTC ]',
+        ylabel: 'Temperature [ C ]',
+
+
+        rollPeriod: 1,
+        showRoller: true,
+        valueRange: [-200, 60],
+        stackedGraph: false,
+        // strokeWidth: 1,
+        // strokeBorderWidth: 2,
+        // highlightCircleSize: 2,
+        highlightCircleSize: 1,
+        strokeWidth: 1,
+        highlightSeriesOpts: {
+          strokeWidth: 1.3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 2
+        },
+        title: 'FIREBall2 temperatures',
+
+        legend: 'always',
+        labelsSeparateLines: true,
+        connectSeparatedPoints: false,
+        labelsKMB: true
+      }
+    );
+  </script>
+  download data file here: <a href="alltemps.csv">alltemps.csv</a><br>
+
+
+
+
+
+
+
+
+  <p>
+  <table>
+    <tr>
+      <td>
+        <div id="pressure" style="width:800px; height:400px;"></div>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <script type="text/javascript">
+    pressgraph = new Dygraph(
+      document.getElementById("pressure"),
+      "pressure.csv",
+      {
+        //  labels: [ 'Time', 'Pressure' ],
+        xlabel: 'Time [ UTC ]',
+        ylabel: 'Pressure [ mbar ]',
+        logscale: true,
+
+        rollPeriod: 1,
+        showRoller: true,
+        stackedGraph: false,
+        valueRange: [1e-7, 1],
+        // strokeWidth: 1,
+        // strokeBorderWidth: 2,
+        // highlightCircleSize: 2,
+        highlightCircleSize: 1,
+        strokeWidth: 1,
+        highlightSeriesOpts: {
+          strokeWidth: 1.3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 2
+        },
+        title: 'FIREBall2 pressure',
+
+        connectSeparatedPoints: false,
+        sigFigs: '3',
+        legend: 'always'
+      }
+    );
+  </script>
+  download data file here: <a href="pressure.csv">pressure.csv</a><br>
+
+
+
+
+
+
+
+
+
+  <p>
+  <table>
+    <tr>
+      <td valign="top">
+        <div id="cooler_power" style="width:800px; height:400px;"></div>
+      </td>
+      <td valign="top"></td>
+      <td valign="top">
+        <div id="labels1"></div>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <script type="text/javascript">
+    tempgraph = new Dygraph(
+      document.getElementById("cooler_power"),
+      "cooler_power.csv",
+      {
+        labels: ["time", "Max_Power[W]:", "Command_Power[W]:", "Min_Power[W]:"],
+        labelsDiv: document.getElementById("labels1"),
+        xlabel: 'Time [ UTC ]',
+        ylabel: 'Power [ W ]',
+        logscale: true,
+
+        valueRange: [1, 160],
+        rollPeriod: 1,
+        showRoller: true,
+        stackedGraph: false,
+        // strokeWidth: 1,
+        // strokeBorderWidth: 2,
+        // highlightCircleSize: 2,
+        highlightCircleSize: 1,
+        strokeWidth: 1,
+        highlightSeriesOpts: {
+          strokeWidth: 1.3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 2
+        },
+        title: 'Fireball2 cryocooler power',
+
+        legend: 'always',
+        labelsSeparateLines: true,
+        connectSeparatedPoints: false,
+        labelsKMB: true
+      }
+    );
+  </script>
+  download data file here: <a href="cooler_power.csv">cooler_power.csv</a><br>
+
+</body>
+
+</html>
