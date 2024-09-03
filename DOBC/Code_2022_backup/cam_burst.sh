@@ -1,1 +1,0 @@
-cam burst=$1
