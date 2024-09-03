@@ -1,0 +1,44 @@
+#!/usr/bin/python
+# -----------------------------------------------------------------------------
+# @file      get_arduino.py
+# @brief     read temperature from Fireball2 ruggeduino RTD shield combo
+# @author    Gillian Kyne <gkyne@caltech.edu>
+# @date      2016-11-21
+# -----------------------------------------------------------------------------
+
+import signal
+import serial
+import os
+import sys
+import time
+from datetime import datetime,timedelta
+import numpy as np
+
+# -----------------------------------------------------------------------------
+# @fn     ard_cmd
+# @brief  send command to pressure gauge
+# @param  ser  serial object
+# @param  cmd  command string
+# -----------------------------------------------------------------------------
+def set_arduino(ser0,setpoint):
+
+#    while True:
+#         if ser0.inWaiting() > 0:  #if incoming bytes are waiting to be read from the serial input buffer
+     time.sleep(1)
+     ser0.write(setpoint) #reads whole line as it's printed from the arduino
+     time.sleep(1)
+
+# -----------------------------------------------------------------------------
+# @fn     main
+# @brief  the main function starts here
+# -----------------------------------------------------------------------------
+if __name__ == "__main__":
+
+	# open the serial port to RTD arduino
+	ser0  = serial.Serial(port='/dev/arduino',baudrate=115200,timeout=5,xonxoff=False,rtscts=False,dsrdtr=False)#parity=serial.PARITY_NONE,stopbits=serial.STOPBITS_ONE,bytesize=serial.EIGHTBITS)
+
+        setpoint = sys.argv[1]
+        print setpoint
+        set_arduino(ser0,setpoint)
+
+        ser0.close()
